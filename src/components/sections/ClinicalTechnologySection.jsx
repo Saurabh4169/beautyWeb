@@ -12,7 +12,7 @@ export const ClinicalTechnologySection = () => {
       id="technology"
       className="section-padding"
       style={{
-        background: "linear-gradient(180deg, #091a15 0%, #0d231d 50%, #081612 100%)",
+        background: "linear-gradient(180deg, #1a0e08 0%, #241409 50%, #1a0e08 100%)",
         color: "#ffffff",
         position: "relative",
         overflow: "hidden"
@@ -27,7 +27,7 @@ export const ClinicalTechnologySection = () => {
           transform: "translateX(-50%)",
           width: "600px",
           height: "300px",
-          background: "radial-gradient(ellipse, rgba(16, 185, 129, 0.15) 0%, rgba(0,0,0,0) 70%)",
+          background: "radial-gradient(ellipse, rgba(196, 98, 45, 0.16) 0%, rgba(0,0,0,0) 70%)",
           filter: "blur(60px)",
           pointerEvents: "none"
         }}
@@ -54,8 +54,8 @@ export const ClinicalTechnologySection = () => {
             <div
               key={tech.number}
               style={{
-                background: "rgba(19, 44, 37, 0.65)",
-                border: "1px solid rgba(46, 92, 79, 0.4)",
+                background: "rgba(44, 24, 16, 0.65)",
+                border: "1px solid rgba(196, 98, 45, 0.25)",
                 borderRadius: "20px",
                 padding: "32px 26px",
                 backdropFilter: "blur(10px)",
@@ -67,12 +67,12 @@ export const ClinicalTechnologySection = () => {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "translateY(-6px)";
-                e.currentTarget.style.borderColor = "#10b981";
-                e.currentTarget.style.boxShadow = "0 12px 35px rgba(16, 185, 129, 0.18)";
+                e.currentTarget.style.borderColor = "#c4622d";
+                e.currentTarget.style.boxShadow = "0 12px 35px rgba(196, 98, 45, 0.22)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.borderColor = "rgba(46, 92, 79, 0.4)";
+                e.currentTarget.style.borderColor = "rgba(196, 98, 45, 0.25)";
                 e.currentTarget.style.boxShadow = "none";
               }}
             >
@@ -84,7 +84,7 @@ export const ClinicalTechnologySection = () => {
                       fontFamily: "var(--font-serif-display)",
                       fontSize: "1.8rem",
                       fontWeight: 700,
-                      color: "#34d399",
+                      color: "#d4784a",
                       lineHeight: 1
                     }}
                   >
@@ -95,7 +95,7 @@ export const ClinicalTechnologySection = () => {
                       fontSize: "10px",
                       textTransform: "uppercase",
                       letterSpacing: "0.08em",
-                      color: "#95bfb3",
+                      color: "#dfc8a4",
                       fontWeight: 700,
                       background: "rgba(255, 255, 255, 0.08)",
                       padding: "4px 10px",
@@ -122,7 +122,7 @@ export const ClinicalTechnologySection = () => {
                 <p
                   style={{
                     fontSize: "0.88rem",
-                    color: "#a4c4bb",
+                    color: "#b89e8c",
                     lineHeight: 1.65,
                     marginBottom: "20px"
                   }}
@@ -135,8 +135,8 @@ export const ClinicalTechnologySection = () => {
               <div style={{ borderTop: "1px solid rgba(255, 255, 255, 0.1)", paddingTop: "16px" }}>
                 <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "6px" }}>
                   {tech.benefits.map((b, i) => (
-                    <li key={i} style={{ fontSize: "12px", color: "#c8dfd8", display: "flex", alignItems: "center", gap: "6px" }}>
-                      <span style={{ width: "4px", height: "4px", borderRadius: "50%", background: "#10b981" }} />
+                    <li key={i} style={{ fontSize: "12px", color: "#dfc8a4", display: "flex", alignItems: "center", gap: "6px" }}>
+                      <span style={{ width: "4px", height: "4px", borderRadius: "50%", background: "#c4622d" }} />
                       <span>{b}</span>
                     </li>
                   ))}
@@ -150,7 +150,7 @@ export const ClinicalTechnologySection = () => {
         <div
           style={{
             background: "rgba(255, 255, 255, 0.05)",
-            border: "1px solid rgba(255, 255, 255, 0.12)",
+            border: "1px solid rgba(223, 200, 164, 0.2)",
             borderRadius: "18px",
             padding: "24px 32px",
             display: "flex",
@@ -161,8 +161,8 @@ export const ClinicalTechnologySection = () => {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-            <Cpu size={22} color="#34d399" />
-            <span style={{ fontSize: "0.95rem", color: "#e2ede9" }}>
+            <Cpu size={22} color="#d4784a" />
+            <span style={{ fontSize: "0.95rem", color: "#fdf8f3" }}>
               Interested in clinical device specifications and contraindications?
             </span>
           </div>
@@ -170,16 +170,20 @@ export const ClinicalTechnologySection = () => {
           <button
             onClick={() => openBookingModal()}
             style={{
-              background: "#10b981",
-              color: "#081d16",
+              background: "linear-gradient(135deg, #c4622d 0%, #a84e22 100%)",
+              color: "#ffffff",
               padding: "10px 24px",
               borderRadius: "9999px",
               fontSize: "13px",
               fontWeight: 700,
               display: "flex",
               alignItems: "center",
-              gap: "6px"
+              gap: "6px",
+              boxShadow: "0 4px 16px rgba(196,98,45,0.35)",
+              transition: "transform 0.2s ease"
             }}
+            onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; }}
           >
             <span>Consult With a Physician</span>
             <ArrowRight size={14} />

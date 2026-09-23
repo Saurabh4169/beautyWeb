@@ -17,41 +17,41 @@ export const Button = ({
     switch (variant) {
       case "primary":
         return {
-          background: "linear-gradient(135deg, #163a31 0%, #0f2b24 100%)",
-          color: "#ffffff",
-          border: "1px solid #1f4f43",
-          boxShadow: "0 4px 18px rgba(16, 38, 31, 0.25)"
+          background: "linear-gradient(135deg, #3d2314 0%, #2c1810 100%)",
+          color: "#fdf8f3",
+          border: "1px solid #5c3520",
+          boxShadow: "0 4px 18px rgba(44, 24, 16, 0.28)"
         };
       case "secondary":
         return {
-          background: "#ffffff",
-          color: "#163a31",
-          border: "1px solid #c8d8d2",
-          boxShadow: "0 2px 8px rgba(0, 0, 0, 0.04)"
+          background: "#fdf8f3",
+          color: "#3d2314",
+          border: "1px solid #e4d8cc",
+          boxShadow: "0 2px 8px rgba(44, 24, 16, 0.06)"
         };
       case "emerald":
         return {
-          background: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
+          background: "linear-gradient(135deg, #c4622d 0%, #a84e22 100%)",
           color: "#ffffff",
           border: "none",
-          boxShadow: "0 4px 15px rgba(16, 185, 129, 0.35)"
+          boxShadow: "0 4px 15px rgba(196, 98, 45, 0.38)"
         };
       case "outline":
         return {
           background: "transparent",
-          color: "#163a31",
-          border: "1px solid #234b40"
+          color: "#3d2314",
+          border: "1px solid #8b5e3c"
         };
       case "ghost":
         return {
           background: "transparent",
-          color: "#163a31",
+          color: "#3d2314",
           border: "none"
         };
       case "dark-ghost":
         return {
           background: "rgba(255, 255, 255, 0.08)",
-          color: "#ffffff",
+          color: "#fdf8f3",
           border: "1px solid rgba(255, 255, 255, 0.2)"
         };
       default:

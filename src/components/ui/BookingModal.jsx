@@ -62,11 +62,11 @@ export const BookingModal = () => {
             width: "34px",
             height: "34px",
             borderRadius: "50%",
-            background: "#f0f5f2",
+            background: "#fdf0e8",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            color: "#304b42"
+            color: "#6b4c38"
           }}
         >
           <X size={16} />
@@ -79,28 +79,28 @@ export const BookingModal = () => {
                 width: "64px",
                 height: "64px",
                 borderRadius: "50%",
-                background: "#e8f5f0",
+                background: "#fdf0e8",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 margin: "0 auto 16px auto"
               }}
             >
-              <CheckCircle2 size={36} color="#10b981" />
+              <CheckCircle2 size={36} color="#c4622d" />
             </div>
 
-            <h3 style={{ fontSize: "1.6rem", color: "#163a31", fontFamily: "var(--font-serif-display)", marginBottom: "8px" }}>
+            <h3 style={{ fontSize: "1.6rem", color: "#3d2314", fontFamily: "var(--font-serif-display)", marginBottom: "8px" }}>
               Consultation Reserved
             </h3>
 
-            <p style={{ color: "#506b62", fontSize: "0.92rem", maxWidth: "420px", margin: "0 auto 20px auto", lineHeight: 1.55 }}>
+            <p style={{ color: "#6b4c38", fontSize: "0.92rem", maxWidth: "420px", margin: "0 auto 20px auto", lineHeight: 1.55 }}>
               Thank you, <strong>{formData.name || "Valued Client"}</strong>. Your clinical appointment has been scheduled at our <strong>{formData.location}</strong> on <strong>{formData.date} at {formData.time}</strong>.
             </p>
 
             <button
               onClick={handleClose}
               style={{
-                background: "#163a31",
+                background: "#3d2314",
                 color: "#ffffff",
                 padding: "12px 28px",
                 borderRadius: "9999px",
@@ -114,13 +114,13 @@ export const BookingModal = () => {
         ) : (
           <div>
             <div style={{ marginBottom: "20px", paddingRight: "28px" }}>
-              <span style={{ fontSize: "10.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#10b981" }}>
+              <span style={{ fontSize: "10.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#c4622d" }}>
                 DOCTOR-LED AESTHETIC CARE
               </span>
-              <h2 style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.85rem)", color: "var(--color-primary-dark)", fontFamily: "var(--font-serif-display)", marginTop: "2px" }}>
+              <h2 style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.85rem)", color: "#3d2314", fontFamily: "var(--font-serif-display)", marginTop: "2px" }}>
                 Book Your Clinical Consultation
               </h2>
-              <p style={{ fontSize: "0.88rem", color: "#60756e", margin: 0 }}>
+              <p style={{ fontSize: "0.88rem", color: "#8b5e3c", margin: 0 }}>
                 Select your preferred clinic, specialist, and sensory preferences.
               </p>
             </div>
@@ -128,7 +128,7 @@ export const BookingModal = () => {
             <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               {/* Treatment Select */}
               <div>
-                <label style={{ display: "block", fontSize: "11.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#2d443c", marginBottom: "5px" }}>
+                <label style={{ display: "block", fontSize: "11.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#3d2314", marginBottom: "5px" }}>
                   Selected Treatment / Focus
                 </label>
                 <select
@@ -138,10 +138,10 @@ export const BookingModal = () => {
                     width: "100%",
                     padding: "11px 12px",
                     borderRadius: "10px",
-                    border: "1px solid #c9ded5",
+                    border: "1px solid #ede5da",
                     background: "#ffffff",
                     fontSize: "13.5px",
-                    color: "#163a31"
+                    color: "#3d2314"
                   }}
                 >
                   <option value="general-consult">Comprehensive Doctor Diagnostic Consultation</option>
@@ -160,7 +160,7 @@ export const BookingModal = () => {
                 }}
               >
                 <div>
-                  <label style={{ display: "block", fontSize: "11.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#2d443c", marginBottom: "5px" }}>
+                  <label style={{ display: "block", fontSize: "11.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#3d2314", marginBottom: "5px" }}>
                     Clinic Location
                   </label>
                   <select
@@ -170,10 +170,10 @@ export const BookingModal = () => {
                       width: "100%",
                       padding: "11px 12px",
                       borderRadius: "10px",
-                      border: "1px solid #c9ded5",
+                      border: "1px solid #ede5da",
                       background: "#ffffff",
                       fontSize: "13px",
-                      color: "#163a31"
+                      color: "#3d2314"
                     }}
                   >
                     <option>Allen, Texas Clinic (333 East Bethany Dr)</option>
@@ -183,7 +183,7 @@ export const BookingModal = () => {
                 </div>
 
                 <div>
-                  <label style={{ display: "block", fontSize: "11.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#2d443c", marginBottom: "5px" }}>
+                  <label style={{ display: "block", fontSize: "11.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#3d2314", marginBottom: "5px" }}>
                     Suite Preference
                   </label>
                   <select
@@ -193,10 +193,10 @@ export const BookingModal = () => {
                       width: "100%",
                       padding: "11px 12px",
                       borderRadius: "10px",
-                      border: "1px solid #c9ded5",
+                      border: "1px solid #ede5da",
                       background: "#ffffff",
                       fontSize: "13px",
-                      color: "#163a31"
+                      color: "#3d2314"
                     }}
                   >
                     <option>Standard Luxury Suite</option>
@@ -215,7 +215,7 @@ export const BookingModal = () => {
                 }}
               >
                 <div>
-                  <label style={{ display: "block", fontSize: "11.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#2d443c", marginBottom: "5px" }}>
+                  <label style={{ display: "block", fontSize: "11.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#3d2314", marginBottom: "5px" }}>
                     Preferred Date
                   </label>
                   <input
@@ -227,15 +227,15 @@ export const BookingModal = () => {
                       width: "100%",
                       padding: "11px 12px",
                       borderRadius: "10px",
-                      border: "1px solid #c9ded5",
+                      border: "1px solid #ede5da",
                       fontSize: "13px",
-                      color: "#163a31"
+                      color: "#3d2314"
                     }}
                   />
                 </div>
 
                 <div>
-                  <label style={{ display: "block", fontSize: "11.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#2d443c", marginBottom: "5px" }}>
+                  <label style={{ display: "block", fontSize: "11.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#3d2314", marginBottom: "5px" }}>
                     Time Slot
                   </label>
                   <select
@@ -245,10 +245,10 @@ export const BookingModal = () => {
                       width: "100%",
                       padding: "11px 12px",
                       borderRadius: "10px",
-                      border: "1px solid #c9ded5",
+                      border: "1px solid #ede5da",
                       background: "#ffffff",
                       fontSize: "13px",
-                      color: "#163a31"
+                      color: "#3d2314"
                     }}
                   >
                     <option>09:30 AM</option>
@@ -269,7 +269,7 @@ export const BookingModal = () => {
                 }}
               >
                 <div>
-                  <label style={{ display: "block", fontSize: "11.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#2d443c", marginBottom: "5px" }}>
+                  <label style={{ display: "block", fontSize: "11.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#3d2314", marginBottom: "5px" }}>
                     Full Name
                   </label>
                   <input
@@ -282,14 +282,15 @@ export const BookingModal = () => {
                       width: "100%",
                       padding: "11px 12px",
                       borderRadius: "10px",
-                      border: "1px solid #c9ded5",
+                      border: "1px solid #ede5da",
+                      color: "#3d2314",
                       fontSize: "13px"
                     }}
                   />
                 </div>
 
                 <div>
-                  <label style={{ display: "block", fontSize: "11.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#2d443c", marginBottom: "5px" }}>
+                  <label style={{ display: "block", fontSize: "11.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#3d2314", marginBottom: "5px" }}>
                     Phone Number
                   </label>
                   <input
@@ -302,7 +303,8 @@ export const BookingModal = () => {
                       width: "100%",
                       padding: "11px 12px",
                       borderRadius: "10px",
-                      border: "1px solid #c9ded5",
+                      border: "1px solid #ede5da",
+                      color: "#3d2314",
                       fontSize: "13px"
                     }}
                   />
@@ -310,7 +312,7 @@ export const BookingModal = () => {
               </div>
 
               <div>
-                <label style={{ display: "block", fontSize: "11.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#2d443c", marginBottom: "5px" }}>
+                <label style={{ display: "block", fontSize: "11.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#3d2314", marginBottom: "5px" }}>
                   Email Address
                 </label>
                 <input
@@ -323,7 +325,8 @@ export const BookingModal = () => {
                     width: "100%",
                     padding: "11px 12px",
                     borderRadius: "10px",
-                    border: "1px solid #c9ded5",
+                    border: "1px solid #ede5da",
+                    color: "#3d2314",
                     fontSize: "13px"
                   }}
                 />
@@ -333,13 +336,13 @@ export const BookingModal = () => {
               <button
                 type="submit"
                 style={{
-                  background: "linear-gradient(135deg, #163a31 0%, #0f2b24 100%)",
+                  background: "linear-gradient(135deg, #c4622d 0%, #a84e22 100%)",
                   color: "#ffffff",
                   padding: "14px",
                   borderRadius: "9999px",
                   fontWeight: 700,
                   fontSize: "14px",
-                  boxShadow: "0 4px 16px rgba(22, 58, 49, 0.25)",
+                  boxShadow: "0 4px 16px rgba(196, 98, 45, 0.3)",
                   marginTop: "4px",
                   display: "flex",
                   alignItems: "center",
@@ -347,7 +350,7 @@ export const BookingModal = () => {
                   gap: "8px"
                 }}
               >
-                <ShieldCheck size={17} color="#10b981" />
+                <ShieldCheck size={17} color="#fdf8f3" />
                 <span>Confirm & Reserve Consultation</span>
               </button>
             </form>

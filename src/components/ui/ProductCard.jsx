@@ -22,27 +22,27 @@ export const ProductCard = ({ product }) => {
       style={{
         background: "#ffffff",
         borderRadius: "18px",
-        border: "1px solid #e9eee8",
+        border: "1px solid #ede5da",
         padding: "20px",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
         transition: "all 0.35s ease",
         position: "relative",
-        boxShadow: "0 4px 18px rgba(16, 38, 31, 0.03)",
+        boxShadow: "0 4px 18px rgba(44, 24, 16, 0.04)",
         cursor: "pointer"
       }}
       onMouseEnter={(e) => {
         setIsHovered(true);
         e.currentTarget.style.transform = "translateY(-6px)";
-        e.currentTarget.style.boxShadow = "0 16px 36px rgba(21, 62, 53, 0.08)";
-        e.currentTarget.style.borderColor = "#cbe0d7";
+        e.currentTarget.style.boxShadow = "0 16px 36px rgba(44, 24, 16, 0.1)";
+        e.currentTarget.style.borderColor = "#c4622d";
       }}
       onMouseLeave={(e) => {
         setIsHovered(false);
         e.currentTarget.style.transform = "translateY(0)";
-        e.currentTarget.style.boxShadow = "0 4px 18px rgba(16, 38, 31, 0.03)";
-        e.currentTarget.style.borderColor = "#e9eee8";
+        e.currentTarget.style.boxShadow = "0 4px 18px rgba(44, 24, 16, 0.04)";
+        e.currentTarget.style.borderColor = "#ede5da";
       }}
       onClick={() => setQuickViewProduct(product)}
     >
@@ -65,11 +65,12 @@ export const ProductCard = ({ product }) => {
               width: "32px",
               height: "32px",
               borderRadius: "50%",
-              background: "#f0f5f2",
+              background: "#f8f2eb",
+              border: "1px solid #e4d8cc",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              color: "#3a574e",
+              color: "#3d2314",
               transition: "all 0.2s"
             }}
           >
@@ -84,7 +85,7 @@ export const ProductCard = ({ product }) => {
             borderRadius: "12px",
             overflow: "hidden",
             marginBottom: "18px",
-            background: "#faf9f6",
+            background: "#fdf8f3",
             position: "relative"
           }}
         >
@@ -102,7 +103,7 @@ export const ProductCard = ({ product }) => {
         </div>
 
         {/* Category & Subtitle */}
-        <div style={{ fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.05em", color: "#6a827a", fontWeight: 600, marginBottom: "4px" }}>
+        <div style={{ fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.05em", color: "#8b5e3c", fontWeight: 600, marginBottom: "4px" }}>
           {product.subtitle}
         </div>
 
@@ -122,20 +123,20 @@ export const ProductCard = ({ product }) => {
 
         {/* Rating Stars */}
         <div style={{ display: "flex", alignItems: "center", gap: "5px", marginBottom: "14px" }}>
-          <div style={{ display: "flex", gap: "2px", color: "#eab308" }}>
+          <div style={{ display: "flex", gap: "2px", color: "#c29b64" }}>
             {[...Array(5)].map((_, i) => (
-              <Star key={i} size={13} fill="#eab308" color="#eab308" />
+              <Star key={i} size={13} fill="#c29b64" color="#c29b64" />
             ))}
           </div>
-          <span style={{ fontSize: "12px", fontWeight: 600, color: "#2d3f38" }}>{product.rating}</span>
-          <span style={{ fontSize: "12px", color: "#8a9d96" }}>({product.reviewCount})</span>
+          <span style={{ fontSize: "12px", fontWeight: 600, color: "#3d2314" }}>{product.rating}</span>
+          <span style={{ fontSize: "12px", color: "#8b5e3c" }}>({product.reviewCount})</span>
         </div>
       </div>
 
       {/* Price and Add to Cart Row */}
       <div
         style={{
-          borderTop: "1px solid #f0f4f2",
+          borderTop: "1px solid #ede5da",
           paddingTop: "14px",
           display: "flex",
           alignItems: "center",
@@ -147,7 +148,7 @@ export const ProductCard = ({ product }) => {
             £{product.price}
           </span>
           {product.originalPrice && (
-            <span style={{ fontSize: "0.85rem", textDecoration: "line-through", color: "#9dafa8" }}>
+            <span style={{ fontSize: "0.85rem", textDecoration: "line-through", color: "#9c7b68" }}>
               £{product.originalPrice}
             </span>
           )}
@@ -159,15 +160,17 @@ export const ProductCard = ({ product }) => {
             display: "inline-flex",
             alignItems: "center",
             gap: "6px",
-            background: addedAnim ? "#10b981" : "#163a31",
+            background: addedAnim ? "#c4622d" : "#3d2314",
             color: "#ffffff",
             padding: "9px 16px",
             borderRadius: "9999px",
             fontSize: "13px",
             fontWeight: 600,
             transition: "all 0.25s ease",
-            boxShadow: "0 4px 12px rgba(22, 58, 49, 0.15)"
+            boxShadow: "0 4px 14px rgba(44, 24, 16, 0.2)"
           }}
+          onMouseEnter={(e) => { e.currentTarget.style.background = '#c4622d'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.background = addedAnim ? '#c4622d' : '#3d2314'; }}
         >
           {addedAnim ? (
             <>

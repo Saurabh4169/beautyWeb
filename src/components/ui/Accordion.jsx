@@ -18,8 +18,8 @@ export const Accordion = ({ items }) => {
             style={{
               background: "#ffffff",
               borderRadius: "16px",
-              border: isOpen ? "1px solid #bedad0" : "1px solid #e7eee9",
-              boxShadow: isOpen ? "0 8px 24px rgba(22, 58, 49, 0.06)" : "0 2px 8px rgba(0, 0, 0, 0.02)",
+              border: isOpen ? "1px solid #c4622d" : "1px solid #ede5da",
+              boxShadow: isOpen ? "0 8px 24px rgba(44, 24, 16, 0.08)" : "0 2px 8px rgba(0, 0, 0, 0.02)",
               overflow: "hidden",
               transition: "all 0.3s ease"
             }}
@@ -35,7 +35,7 @@ export const Accordion = ({ items }) => {
                 gap: "16px",
                 textAlign: "left",
                 background: "transparent",
-                color: isOpen ? "#163a31" : "#22332d",
+                color: isOpen ? "#c4622d" : "#3d2314",
                 fontWeight: 600,
                 fontSize: "1.05rem",
                 fontFamily: "var(--font-sans)",
@@ -48,7 +48,7 @@ export const Accordion = ({ items }) => {
                   width: "32px",
                   height: "32px",
                   borderRadius: "50%",
-                  background: isOpen ? "#e8f5f0" : "#f3f7f5",
+                  background: isOpen ? "#fdf0e8" : "#f8f2eb",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -57,7 +57,7 @@ export const Accordion = ({ items }) => {
                   transform: isOpen ? "rotate(180deg)" : "rotate(0)"
                 }}
               >
-                <ChevronDown size={18} color={isOpen ? "#155e4c" : "#5d736c"} />
+                <ChevronDown size={18} color={isOpen ? "#c4622d" : "#8b5e3c"} />
               </div>
             </button>
 
@@ -65,10 +65,10 @@ export const Accordion = ({ items }) => {
               <div
                 style={{
                   padding: "0 26px 24px 26px",
-                  color: "#4e635b",
+                  color: "#6b4c38",
                   fontSize: "0.96rem",
                   lineHeight: 1.7,
-                  borderTop: "1px solid #f0f6f3",
+                  borderTop: "1px solid #ede5da",
                   paddingTop: "16px",
                   animation: "fadeIn 0.3s ease"
                 }}

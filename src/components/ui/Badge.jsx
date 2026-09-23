@@ -5,9 +5,9 @@ export const Badge = ({ children, variant = "emerald", className = "", icon = nu
     switch (variant) {
       case "emerald":
         return {
-          background: "#e8f5f0",
-          color: "#155e4c",
-          border: "1px solid rgba(16, 185, 129, 0.25)"
+          background: "#fdf0e8",
+          color: "#c4622d",
+          border: "1px solid rgba(196, 98, 45, 0.3)"
         };
       case "gold":
         return {
@@ -18,20 +18,20 @@ export const Badge = ({ children, variant = "emerald", className = "", icon = nu
       case "dark":
         return {
           background: "rgba(255, 255, 255, 0.1)",
-          color: "#c2e7dc",
-          border: "1px solid rgba(255, 255, 255, 0.15)"
+          color: "#dfc8a4",
+          border: "1px solid rgba(223, 200, 164, 0.25)"
         };
       case "outline":
         return {
           background: "transparent",
-          color: "#325c50",
-          border: "1px solid #c2ded4"
+          color: "#8b5e3c",
+          border: "1px solid #e4d8cc"
         };
       default:
         return {
-          background: "#e8f5f0",
-          color: "#155e4c",
-          border: "1px solid rgba(16, 185, 129, 0.25)"
+          background: "#fdf0e8",
+          color: "#c4622d",
+          border: "1px solid rgba(196, 98, 45, 0.3)"
         };
     }
   };

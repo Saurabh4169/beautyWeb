@@ -1,60 +1,89 @@
 :root {
-  /* Color Palette - Luxury Medical Spa Emerald, Sage, Deep Forest & Warm Champagne */
-  --color-primary-dark: #10261f;
-  --color-primary: #153e35;
-  --color-primary-light: #1e5247;
-  --color-forest-rich: #0b1f1a;
-  
-  --color-accent-emerald: #10b981;
-  --color-accent-sage: #4e8275;
-  --color-accent-mint: #e8f5f0;
-  --color-accent-mint-light: #f2faf6;
+  /* ── Color Palette — Premium Warm Luxury Beauty ── */
+  /* Deep espresso / chocolate browns replacing green primaries */
+  --color-primary-dark: #2c1810;
+  --color-primary: #3d2314;
+  --color-primary-light: #5c3520;
+  --color-forest-rich: #1a0e08;
+
+  /* Terracotta / burnt orange accent replacing emerald */
+  --color-accent-emerald: #c4622d;
+  --color-accent-sage: #8b5e3c;
+  --color-accent-mint: #fdf0e8;
+  --color-accent-mint-light: #fdf6ef;
+
+  /* Gold — already warm, kept and enhanced */
   --color-accent-gold: #c29b64;
   --color-accent-gold-light: #dfc8a4;
-  --color-accent-sand: #fbf9f5;
-  
-  --color-cream-bg: #fcfbf8;
+  --color-accent-sand: #fcf8f3;
+
+  /* Warm ivory / champagne backgrounds */
+  --color-cream-bg: #fdf8f3;
   --color-card-bg: #ffffff;
-  --color-surface-soft: #f6f5f0;
-  --color-surface-subtle: #f0f4f2;
-  
-  --color-dark-section: #0c1815;
-  --color-dark-card: #132420;
-  --color-dark-card-border: #1d3630;
-  --color-dark-subtext: #8eaba4;
+  --color-surface-soft: #f8f2eb;
+  --color-surface-subtle: #f5ede4;
 
-  --color-text-main: #18221f;
-  --color-text-muted: #5e6d67;
-  --color-text-light: #899a93;
-  --color-text-inverse: #f7faf8;
-  
-  --color-border-light: #e6eae8;
-  --color-border-subtle: #dbe4e0;
-  --color-badge-green: #dcfce7;
-  --color-badge-green-text: #166534;
+  /* Dark sections — espresso */
+  --color-dark-section: #1a0e08;
+  --color-dark-card: #241409;
+  --color-dark-card-border: #3a2016;
+  --color-dark-subtext: #b89e8c;
 
-  /* Typography */
+  /* Typography colors — espresso browns */
+  --color-text-main: #221208;
+  --color-text-muted: #6b4c38;
+  --color-text-light: #9c7b68;
+  --color-text-inverse: #fdf8f3;
+
+  /* Borders — warm */
+  --color-border-light: #ede5da;
+  --color-border-subtle: #e4d8cc;
+  --color-badge-green: #fce8dc;
+  --color-badge-green-text: #7a2e10;
+
+  /* ── Luxury Gradient Tokens ── */
+  --gradient-gold: linear-gradient(135deg, #a47838 0%, #d4af70 45%, #c89d58 75%, #926628 100%);
+  --gradient-emerald: linear-gradient(135deg, #b85520 0%, #c4622d 50%, #d4784a 100%);
+  --gradient-dark: linear-gradient(135deg, #3d2314 0%, #1a0e08 100%);
+  --gradient-card-border: linear-gradient(135deg, rgba(196,98,45,0.5), rgba(194,155,100,0.4), rgba(255,255,255,0.9));
+  --gradient-warm-hero: linear-gradient(155deg, #fdf4ec 0%, #fdf0e3 40%, #f9e8d8 100%);
+
+  /* ── Typography ── */
   --font-serif-display: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-  /* Shadows */
-  --shadow-sm: 0 2px 6px rgba(16, 38, 31, 0.04);
-  --shadow-md: 0 8px 24px rgba(16, 38, 31, 0.07);
-  --shadow-lg: 0 16px 40px rgba(16, 38, 31, 0.1);
-  --shadow-xl: 0 24px 60px rgba(16, 38, 31, 0.14);
-  --shadow-emerald: 0 10px 30px rgba(21, 62, 53, 0.25);
-  --shadow-glow: 0 0 35px rgba(16, 185, 129, 0.18);
+  /* ── Shadows — warm espresso base ── */
+  --shadow-xs: 0 1px 3px rgba(44, 24, 16, 0.06);
+  --shadow-sm: 0 2px 6px rgba(44, 24, 16, 0.04);
+  --shadow-md: 0 8px 24px rgba(44, 24, 16, 0.07);
+  --shadow-lg: 0 16px 40px rgba(44, 24, 16, 0.1);
+  --shadow-xl: 0 24px 60px rgba(44, 24, 16, 0.14);
+  --shadow-2xl: 0 40px 80px rgba(44, 24, 16, 0.2);
+  --shadow-emerald: 0 10px 30px rgba(61, 35, 20, 0.25);
+  --shadow-glow: 0 0 35px rgba(196, 98, 45, 0.18);
+  --shadow-glow-gold: 0 0 35px rgba(194, 155, 100, 0.28);
+  --shadow-card-hover: 0 20px 55px rgba(44, 24, 16, 0.12), 0 0 20px rgba(196, 98, 45, 0.09);
 
-  /* Border Radius */
+  /* ── Border Radius ── */
   --radius-sm: 6px;
   --radius-md: 12px;
   --radius-lg: 20px;
   --radius-xl: 28px;
+  --radius-2xl: 36px;
   --radius-full: 9999px;
 
-  /* Transitions */
+  /* ── Transitions ── */
   --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-spring: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ── Z-Index Scale ── */
+  --z-behind: -1;
+  --z-base: 0;
+  --z-raised: 10;
+  --z-overlay: 100;
+  --z-modal: 500;
+  --z-cursor: 99999;
 }

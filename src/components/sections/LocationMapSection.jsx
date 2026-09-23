@@ -74,7 +74,7 @@ export const LocationMapSection = () => {
       id="locations"
       className="section-padding"
       style={{
-        background: "linear-gradient(180deg, #fcfbf8 0%, #f4f8f6 50%, #edf5f1 100%)",
+        background: "linear-gradient(180deg, #fdf8f3 0%, #fcf5ee 50%, #f8ede3 100%)",
         position: "relative",
         overflow: "hidden"
       }}
@@ -112,15 +112,15 @@ export const LocationMapSection = () => {
                   fontSize: "13.5px",
                   fontWeight: 600,
                   transition: "all 0.25s ease",
-                  background: isSelected ? "#163a31" : "#ffffff",
-                  color: isSelected ? "#ffffff" : "#3e574d",
-                  border: isSelected ? "1px solid #163a31" : "1px solid #d5e3dc",
+                  background: isSelected ? "#3d2314" : "#ffffff",
+                  color: isSelected ? "#ffffff" : "#6b4c38",
+                  border: isSelected ? "1px solid #3d2314" : "1px solid #ede5da",
                   boxShadow: isSelected
-                    ? "0 6px 18px rgba(22, 58, 49, 0.2)"
-                    : "0 2px 6px rgba(0, 0, 0, 0.03)"
+                    ? "0 6px 18px rgba(44, 24, 16, 0.22)"
+                    : "0 2px 6px rgba(44, 24, 16, 0.03)"
                 }}
               >
-                <MapPin size={15} color={isSelected ? "#34d399" : "#10b981"} />
+                <MapPin size={15} color={isSelected ? "#d4784a" : "#c4622d"} />
                 <span>{loc.name}</span>
               </button>
             );
@@ -132,8 +132,8 @@ export const LocationMapSection = () => {
           style={{
             background: "#ffffff",
             borderRadius: "clamp(18px, 3vw, 28px)",
-            border: "1px solid #dce8e2",
-            boxShadow: "0 16px 50px rgba(16, 38, 31, 0.07)",
+            border: "1px solid #ede5da",
+            boxShadow: "0 16px 50px rgba(44, 24, 16, 0.07)",
             overflow: "hidden",
             display: "grid",
             gridTemplateColumns: "1fr",
@@ -143,7 +143,7 @@ export const LocationMapSection = () => {
           {/* Top Quick Status Ribbon */}
           <div
             style={{
-              background: "#163a31",
+              background: "#3d2314",
               color: "#ffffff",
               padding: "12px clamp(16px, 3vw, 28px)",
               display: "flex",
@@ -160,12 +160,12 @@ export const LocationMapSection = () => {
                   width: "8px",
                   height: "8px",
                   borderRadius: "50%",
-                  background: "#10b981",
-                  boxShadow: "0 0 10px #10b981"
+                  background: "#c4622d",
+                  boxShadow: "0 0 10px #c4622d"
                 }}
               />
-              <strong style={{ color: "#34d399" }}>Open Today</strong>
-              <span style={{ color: "#b6d4cb" }}>• Appointments Available</span>
+              <strong style={{ color: "#d4784a" }}>Open Today</strong>
+              <span style={{ color: "#dfc8a4" }}>• Appointments Available</span>
             </div>
 
             <a
@@ -184,7 +184,7 @@ export const LocationMapSection = () => {
                 borderRadius: "9999px"
               }}
             >
-              <Navigation size={12} color="#34d399" />
+              <Navigation size={12} color="#d4784a" />
               <span>Google Maps Directions</span>
               <ExternalLink size={11} />
             </a>
@@ -205,8 +205,8 @@ export const LocationMapSection = () => {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
-                background: "#fafcfb",
-                borderRight: "1px solid #eaf0ec"
+                background: "#fdf8f3",
+                borderRight: "1px solid #ede5da"
               }}
             >
               <div>
@@ -231,7 +231,7 @@ export const LocationMapSection = () => {
                   style={{
                     background: "#ffffff",
                     borderRadius: "14px",
-                    border: "1px solid #e1ebe6",
+                    border: "1px solid #ede5da",
                     padding: "14px 16px",
                     marginBottom: "18px",
                     display: "flex",
@@ -241,12 +241,12 @@ export const LocationMapSection = () => {
                   }}
                 >
                   <div style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
-                    <MapPin size={18} color="#10b981" style={{ flexShrink: 0, marginTop: "2px" }} />
+                    <MapPin size={18} color="#c4622d" style={{ flexShrink: 0, marginTop: "2px" }} />
                     <div>
-                      <div style={{ fontWeight: 700, color: "#163a31", fontSize: "13.5px" }}>
+                      <div style={{ fontWeight: 700, color: "#3d2314", fontSize: "13.5px" }}>
                         {currentLoc.address}
                       </div>
-                      <div style={{ color: "#617d73", fontSize: "12.5px" }}>
+                      <div style={{ color: "#8b5e3c", fontSize: "12.5px" }}>
                         {currentLoc.cityStateZip}
                       </div>
                     </div>
@@ -259,8 +259,8 @@ export const LocationMapSection = () => {
                       display: "flex",
                       alignItems: "center",
                       gap: "4px",
-                      background: copied ? "#dcfce7" : "#f0f6f3",
-                      color: copied ? "#166534" : "#163a31",
+                      background: copied ? "#fdf0e8" : "#f8f2eb",
+                      color: copied ? "#c4622d" : "#3d2314",
                       padding: "6px 10px",
                       borderRadius: "8px",
                       fontSize: "11.5px",
@@ -281,7 +281,7 @@ export const LocationMapSection = () => {
                       display: "flex",
                       alignItems: "center",
                       gap: "10px",
-                      color: "#163a31",
+                      color: "#3d2314",
                       fontSize: "13.5px",
                       fontWeight: 600
                     }}
@@ -291,18 +291,18 @@ export const LocationMapSection = () => {
                         width: "32px",
                         height: "32px",
                         borderRadius: "8px",
-                        background: "#e8f5f0",
+                        background: "#fdf0e8",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        color: "#10b981",
+                        color: "#c4622d",
                         flexShrink: 0
                       }}
                     >
                       <Phone size={15} />
                     </div>
                     <div>
-                      <span style={{ fontSize: "10.5px", textTransform: "uppercase", color: "#718e84", display: "block" }}>Direct Line</span>
+                      <span style={{ fontSize: "10.5px", textTransform: "uppercase", color: "#8b5e3c", display: "block" }}>Direct Line</span>
                       <span>{currentLoc.phone}</span>
                     </div>
                   </a>
@@ -313,7 +313,7 @@ export const LocationMapSection = () => {
                       display: "flex",
                       alignItems: "center",
                       gap: "10px",
-                      color: "#163a31",
+                      color: "#3d2314",
                       fontSize: "13.5px",
                       fontWeight: 600
                     }}
@@ -323,77 +323,77 @@ export const LocationMapSection = () => {
                         width: "32px",
                         height: "32px",
                         borderRadius: "8px",
-                        background: "#e8f5f0",
+                        background: "#fdf0e8",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        color: "#10b981",
+                        color: "#c4622d",
                         flexShrink: 0
                       }}
                     >
                       <Mail size={15} />
                     </div>
                     <div style={{ overflow: "hidden", textOverflow: "ellipsis" }}>
-                      <span style={{ fontSize: "10.5px", textTransform: "uppercase", color: "#718e84", display: "block" }}>Email Inquiries</span>
+                      <span style={{ fontSize: "10.5px", textTransform: "uppercase", color: "#8b5e3c", display: "block" }}>Email Inquiries</span>
                       <span style={{ fontSize: "12.5px" }}>{currentLoc.email}</span>
                     </div>
                   </a>
 
-                  <div style={{ display: "flex", alignItems: "center", gap: "10px", color: "#163a31", fontSize: "13px" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "10px", color: "#3d2314", fontSize: "13px" }}>
                     <div
                       style={{
                         width: "32px",
                         height: "32px",
                         borderRadius: "8px",
-                        background: "#e8f5f0",
+                        background: "#fdf0e8",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        color: "#10b981",
+                        color: "#c4622d",
                         flexShrink: 0
                       }}
                     >
                       <Clock size={15} />
                     </div>
                     <div>
-                      <span style={{ fontSize: "10.5px", textTransform: "uppercase", color: "#718e84", display: "block" }}>Hours</span>
-                      <span style={{ color: "#375046" }}>{currentLoc.hours}</span>
+                      <span style={{ fontSize: "10.5px", textTransform: "uppercase", color: "#8b5e3c", display: "block" }}>Hours</span>
+                      <span style={{ color: "#5c3520" }}>{currentLoc.hours}</span>
                     </div>
                   </div>
 
-                  <div style={{ display: "flex", alignItems: "center", gap: "10px", color: "#163a31", fontSize: "13px" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "10px", color: "#3d2314", fontSize: "13px" }}>
                     <div
                       style={{
                         width: "32px",
                         height: "32px",
                         borderRadius: "8px",
-                        background: "#e8f5f0",
+                        background: "#fdf0e8",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        color: "#10b981",
+                        color: "#c4622d",
                         flexShrink: 0
                       }}
                     >
                       <Car size={15} />
                     </div>
                     <div>
-                      <span style={{ fontSize: "10.5px", textTransform: "uppercase", color: "#718e84", display: "block" }}>Parking</span>
-                      <span style={{ color: "#476359" }}>{currentLoc.parkingInfo}</span>
+                      <span style={{ fontSize: "10.5px", textTransform: "uppercase", color: "#8b5e3c", display: "block" }}>Parking</span>
+                      <span style={{ color: "#5c3520" }}>{currentLoc.parkingInfo}</span>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Action Buttons */}
-              <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", paddingTop: "14px", borderTop: "1px solid #e7ede9" }}>
+              <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", paddingTop: "14px", borderTop: "1px solid #ede5da" }}>
                 <a
                   href={currentLoc.directionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
                     flex: "1 1 140px",
-                    background: "#163a31",
+                    background: "#3d2314",
                     color: "#ffffff",
                     padding: "11px 16px",
                     borderRadius: "9999px",
@@ -402,10 +402,13 @@ export const LocationMapSection = () => {
                     display: "inline-flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    gap: "6px"
+                    gap: "6px",
+                    transition: "background 0.2s"
                   }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = '#c4622d'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.background = '#3d2314'; }}
                 >
-                  <Navigation size={14} color="#34d399" />
+                  <Navigation size={14} color="#d4784a" />
                   <span>Get Directions</span>
                 </a>
 
@@ -414,8 +417,8 @@ export const LocationMapSection = () => {
                   style={{
                     flex: "1 1 140px",
                     background: "#ffffff",
-                    color: "#163a31",
-                    border: "1px solid #163a31",
+                    color: "#3d2314",
+                    border: "1px solid #3d2314",
                     padding: "11px 16px",
                     borderRadius: "9999px",
                     fontSize: "13px",
@@ -423,17 +426,26 @@ export const LocationMapSection = () => {
                     display: "inline-flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    gap: "6px"
+                    gap: "6px",
+                    transition: "all 0.2s"
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = '#3d2314';
+                    e.currentTarget.style.color = '#ffffff';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = '#ffffff';
+                    e.currentTarget.style.color = '#3d2314';
                   }}
                 >
-                  <Sparkles size={14} color="#10b981" />
+                  <Sparkles size={14} color="#c4622d" />
                   <span>Book at Clinic</span>
                 </button>
               </div>
             </div>
 
             {/* Right Column: Embedded Map */}
-            <div style={{ position: "relative", minHeight: "360px", background: "#e8efe9", width: "100%" }}>
+            <div style={{ position: "relative", minHeight: "360px", background: "#f8f2eb", width: "100%" }}>
               <iframe
                 title={currentLoc.name}
                 src={currentLoc.googleMapsEmbed}
@@ -458,13 +470,13 @@ export const LocationMapSection = () => {
             marginTop: "28px",
             background: "#ffffff",
             borderRadius: "18px",
-            border: "1px solid #dce8e2",
+            border: "1px solid #ede5da",
             padding: "clamp(18px, 3vw, 24px)",
-            boxShadow: "0 4px 14px rgba(16, 38, 31, 0.02)"
+            boxShadow: "0 4px 14px rgba(44, 24, 16, 0.03)"
           }}
         >
           <div style={{ marginBottom: "12px" }}>
-            <span style={{ fontSize: "10.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#10b981" }}>
+            <span style={{ fontSize: "10.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#c4622d" }}>
               REGIONAL CARE REACH
             </span>
             <h4 style={{ fontSize: "1.1rem", color: "var(--color-primary-dark)", fontFamily: "var(--font-serif-display)", margin: "2px 0 0 0" }}>
@@ -483,9 +495,9 @@ export const LocationMapSection = () => {
               <span
                 key={i}
                 style={{
-                  background: "#f0f7f4",
-                  color: "#165e4c",
-                  border: "1px solid #cfe0d8",
+                  background: "#fdf0e8",
+                  color: "#8b5e3c",
+                  border: "1px solid #f2ded1",
                   padding: "5px 12px",
                   borderRadius: "9999px",
                   fontSize: "12px",
@@ -495,7 +507,7 @@ export const LocationMapSection = () => {
                   gap: "5px"
                 }}
               >
-                <CheckCircle2 size={12} color="#10b981" />
+                <CheckCircle2 size={12} color="#c4622d" />
                 <span>{area}</span>
               </span>
             ))}

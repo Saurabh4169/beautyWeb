@@ -28,10 +28,10 @@ export const BeforeAfterSlider = ({ cases }) => {
               fontSize: "12.5px",
               fontWeight: 600,
               transition: "all 0.25s ease",
-              background: activeCaseIndex === idx ? "#163a31" : "#ffffff",
-              color: activeCaseIndex === idx ? "#ffffff" : "#455c54",
-              border: activeCaseIndex === idx ? "1px solid #163a31" : "1px solid #dce5e1",
-              boxShadow: activeCaseIndex === idx ? "0 4px 14px rgba(22, 58, 49, 0.2)" : "none"
+              background: activeCaseIndex === idx ? "#3d2314" : "#ffffff",
+              color: activeCaseIndex === idx ? "#ffffff" : "#6b4c38",
+              border: activeCaseIndex === idx ? "1px solid #3d2314" : "1px solid #ede5da",
+              boxShadow: activeCaseIndex === idx ? "0 4px 14px rgba(44, 24, 16, 0.22)" : "none"
             }}
           >
             {c.category}
@@ -44,9 +44,9 @@ export const BeforeAfterSlider = ({ cases }) => {
         style={{
           background: "#ffffff",
           borderRadius: "clamp(18px, 3vw, 24px)",
-          border: "1px solid #e1e9e5",
+          border: "1px solid #ede5da",
           padding: "clamp(16px, 3.5vw, 32px)",
-          boxShadow: "0 12px 40px rgba(16, 38, 31, 0.06)",
+          boxShadow: "0 12px 40px rgba(44, 24, 16, 0.06)",
           display: "grid",
           gridTemplateColumns: "1fr",
           gap: "20px"
@@ -60,14 +60,14 @@ export const BeforeAfterSlider = ({ cases }) => {
             alignItems: "flex-start",
             flexWrap: "wrap",
             gap: "12px",
-            borderBottom: "1px solid #eef3f1",
+            borderBottom: "1px solid #ede5da",
             paddingBottom: "14px"
           }}
         >
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px", flexWrap: "wrap" }}>
               <Badge variant="emerald">CLINICAL CASE #{activeCaseIndex + 1}</Badge>
-              <span style={{ fontSize: "11.5px", color: "#6a7e77", fontWeight: 500 }}>Standard Polarized Photography</span>
+              <span style={{ fontSize: "11.5px", color: "#8b5e3c", fontWeight: 500 }}>Standard Polarized Photography</span>
             </div>
             <h3
               style={{
@@ -86,16 +86,16 @@ export const BeforeAfterSlider = ({ cases }) => {
               display: "flex",
               gap: "12px",
               fontSize: "12px",
-              color: "#445952",
+              color: "#6b4c38",
               flexWrap: "wrap"
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-              <Calendar size={14} color="#10b981" />
+              <Calendar size={14} color="#c4622d" />
               <span><strong>Timeline:</strong> {currentCase.timeline}</span>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-              <Layers size={14} color="#10b981" />
+              <Layers size={14} color="#c4622d" />
               <span><strong>Protocol:</strong> {currentCase.sessions}</span>
             </div>
           </div>
@@ -107,8 +107,8 @@ export const BeforeAfterSlider = ({ cases }) => {
             position: "relative",
             borderRadius: "14px",
             overflow: "hidden",
-            border: "1px solid #e2ece8",
-            background: "#0c1815",
+            border: "1px solid #ede5da",
+            background: "#1a0e08",
             width: "100%"
           }}
         >
@@ -131,26 +131,26 @@ export const BeforeAfterSlider = ({ cases }) => {
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 260px), 1fr))",
             gap: "16px",
-            background: "#f7faf8",
+            background: "#fdf8f3",
             borderRadius: "14px",
             padding: "clamp(14px, 2.5vw, 22px)",
-            border: "1px solid #e4ece8"
+            border: "1px solid #ede5da"
           }}
         >
           <div>
-            <div style={{ fontSize: "10.5px", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 700, color: "#8a584c", marginBottom: "4px" }}>
+            <div style={{ fontSize: "10.5px", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 700, color: "#a84e22", marginBottom: "4px" }}>
               Initial Clinical Baseline
             </div>
-            <p style={{ fontSize: "0.86rem", color: "#4a5a54", lineHeight: 1.55 }}>
+            <p style={{ fontSize: "0.86rem", color: "#6b4c38", lineHeight: 1.55 }}>
               {currentCase.beforeNotes}
             </p>
           </div>
 
           <div>
-            <div style={{ fontSize: "10.5px", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 700, color: "#166534", marginBottom: "4px" }}>
+            <div style={{ fontSize: "10.5px", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 700, color: "#c4622d", marginBottom: "4px" }}>
               Documented Post-Treatment Result
             </div>
-            <p style={{ fontSize: "0.86rem", color: "#4a5a54", lineHeight: 1.55 }}>
+            <p style={{ fontSize: "0.86rem", color: "#6b4c38", lineHeight: 1.55 }}>
               {currentCase.afterNotes}
             </p>
           </div>
@@ -158,7 +158,7 @@ export const BeforeAfterSlider = ({ cases }) => {
           <div
             style={{
               gridColumn: "1 / -1",
-              borderTop: "1px solid #e2ede8",
+              borderTop: "1px solid #ede5da",
               paddingTop: "12px",
               display: "flex",
               alignItems: "center",
@@ -170,7 +170,7 @@ export const BeforeAfterSlider = ({ cases }) => {
             <span style={{ fontWeight: 700, color: "var(--color-primary-dark)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
               Clinical Pathway:
             </span>
-            <span style={{ color: "#1b4d40", fontWeight: 500 }}>
+            <span style={{ color: "#3d2314", fontWeight: 500 }}>
               {currentCase.protocolUsed}
             </span>
           </div>

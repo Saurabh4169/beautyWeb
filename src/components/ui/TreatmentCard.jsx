@@ -9,17 +9,17 @@ export const TreatmentCard = ({ treatment }) => {
   const getIcon = (id) => {
     switch (id) {
       case 'hydrafacial-deluxe':
-        return <Droplets size={20} color="#155e4c" />;
+        return <Droplets size={20} color="#c4622d" />;
       case 'rf-microneedling':
-        return <Zap size={20} color="#155e4c" />;
+        return <Zap size={20} color="#c4622d" />;
       case 'polynucleotides-boosters':
-        return <Activity size={20} color="#155e4c" />;
+        return <Activity size={20} color="#c4622d" />;
       case 'chemical-peels-bespoke':
-        return <Sparkles size={20} color="#155e4c" />;
+        return <Sparkles size={20} color="#c4622d" />;
       case 'laser-genesis-ipl':
-        return <ShieldCheck size={20} color="#155e4c" />;
+        return <ShieldCheck size={20} color="#c4622d" />;
       default:
-        return <HeartHandshake size={20} color="#155e4c" />;
+        return <HeartHandshake size={20} color="#c4622d" />;
     }
   };
 
@@ -28,25 +28,25 @@ export const TreatmentCard = ({ treatment }) => {
       style={{
         background: "#ffffff",
         borderRadius: "18px",
-        border: "1px solid #e7edea",
+        border: "1px solid #ede5da",
         padding: "32px 28px",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
         transition: "all 0.35s cubic-bezier(0.16, 1, 0.3, 1)",
         position: "relative",
-        boxShadow: "0 4px 20px rgba(16, 38, 31, 0.04)"
+        boxShadow: "0 4px 20px rgba(44, 24, 16, 0.04)"
       }}
       className="treatment-card-hover"
       onMouseEnter={(e) => {
         e.currentTarget.style.transform = "translateY(-6px)";
-        e.currentTarget.style.boxShadow = "0 18px 45px rgba(21, 62, 53, 0.1)";
-        e.currentTarget.style.borderColor = "#bed9cf";
+        e.currentTarget.style.boxShadow = "0 18px 45px rgba(44, 24, 16, 0.12)";
+        e.currentTarget.style.borderColor = "#c4622d";
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.transform = "translateY(0)";
-        e.currentTarget.style.boxShadow = "0 4px 20px rgba(16, 38, 31, 0.04)";
-        e.currentTarget.style.borderColor = "#e7edea";
+        e.currentTarget.style.boxShadow = "0 4px 20px rgba(44, 24, 16, 0.04)";
+        e.currentTarget.style.borderColor = "#ede5da";
       }}
     >
       <div>
@@ -57,7 +57,7 @@ export const TreatmentCard = ({ treatment }) => {
               width: "48px",
               height: "48px",
               borderRadius: "12px",
-              background: "#eaf5f1",
+              background: "#fdf0e8",
               display: "flex",
               alignItems: "center",
               justifyContent: "center"
@@ -75,7 +75,7 @@ export const TreatmentCard = ({ treatment }) => {
             fontWeight: 600,
             textTransform: "uppercase",
             letterSpacing: "0.06em",
-            color: "#4e8275",
+            color: "#8b5e3c",
             marginBottom: "6px"
           }}
         >
@@ -110,8 +110,8 @@ export const TreatmentCard = ({ treatment }) => {
         {/* Features list */}
         <ul style={{ listStyle: "none", marginBottom: "24px", display: "flex", flexDirection: "column", gap: "8px" }}>
           {treatment.features.slice(0, 3).map((feature, i) => (
-            <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.85rem", color: "#364a43" }}>
-              <CheckCircle2 size={15} color="#10b981" style={{ flexShrink: 0, marginTop: "2px" }} />
+            <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.85rem", color: "#5c3520" }}>
+              <CheckCircle2 size={15} color="#c4622d" style={{ flexShrink: 0, marginTop: "2px" }} />
               <span>{feature}</span>
             </li>
           ))}
@@ -121,7 +121,7 @@ export const TreatmentCard = ({ treatment }) => {
       {/* Footer Meta & Action */}
       <div
         style={{
-          borderTop: "1px solid #edf2f0",
+          borderTop: "1px solid #ede5da",
           paddingTop: "18px",
           display: "flex",
           alignItems: "center",
@@ -129,7 +129,7 @@ export const TreatmentCard = ({ treatment }) => {
         }}
       >
         <div>
-          <div style={{ display: "flex", alignItems: "center", gap: "5px", fontSize: "12px", color: "#6b7d76" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "5px", fontSize: "12px", color: "#8b5e3c" }}>
             <Clock size={13} />
             <span>{treatment.duration}</span>
             <span style={{ margin: "0 4px" }}>•</span>
@@ -145,19 +145,22 @@ export const TreatmentCard = ({ treatment }) => {
             gap: "5px",
             fontSize: "13px",
             fontWeight: 600,
-            color: "#163a31",
-            padding: "6px 12px",
+            color: "#3d2314",
+            padding: "6px 14px",
             borderRadius: "6px",
-            background: "#f0f6f4",
+            background: "#f8f2eb",
+            border: "1px solid #e4d8cc",
             transition: "all 0.2s"
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.background = "#163a31";
+            e.currentTarget.style.background = "#3d2314";
             e.currentTarget.style.color = "#ffffff";
+            e.currentTarget.style.borderColor = "#3d2314";
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.background = "#f0f6f4";
-            e.currentTarget.style.color = "#163a31";
+            e.currentTarget.style.background = "#f8f2eb";
+            e.currentTarget.style.color = "#3d2314";
+            e.currentTarget.style.borderColor = "#e4d8cc";
           }}
         >
           <span>Book</span>

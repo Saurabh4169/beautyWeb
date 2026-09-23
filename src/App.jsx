@@ -1,83 +1,78 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import { BookingProvider } from './context/BookingContext';
 import { TopAnnouncementBar } from './components/layout/TopAnnouncementBar';
 import { Navbar } from './components/layout/Navbar';
 import { CartDrawer } from './components/layout/CartDrawer';
 import { Footer } from './components/layout/Footer';
-import { HeroSection } from './components/sections/HeroSection';
-import { StatsBar } from './components/sections/StatsBar';
-import { TreatmentsSection } from './components/sections/TreatmentsSection';
-import { InclusiveCareBanner } from './components/sections/InclusiveCareBanner';
-import { ClinicalTechnologySection } from './components/sections/ClinicalTechnologySection';
-import { BeforeAfterSection } from './components/sections/BeforeAfterSection';
-import { ProductsSection } from './components/sections/ProductsSection';
-import { TestimonialsSection } from './components/sections/TestimonialsSection';
-import { FaqSection } from './components/sections/FaqSection';
-import { LocationMapSection } from './components/sections/LocationMapSection';
-import { NewsletterCta } from './components/sections/NewsletterCta';
+import { ScrollToTop } from './components/layout/ScrollToTop';
+
+// Dedicated Pages
+import { HomePage } from './pages/HomePage';
+import { TreatmentsPage } from './pages/TreatmentsPage';
+import { InclusiveCarePage } from './pages/InclusiveCarePage';
+import { TechnologyPage } from './pages/TechnologyPage';
+import { BeforeAfterPage } from './pages/BeforeAfterPage';
+import { ApothecaryPage } from './pages/ApothecaryPage';
+import { ReviewsPage } from './pages/ReviewsPage';
+import { LocationsPage } from './pages/LocationsPage';
+import { FaqPage } from './pages/FaqPage';
+
+// Global Modals & Notifications
 import { QuickViewModal } from './components/ui/QuickViewModal';
 import { BookingModal } from './components/ui/BookingModal';
 import { Toast } from './components/ui/Toast';
+import { CustomCursor } from './components/ui/CustomCursor';
 
 export function App() {
   return (
-    <CartProvider>
-      <BookingProvider>
-        <div className="beauty-oasis-app">
-          {/* Top Announcement Bar */}
-          <TopAnnouncementBar />
+    <BrowserRouter>
+      <CartProvider>
+        <BookingProvider>
+          <div className="beauty-oasis-app">
+            {/* Custom Luxury Fluid Cursor */}
+            <CustomCursor />
 
-          {/* Sticky Navigation Header */}
-          <Navbar />
+            {/* Scroll to top automatically when navigating */}
+            <ScrollToTop />
 
-          {/* Main Website Flow */}
-          <main>
-            {/* 1. Hero Section */}
-            <HeroSection />
+            {/* Top Announcement Bar */}
+            <TopAnnouncementBar />
 
-            {/* 2. Clinical Stats Strip */}
-            <StatsBar />
+            {/* Sticky Navigation Header with Active Link State */}
+            <Navbar />
 
-            {/* 3. Bespoke Treatments Grid */}
-            <TreatmentsSection />
+            {/* Routed Pages */}
+            <main>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/treatments" element={<TreatmentsPage />} />
+                <Route path="/inclusive-care" element={<InclusiveCarePage />} />
+                <Route path="/technology" element={<TechnologyPage />} />
+                <Route path="/before-after" element={<BeforeAfterPage />} />
+                <Route path="/apothecary" element={<ApothecaryPage />} />
+                <Route path="/products" element={<ApothecaryPage />} />
+                <Route path="/reviews" element={<ReviewsPage />} />
+                <Route path="/locations" element={<LocationsPage />} />
+                <Route path="/faq" element={<FaqPage />} />
+                {/* Fallback route */}
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Routes>
+            </main>
 
-            {/* 4. Inclusive & Neuro-Divergent Skincare Banner */}
-            <InclusiveCareBanner />
+            {/* Footer & Accreditations */}
+            <Footer />
 
-            {/* 5. Clinical Technology Dark Section */}
-            <ClinicalTechnologySection />
-
-            {/* 6. Before & After Interactive Transformations */}
-            <BeforeAfterSection />
-
-            {/* 7. Most Popular Products / Medical-Grade Skin Care */}
-            <ProductsSection />
-
-            {/* 8. Testimonials & Client Reviews */}
-            <TestimonialsSection />
-
-            {/* 9. Frequently Asked Questions */}
-            <FaqSection />
-
-            {/* 10. Dynamic Interactive Map & Locations */}
-            <LocationMapSection />
-
-            {/* 11. VIP Newsletter & Journal CTA */}
-            <NewsletterCta />
-          </main>
-
-          {/* Footer & Accreditations */}
-          <Footer />
-
-          {/* Interactive Drawers & Modals */}
-          <CartDrawer />
-          <QuickViewModal />
-          <BookingModal />
-          <Toast />
-        </div>
-      </BookingProvider>
-    </CartProvider>
+            {/* Global Interactive Drawers & Modals */}
+            <CartDrawer />
+            <QuickViewModal />
+            <BookingModal />
+            <Toast />
+          </div>
+        </BookingProvider>
+      </CartProvider>
+    </BrowserRouter>
   );
 }
 

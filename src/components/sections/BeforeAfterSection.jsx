@@ -5,7 +5,7 @@ import { beforeAfterCases } from '../../data/beforeAfterData';
 
 export const BeforeAfterSection = () => {
   return (
-    <section id="before-after" className="section-padding" style={{ background: "#fcfbf8" }}>
+    <section id="before-after" className="section-padding" style={{ background: "#fdf8f3" }}>
       <div className="container">
         <SectionHeader
           badge="CLINICAL RESULTS GALLERY"
