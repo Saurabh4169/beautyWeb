@@ -1,0 +1,29 @@
+@import './styles/global.css';
+
+/* Custom application level styles */
+.beauty-oasis-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Luxury button and card hover micro-animations */
+.btn-luxury:hover {
+  filter: brightness(1.06);
+}
+
+.btn-luxury:active {
+  transform: scale(0.98) !important;
+}
+
+/* Responsive grid tweaks */
+@media (max-width: 640px) {
+  .section-padding {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}

@@ -1,0 +1,60 @@
+:root {
+  /* Color Palette - Luxury Medical Spa Emerald, Sage, Deep Forest & Warm Champagne */
+  --color-primary-dark: #10261f;
+  --color-primary: #153e35;
+  --color-primary-light: #1e5247;
+  --color-forest-rich: #0b1f1a;
+  
+  --color-accent-emerald: #10b981;
+  --color-accent-sage: #4e8275;
+  --color-accent-mint: #e8f5f0;
+  --color-accent-mint-light: #f2faf6;
+  --color-accent-gold: #c29b64;
+  --color-accent-gold-light: #dfc8a4;
+  --color-accent-sand: #fbf9f5;
+  
+  --color-cream-bg: #fcfbf8;
+  --color-card-bg: #ffffff;
+  --color-surface-soft: #f6f5f0;
+  --color-surface-subtle: #f0f4f2;
+  
+  --color-dark-section: #0c1815;
+  --color-dark-card: #132420;
+  --color-dark-card-border: #1d3630;
+  --color-dark-subtext: #8eaba4;
+
+  --color-text-main: #18221f;
+  --color-text-muted: #5e6d67;
+  --color-text-light: #899a93;
+  --color-text-inverse: #f7faf8;
+  
+  --color-border-light: #e6eae8;
+  --color-border-subtle: #dbe4e0;
+  --color-badge-green: #dcfce7;
+  --color-badge-green-text: #166534;
+
+  /* Typography */
+  --font-serif-display: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 6px rgba(16, 38, 31, 0.04);
+  --shadow-md: 0 8px 24px rgba(16, 38, 31, 0.07);
+  --shadow-lg: 0 16px 40px rgba(16, 38, 31, 0.1);
+  --shadow-xl: 0 24px 60px rgba(16, 38, 31, 0.14);
+  --shadow-emerald: 0 10px 30px rgba(21, 62, 53, 0.25);
+  --shadow-glow: 0 0 35px rgba(16, 185, 129, 0.18);
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
