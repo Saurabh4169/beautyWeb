@@ -23,7 +23,7 @@ import { FaqPage } from './pages/FaqPage';
 import { QuickViewModal } from './components/ui/QuickViewModal';
 import { BookingModal } from './components/ui/BookingModal';
 import { Toast } from './components/ui/Toast';
-import { CustomCursor } from './components/ui/CustomCursor';
+
 
 export function App() {
   return (
@@ -32,7 +32,7 @@ export function App() {
         <BookingProvider>
           <div className="beauty-oasis-app">
             {/* Custom Luxury Fluid Cursor */}
-            <CustomCursor />
+
 
             {/* Scroll to top automatically when navigating */}
             <ScrollToTop />

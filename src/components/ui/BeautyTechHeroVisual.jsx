@@ -1,9 +1,52 @@
-import React, { useState, useRef } from 'react';
-import { ShieldCheck, Activity, Scan, Sparkles, Cpu, Award, CheckCircle2, Zap } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { ShieldCheck, Activity, Sparkles, CheckCircle2 } from 'lucide-react';
+
+// Animated counter hook
+const useCountUp = (target, duration = 1200, start = true) => {
+  const [value, setValue] = useState(0);
+  useEffect(() => {
+    if (!start) return;
+    let startTime = null;
+    const step = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setValue(Math.floor(eased * target));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [target, duration, start]);
+  return value;
+};
+
+// Radial SVG Score Ring
+const ScoreRing = ({ score, color, size = 100, strokeWidth = 7 }) => {
+  const r = (size - strokeWidth) / 2;
+  const circ = 2 * Math.PI * r;
+  const dash = (score / 100) * circ;
+  return (
+    <svg width={size} height={size} style={{ transform: 'rotate(-90deg)' }}>
+      <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="#e2e8f0" strokeWidth={strokeWidth} />
+      <circle
+        cx={size / 2} cy={size / 2} r={r} fill="none"
+        stroke={color} strokeWidth={strokeWidth}
+        strokeDasharray={`${dash} ${circ}`}
+        strokeLinecap="round"
+        style={{ transition: 'stroke-dasharray 1.2s cubic-bezier(0.16,1,0.3,1)' }}
+      />
+    </svg>
+  );
+};
 
 export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
   const cardRef = useRef(null);
   const [tiltStyle, setTiltStyle] = useState({});
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setMounted(true), 200);
+    return () => clearTimeout(t);
+  }, []);
 
   // 3D Parallax Tilt Handler
   const handleMouseMove = (e) => {
@@ -32,6 +75,9 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
       badge: 'Active Protocol',
       accent: '#1e5aa8',
       highlight: 'Clinical Hydrafacial + RF Microneedling',
+      overallScore: 96,
+      scoreColor: '#1e5aa8',
+      scoreLabel: 'Skin Score',
       metrics: [
         { label: 'Deep Dermal Hydration', value: '94.8%', progress: 95, status: 'Optimal' },
         { label: 'Epidermal Barrier Index', value: '98.2%', progress: 98, status: 'Fortified' },
@@ -43,6 +89,9 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
       badge: 'Targeted Protocol',
       accent: '#16a34a',
       highlight: 'Lymphatic Drainage + RF Sculpting',
+      overallScore: 92,
+      scoreColor: '#16a34a',
+      scoreLabel: 'Body Score',
       metrics: [
         { label: 'Micro-Circulation Flow', value: '+88.4%', progress: 88, status: 'Enhanced' },
         { label: 'Muscle Tone Activation', value: '92.0%', progress: 92, status: 'High Response' },
@@ -54,6 +103,9 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
       badge: 'Sensory Protocol',
       accent: '#0284c7',
       highlight: 'Cellular Restoration + Sensory Calm',
+      overallScore: 99,
+      scoreColor: '#0284c7',
+      scoreLabel: 'Calm Score',
       metrics: [
         { label: 'Sensory Calm Score', value: '99.4%', progress: 99, status: 'Pure Bliss' },
         { label: 'Autonomic Stress Reset', value: '-68.2%', progress: 86, status: 'Restored' },
@@ -63,6 +115,7 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
   ];
 
   const current = tabTelemetry[activeTabIndex] || tabTelemetry[0];
+  const countedScore = useCountUp(current.overallScore, 1200, mounted);
 
   return (
     <div
@@ -79,48 +132,58 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
       }}
       className="beauty-tech-hero-wrapper"
     >
-      {/* ── Floating Badges Above the Glass Telemetry Card ── */}
-
-      {/* Top-Left Badge: Skin Analysis */}
+      {/* ── Top-Left: Animated Circular Score Ring ── */}
       <div
         className="floating-tech-card float-card-1"
         style={{
           position: 'absolute',
-          top: '0px',
+          top: '-6px',
           left: '4px',
           zIndex: 10,
           background: 'rgba(255,255,255,0.96)',
           backdropFilter: 'blur(20px)',
-          padding: '8px 16px',
-          borderRadius: '16px',
+          padding: '10px 16px 10px 10px',
+          borderRadius: '20px',
           border: '1px solid #e2e8f0',
-          boxShadow: '0 12px 32px rgba(15,41,66,0.08), 0 0 16px rgba(37,99,235,0.08)',
+          boxShadow: '0 12px 32px rgba(15,41,66,0.09), 0 0 16px rgba(37,99,235,0.08)',
           display: 'flex',
           alignItems: 'center',
           gap: '10px',
           transform: 'translateZ(35px)',
+          minWidth: '152px',
         }}
       >
-        <div
-          style={{
-            width: '32px', height: '32px', borderRadius: '10px',
-            background: 'linear-gradient(135deg, rgba(30,90,168,0.12), rgba(2,132,199,0.18))',
-            display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1e5aa8',
-          }}
-        >
-          <Activity size={17} />
+        {/* Radial ring */}
+        <div style={{ position: 'relative', flexShrink: 0 }}>
+          <ScoreRing score={mounted ? current.overallScore : 0} color={current.scoreColor} size={56} strokeWidth={5.5} />
+          <div style={{
+            position: 'absolute', inset: 0,
+            display: 'flex', flexDirection: 'column',
+            alignItems: 'center', justifyContent: 'center',
+          }}>
+            <span style={{ fontSize: '13px', fontWeight: 900, color: current.scoreColor, lineHeight: 1 }}>
+              {countedScore}
+            </span>
+            <span style={{ fontSize: '7.5px', fontWeight: 700, color: '#94a3b8', letterSpacing: '0.02em' }}>/ 100</span>
+          </div>
         </div>
         <div>
-          <div style={{ fontSize: '11.5px', fontWeight: 800, color: '#0f2942', letterSpacing: '0.02em' }}>
-            Skin Diagnostics
+          <div style={{ fontSize: '11px', fontWeight: 800, color: '#0f2942' }}>{current.scoreLabel}</div>
+          <div style={{ fontSize: '9.5px', color: current.scoreColor, fontWeight: 700, marginTop: '2px' }}>
+            AI Clinical Analysis
           </div>
-          <div style={{ fontSize: '10px', color: '#1e5aa8', fontWeight: 600 }}>
-            Bespoke Dermal Analysis
+          <div style={{
+            marginTop: '4px', display: 'flex', alignItems: 'center', gap: '4px',
+            background: `${current.scoreColor}12`, borderRadius: '6px',
+            padding: '2px 6px', width: 'fit-content',
+          }}>
+            <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#22c55e', display: 'inline-block', boxShadow: '0 0 5px #22c55e' }} />
+            <span style={{ fontSize: '9px', fontWeight: 700, color: '#15803d' }}>Live Reading</span>
           </div>
         </div>
       </div>
 
-      {/* Top-Right Badge: Clinical Care */}
+      {/* ── Top-Right: Glowing Doctor-Led Trust Badge ── */}
       <div
         className="floating-tech-card float-card-2"
         style={{
@@ -128,18 +191,25 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
           top: '4px',
           right: '4px',
           zIndex: 10,
-          background: 'rgba(255,255,255,0.96)',
+          background: 'linear-gradient(135deg, rgba(22,163,74,0.1) 0%, rgba(255,255,255,0.97) 60%)',
           backdropFilter: 'blur(20px)',
-          padding: '8px 16px',
+          padding: '9px 14px',
           borderRadius: '9999px',
-          border: '1px solid #e2e8f0',
-          boxShadow: '0 12px 30px rgba(15,41,66,0.08), 0 0 14px rgba(22,163,74,0.1)',
-          display: 'flex', alignItems: 'center', gap: '8px',
+          border: '1px solid rgba(22,163,74,0.25)',
+          boxShadow: '0 8px 24px rgba(22,163,74,0.15), 0 0 20px rgba(22,163,74,0.08)',
+          display: 'flex', alignItems: 'center', gap: '7px',
           fontSize: '11.5px', fontWeight: 700, color: '#0f2942',
           transform: 'translateZ(30px)',
         }}
       >
-        <ShieldCheck size={16} color="#16a34a" />
+        <div style={{
+          width: '26px', height: '26px', borderRadius: '50%',
+          background: 'linear-gradient(135deg, #16a34a, #22c55e)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          boxShadow: '0 0 10px rgba(22,163,74,0.4)',
+        }}>
+          <ShieldCheck size={14} color="#ffffff" />
+        </div>
         <span>Clinical Care · Doctor-Led</span>
       </div>
 
@@ -171,7 +241,7 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
         }}
         className="clinical-telemetry-card"
       >
-        {/* Header strip with Live Dermal Scan and REC */}
+        {/* Header strip */}
         <div
           style={{
             display: 'flex',
@@ -259,7 +329,7 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
 
         {/* Live Metrics Bars */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '20px' }}>
-          {current.metrics.map((metric, idx) => (
+          {current.metrics.map((metric) => (
             <div key={metric.label}>
               <div
                 style={{
@@ -315,7 +385,7 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
           ))}
         </div>
 
-        {/* Bottom Doctor-Led Verification Strip */}
+        {/* Bottom Verification Strip */}
         <div
           style={{
             display: 'flex',
@@ -359,16 +429,16 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
 
         @keyframes floatGentle1 {
           0%   { transform: translateY(0px) translateZ(35px); }
-          100% { transform: translateY(-6px) translateZ(35px); }
+          100% { transform: translateY(-7px) translateZ(35px); }
         }
         @keyframes floatGentle2 {
           0%   { transform: translateY(0px) translateZ(30px); }
-          100% { transform: translateY(5px) translateZ(30px); }
+          100% { transform: translateY(6px) translateZ(30px); }
         }
 
         @media (max-width: 767px) {
-          .float-card-1 { top: -6px !important; left: 0px !important; padding: 6px 12px !important; }
-          .float-card-2 { top: -6px !important; right: 0px !important; padding: 6px 12px !important; }
+          .float-card-1 { top: -6px !important; left: 0px !important; padding: 8px 12px !important; }
+          .float-card-2 { top: -6px !important; right: 0px !important; padding: 7px 12px !important; }
           .clinical-telemetry-card { padding: 18px !important; }
         }
 

@@ -1,67 +1,14 @@
-import React, { useState, useRef, useCallback, useEffect } from 'react';
-import { Calendar, Layers, ChevronsLeftRight, SplitSquareVertical, Columns, Eye, Sparkles, CheckCircle2, ShieldCheck, ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { Calendar, Layers, Eye, Columns, Sparkles, CheckCircle2, ShieldCheck, ArrowRight } from 'lucide-react';
 import { Badge } from './Badge';
 import { useBooking } from '../../context/BookingContext';
 
 export const BeforeAfterSlider = ({ cases }) => {
   const { openBookingModal } = useBooking();
   const [activeCaseIndex, setActiveCaseIndex] = useState(0);
-  const [sliderPosition, setSliderPosition] = useState(50); // percentage 0 - 100
-  const [viewMode, setViewMode] = useState('slider'); // 'slider' | 'side-by-side' | 'toggle'
+  const [viewMode, setViewMode] = useState('side-by-side'); // 'side-by-side' | 'toggle'
   const [toggleState, setToggleState] = useState('after'); // 'before' | 'after' for toggle mode
-  const [isDragging, setIsDragging] = useState(false);
-  const [hasInteracted, setHasInteracted] = useState(false);
-
-  const containerRef = useRef(null);
   const currentCase = cases[activeCaseIndex] || cases[0];
-
-  // Calculate slider position from pointer event
-  const handlePointerMove = useCallback((e) => {
-    if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    const clientX = e.clientX ?? (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
-    const offsetX = clientX - rect.left;
-    const percentage = Math.max(0, Math.min(100, (offsetX / rect.width) * 100));
-    setSliderPosition(percentage);
-    setHasInteracted(true);
-  }, []);
-
-  const handlePointerDown = (e) => {
-    setIsDragging(true);
-    handlePointerMove(e);
-  };
-
-  useEffect(() => {
-    const handleGlobalMove = (e) => {
-      if (isDragging) {
-        handlePointerMove(e);
-      }
-    };
-    const handleGlobalUp = () => {
-      if (isDragging) {
-        setIsDragging(false);
-      }
-    };
-
-    if (isDragging) {
-      window.addEventListener('pointermove', handleGlobalMove);
-      window.addEventListener('pointerup', handleGlobalUp);
-      window.addEventListener('touchmove', handleGlobalMove);
-      window.addEventListener('touchend', handleGlobalUp);
-    }
-    return () => {
-      window.removeEventListener('pointermove', handleGlobalMove);
-      window.removeEventListener('pointerup', handleGlobalUp);
-      window.removeEventListener('touchmove', handleGlobalMove);
-      window.removeEventListener('touchend', handleGlobalUp);
-    };
-  }, [isDragging, handlePointerMove]);
-
-  // Reset slider position when changing cases
-  const handleSelectCase = (idx) => {
-    setActiveCaseIndex(idx);
-    setSliderPosition(50);
-  };
 
   const beforeSrc = currentCase.beforeImage || currentCase.image;
   const afterSrc = currentCase.afterImage || currentCase.image;
@@ -84,7 +31,7 @@ export const BeforeAfterSlider = ({ cases }) => {
           return (
             <button
               key={c.id}
-              onClick={() => handleSelectCase(idx)}
+              onClick={() => setActiveCaseIndex(idx)}
               style={{
                 padding: '10px 22px',
                 borderRadius: '9999px',
@@ -204,28 +151,6 @@ export const BeforeAfterSlider = ({ cases }) => {
             }}
           >
             <button
-              onClick={() => setViewMode('slider')}
-              title="Interactive Split Slider"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '6px',
-                padding: '7px 14px',
-                borderRadius: '9999px',
-                fontSize: '12px',
-                fontWeight: 600,
-                cursor: 'pointer',
-                border: 'none',
-                transition: 'all 0.2s ease',
-                background: viewMode === 'slider' ? '#1e5aa8' : 'transparent',
-                color: viewMode === 'slider' ? '#ffffff' : '#334155',
-              }}
-            >
-              <SplitSquareVertical size={14} />
-              <span>Interactive Slider</span>
-            </button>
-
-            <button
               onClick={() => setViewMode('side-by-side')}
               title="Side-by-Side Dual View"
               style={{
@@ -252,7 +177,7 @@ export const BeforeAfterSlider = ({ cases }) => {
                 setViewMode('toggle');
                 setToggleState(toggleState === 'before' ? 'after' : 'before');
               }}
-              title="1-Click Quick Toggle"
+              title="Quick Toggle"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -274,264 +199,8 @@ export const BeforeAfterSlider = ({ cases }) => {
           </div>
         </div>
 
-        {/* ── Mode 1: Interactive Split Slider ── */}
-        {viewMode === 'slider' && (
-          <div style={{ position: 'relative', width: '100%', userSelect: 'none' }}>
-            <div
-              ref={containerRef}
-              onPointerDown={handlePointerDown}
-              style={{
-                position: 'relative',
-                width: '100%',
-                maxHeight: '560px',
-                minHeight: '360px',
-                borderRadius: '18px',
-                overflow: 'hidden',
-                cursor: 'ew-resize',
-                boxShadow: '0 8px 30px rgba(15, 41, 66, 0.1)',
-                background: '#091e36',
-                touchAction: 'none',
-              }}
-            >
-              {/* If split composite image (like case 2) */}
-              {isSplitComposite ? (
-                <div style={{ position: 'relative', width: '100%', height: '100%' }}>
-                  <img
-                    src={currentCase.image}
-                    alt={currentCase.title}
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                      maxHeight: '560px',
-                      display: 'block',
-                      objectFit: 'cover',
-                      pointerEvents: 'none',
-                    }}
-                  />
-                  {/* Floating split notice */}
-                  <div
-                    style={{
-                      position: 'absolute',
-                      bottom: '16px',
-                      left: '50%',
-                      transform: 'translateX(-50%)',
-                      background: 'rgba(11, 37, 69, 0.88)',
-                      backdropFilter: 'blur(8px)',
-                      color: '#e2e8f0',
-                      padding: '8px 18px',
-                      borderRadius: '9999px',
-                      fontSize: '12px',
-                      fontWeight: 600,
-                      border: '1px solid rgba(56, 189, 248, 0.35)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      whiteSpace: 'nowrap',
-                    }}
-                  >
-                    <span>Left: Clinical Baseline</span>
-                    <span style={{ color: '#38bdf8' }}>•</span>
-                    <span>Right: Post-Treatment Clearance</span>
-                  </div>
-                </div>
-              ) : (
-                <>
-                  {/* Base Layer: AFTER Image */}
-                  <img
-                    src={afterSrc}
-                    alt={`${currentCase.title} - After Treatment Result`}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      maxHeight: '560px',
-                      objectFit: 'contain',
-                      display: 'block',
-                      background: '#091e36',
-                      pointerEvents: 'none',
-                    }}
-                  />
 
-                  {/* Overlaid Layer: BEFORE Image (clipped to sliderPosition %) */}
-                  <div
-                    style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      bottom: 0,
-                      width: `${sliderPosition}%`,
-                      overflow: 'hidden',
-                      pointerEvents: 'none',
-                      borderRight: '2px solid rgba(255, 255, 255, 0.95)',
-                      boxShadow: '4px 0 20px rgba(0, 0, 0, 0.35)',
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: containerRef.current ? `${containerRef.current.clientWidth}px` : '100%',
-                        height: '100%',
-                      }}
-                    >
-                      <img
-                        src={beforeSrc}
-                        alt={`${currentCase.title} - Before Treatment Baseline`}
-                        style={{
-                          width: containerRef.current ? `${containerRef.current.clientWidth}px` : '100%',
-                          height: '100%',
-                          maxHeight: '560px',
-                          objectFit: 'contain',
-                          display: 'block',
-                          background: '#091e36',
-                          pointerEvents: 'none',
-                        }}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Draggable Divider Line & Handle */}
-                  <div
-                    style={{
-                      position: 'absolute',
-                      top: 0,
-                      bottom: 0,
-                      left: `${sliderPosition}%`,
-                      transform: 'translateX(-50%)',
-                      width: '4px',
-                      background: 'linear-gradient(180deg, #1e5aa8 0%, #ffffff 50%, #16a34a 100%)',
-                      pointerEvents: 'none',
-                      zIndex: 10,
-                    }}
-                  >
-                    <div
-                      style={{
-                        position: 'absolute',
-                        top: '50%',
-                        left: '50%',
-                        transform: 'translate(-50%, -50%)',
-                        width: '46px',
-                        height: '46px',
-                        borderRadius: '50%',
-                        background: 'linear-gradient(135deg, #1e5aa8 0%, #16a34a 100%)',
-                        border: '2px solid #ffffff',
-                        boxShadow: '0 4px 18px rgba(0,0,0,0.35), 0 0 14px rgba(37,99,235,0.6)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: '#ffffff',
-                        cursor: 'ew-resize',
-                        pointerEvents: 'auto',
-                      }}
-                    >
-                      <ChevronsLeftRight size={22} color="#ffffff" />
-                    </div>
-                  </div>
-                </>
-              )}
-
-              {/* Floating Pill Badges */}
-              <div
-                style={{
-                  position: 'absolute',
-                  top: '16px',
-                  left: '16px',
-                  background: 'rgba(11, 37, 69, 0.88)',
-                  backdropFilter: 'blur(8px)',
-                  color: '#ffffff',
-                  padding: '6px 14px',
-                  borderRadius: '9999px',
-                  fontSize: '11.5px',
-                  fontWeight: 700,
-                  letterSpacing: '0.06em',
-                  textTransform: 'uppercase',
-                  border: '1px solid rgba(56, 189, 248, 0.4)',
-                  zIndex: 5,
-                  pointerEvents: 'none',
-                }}
-              >
-                Before Baseline
-              </div>
-
-              <div
-                style={{
-                  position: 'absolute',
-                  top: '16px',
-                  right: '16px',
-                  background: 'rgba(21, 128, 61, 0.9)',
-                  backdropFilter: 'blur(8px)',
-                  color: '#ffffff',
-                  padding: '6px 14px',
-                  borderRadius: '9999px',
-                  fontSize: '11.5px',
-                  fontWeight: 700,
-                  letterSpacing: '0.06em',
-                  textTransform: 'uppercase',
-                  border: '1px solid rgba(134, 239, 172, 0.45)',
-                  zIndex: 5,
-                  pointerEvents: 'none',
-                }}
-              >
-                After Result
-              </div>
-
-              {/* Interaction Hint Overlay */}
-              {!hasInteracted && !isSplitComposite && (
-                <div
-                  style={{
-                    position: 'absolute',
-                    bottom: '20px',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    background: 'rgba(15, 41, 66, 0.92)',
-                    backdropFilter: 'blur(10px)',
-                    color: '#ffffff',
-                    padding: '8px 20px',
-                    borderRadius: '9999px',
-                    fontSize: '12px',
-                    fontWeight: 600,
-                    boxShadow: '0 4px 16px rgba(0,0,0,0.35)',
-                    border: '1px solid rgba(56,189,248,0.4)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    pointerEvents: 'none',
-                    animation: 'pulseGlow 2.5s infinite',
-                  }}
-                >
-                  <ChevronsLeftRight size={16} color="#38bdf8" />
-                  <span>Drag slider left or right to inspect dermal clearance</span>
-                </div>
-              )}
-            </div>
-
-            {/* Accessible slider input */}
-            <div style={{ marginTop: '12px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <span style={{ fontSize: '11px', color: '#1e5aa8', fontWeight: 700, textTransform: 'uppercase' }}>
-                Before
-              </span>
-              <input
-                type="range"
-                min="0"
-                max="100"
-                value={sliderPosition}
-                onChange={(e) => {
-                  setSliderPosition(Number(e.target.value));
-                  setHasInteracted(true);
-                }}
-                aria-label="Before and After Comparison Slider"
-                style={{
-                  flex: 1,
-                  accentColor: '#1e5aa8',
-                  cursor: 'pointer',
-                  height: '6px',
-                }}
-              />
-              <span style={{ fontSize: '11px', color: '#16a34a', fontWeight: 700, textTransform: 'uppercase' }}>
-                After
-              </span>
-            </div>
-          </div>
-        )}
-
-        {/* ── Mode 2: Side-by-Side Dual View ── */}
+        {/* ── Mode 1: Side-by-Side Dual View ── */}
         {viewMode === 'side-by-side' && (
           <div
             style={{
@@ -546,7 +215,7 @@ export const BeforeAfterSlider = ({ cases }) => {
                 position: 'relative',
                 borderRadius: '16px',
                 overflow: 'hidden',
-                background: '#091e36',
+                background: 'transparent',
                 border: '1px solid #e2e8f0',
                 boxShadow: '0 4px 16px rgba(15,41,66,0.06)',
               }}
@@ -568,7 +237,7 @@ export const BeforeAfterSlider = ({ cases }) => {
                   zIndex: 2,
                 }}
               >
-                1. Initial Baseline (Week 0)
+                Before
               </div>
               <img
                 src={beforeSrc}
@@ -578,7 +247,7 @@ export const BeforeAfterSlider = ({ cases }) => {
                   height: '420px',
                   objectFit: 'contain',
                   display: 'block',
-                  background: '#091e36',
+                  background: '#f8fafc',
                 }}
               />
               <div style={{ padding: '14px', background: '#f0f7ff', borderTop: '1px solid #e2e8f0' }}>
@@ -597,7 +266,7 @@ export const BeforeAfterSlider = ({ cases }) => {
                 position: 'relative',
                 borderRadius: '16px',
                 overflow: 'hidden',
-                background: '#091e36',
+                background: 'transparent',
                 border: '1px solid #e2e8f0',
                 boxShadow: '0 4px 16px rgba(15,41,66,0.06)',
               }}
@@ -619,7 +288,7 @@ export const BeforeAfterSlider = ({ cases }) => {
                   zIndex: 2,
                 }}
               >
-                2. Post-Protocol Outcome ({currentCase.timeline})
+                After
               </div>
               <img
                 src={afterSrc}
@@ -629,7 +298,7 @@ export const BeforeAfterSlider = ({ cases }) => {
                   height: '420px',
                   objectFit: 'contain',
                   display: 'block',
-                  background: '#091e36',
+                  background: '#f8fafc',
                 }}
               />
               <div style={{ padding: '14px', background: '#f0fdf4', borderTop: '1px solid #e2e8f0' }}>
@@ -644,7 +313,7 @@ export const BeforeAfterSlider = ({ cases }) => {
           </div>
         )}
 
-        {/* ── Mode 3: 1-Click Quick Toggle ── */}
+        {/* ── Mode 2: Quick Toggle ── */}
         {viewMode === 'toggle' && (
           <div style={{ textAlign: 'center' }}>
             <div
@@ -652,7 +321,7 @@ export const BeforeAfterSlider = ({ cases }) => {
                 position: 'relative',
                 borderRadius: '18px',
                 overflow: 'hidden',
-                background: '#091e36',
+                background: '#f8fafc',
                 border: '1px solid #e2e8f0',
                 maxHeight: '520px',
                 marginBottom: '16px',
@@ -666,10 +335,10 @@ export const BeforeAfterSlider = ({ cases }) => {
                   height: '480px',
                   objectFit: 'contain',
                   display: 'block',
+                  background: '#f8fafc',
                   transition: 'opacity 0.3s ease',
                 }}
               />
-
               <div
                 style={{
                   position: 'absolute',
@@ -689,7 +358,6 @@ export const BeforeAfterSlider = ({ cases }) => {
                 Viewing: {toggleState === 'before' ? 'Initial Baseline' : 'Post-Treatment Result'}
               </div>
             </div>
-
             <div style={{ display: 'inline-flex', gap: '12px' }}>
               <button
                 onClick={() => setToggleState('before')}

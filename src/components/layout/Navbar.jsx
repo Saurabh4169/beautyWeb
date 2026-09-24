@@ -4,14 +4,13 @@ import { ShoppingBag, Menu, X, ArrowUpRight } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
 import { useBooking } from '../../context/BookingContext';
 import { Button } from '../ui/Button';
-import brandLogo from '../../assets/logo.jpeg';
+import brandLogo from '../../assets/logo.png';
 
 export const Navbar = () => {
   const { totalItemsCount, setIsCartOpen } = useCart();
   const { openBookingModal } = useBooking();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [logoHovered, setLogoHovered] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -73,27 +72,21 @@ export const Navbar = () => {
           {/* ── Brand Logo ── */}
           <Link
             to="/"
-            onMouseEnter={() => setLogoHovered(true)}
-            onMouseLeave={() => setLogoHovered(false)}
             style={{
               display: 'flex',
               alignItems: 'center',
               textDecoration: 'none',
               flexShrink: 0,
-              transition: 'transform 0.25s ease, filter 0.25s ease',
-              transform: logoHovered ? 'translateY(-1px) scale(1.02)' : 'none',
-              filter: logoHovered ? 'drop-shadow(0 4px 14px rgba(37, 99, 235, 0.22))' : 'none',
             }}
           >
             <img
               src={brandLogo}
               alt="BeautyOasisRx — Renew Your Skin"
               style={{
-                height: isScrolled ? '46px' : '54px',
+                height: isScrolled ? '46px' : '52px',
                 width: 'auto',
-                maxWidth: '220px',
+                maxWidth: '240px',
                 objectFit: 'contain',
-                mixBlendMode: 'multiply',
                 transition: 'height 0.3s ease',
                 display: 'block',
               }}

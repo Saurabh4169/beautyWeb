@@ -26,7 +26,7 @@ body {
   background-color: var(--color-cream-bg);
   color: var(--color-text-main);
   line-height: 1.6;
-  cursor: none;
+  cursor: auto;
 }
 
 /* Restore cursor on touch devices */
@@ -59,7 +59,7 @@ button, input, select, textarea {
 }
 
 button {
-  cursor: none;
+  cursor: auto;
   background: none;
 }
 
@@ -479,7 +479,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-headline-line-1 {
   display: inline-block;
-  opacity: 0;
+  opacity: 1;
   animation: heroLineFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
               filter 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -493,7 +493,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-headline-line-2 {
   display: inline-block;
-  opacity: 0;
+  opacity: 1;
   animation: heroLineFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
               filter 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -507,7 +507,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-headline-line-3 {
   display: inline-block;
-  opacity: 0;
+  opacity: 1;
   animation: heroLineFadeUp 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
               filter 0.4s cubic-bezier(0.16, 1, 0.3, 1);

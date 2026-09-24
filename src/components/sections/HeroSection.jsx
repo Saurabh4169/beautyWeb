@@ -1,19 +1,11 @@
-import React, { useState } from 'react';
-import { ArrowRight, ArrowUpRight, Star, Sparkles, CheckCircle2 } from 'lucide-react';
+import React from 'react';
+import { ArrowRight, ArrowUpRight, Sparkles, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '../ui/Button';
-import { BeautyTechHeroVisual } from '../ui/BeautyTechHeroVisual';
 import { useBooking } from '../../context/BookingContext';
 
 export const HeroSection = () => {
   const { openBookingModal } = useBooking();
-  const [activeTab, setActiveTab] = useState(0);
-
-  const tabs = [
-    { label: 'Skin Health', color: '#1e5aa8' },
-    { label: 'Body Contouring', color: '#16a34a' },
-    { label: 'Sensory Wellness', color: '#0284c7' },
-  ];
 
   return (
     <section
@@ -81,21 +73,17 @@ export const HeroSection = () => {
             height: '100%',
             objectFit: 'cover',
             objectPosition: '68% 28%',
-            opacity: 0.52,
-            filter: 'contrast(105%) brightness(103%) saturate(104%)',
+            opacity: 0.92,
+            filter: 'contrast(106%) brightness(98%) saturate(106%)',
           }}
         />
 
-        {/* Luminous Light Wash — ensures crisp contrast with pleasant bright backdrop */}
+        {/* Overlay on girl image (16% dark tint for ideal readability and depth) */}
         <div
           style={{
             position: 'absolute',
             inset: 0,
-            background: `
-              linear-gradient(to right, rgba(255,255,255,0.92) 0%, rgba(248,250,252,0.82) 40%, rgba(240,249,255,0.35) 75%, rgba(255,255,255,0.18) 100%),
-              linear-gradient(to top, rgba(255,255,255,0.7) 0%, transparent 25%),
-              linear-gradient(to bottom, rgba(255,255,255,0.7) 0%, transparent 20%)
-            `,
+            background: 'rgba(0, 0, 0, 0.16)',
             pointerEvents: 'none',
           }}
         />
@@ -105,13 +93,11 @@ export const HeroSection = () => {
         <div
           className="hero-main-grid"
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))',
-            gap: 'clamp(44px, 6vw, 72px)',
+            maxWidth: '640px',
             alignItems: 'center',
           }}
         >
-          {/* ── Left Column ── */}
+          {/* ── Main Content Column ── */}
           <div>
             {/* Top Pill Badge */}
             <div style={{ marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
@@ -163,15 +149,16 @@ export const HeroSection = () => {
                 marginBottom: '24px',
                 fontFamily: 'var(--font-serif-display)',
                 cursor: 'pointer',
+                textShadow: '0 2px 12px rgba(0,0,0,0.18), 0 1px 4px rgba(0,0,0,0.12)',
               }}
             >
-              <span className="hero-headline-line-1" data-cursor="Beauty">
+              <span className="hero-headline-line-1" data-cursor="Beauty" style={{ color: '#16447e' }}>
                 <span className="hero-word-hover">Your</span>{' '}
                 <span className="hero-word-hover hero-word-highlight">Beauty,</span>
               </span>
               <br />
               <span className="hero-headline-line-2" data-cursor="Wellness">
-                <span className="hero-word-hover">Your</span>{' '}
+                <span className="hero-word-hover" style={{ color: '#16447e' }}>Your</span>{' '}
                 <span className="hero-word-hover hero-word-highlight" style={{ color: '#16a34a' }}>Wellness,</span>
               </span>
               <br />
@@ -192,42 +179,32 @@ export const HeroSection = () => {
               </span>
             </h1>
 
-            {/* Subtitle */}
-            <p
+            {/* Subtitle with subtle white border container for perfect visibility */}
+            <div
               style={{
-                fontSize: 'clamp(0.96rem, 1.3vw, 1.1rem)',
-                color: '#334155',
-                lineHeight: 1.72,
-                maxWidth: '530px',
-                marginBottom: '36px',
+                maxWidth: '540px',
+                marginBottom: '32px',
+                background: 'rgba(255, 255, 255, 0.62)',
+                backdropFilter: 'blur(12px)',
+                WebkitBackdropFilter: 'blur(12px)',
+                border: '1px solid rgba(255, 255, 255, 0.95)',
+                borderRadius: '16px',
+                padding: '14px 20px',
+                boxShadow: '0 4px 20px rgba(15, 41, 66, 0.06), 0 1px 2px rgba(255, 255, 255, 0.8) inset',
               }}
             >
-              At Beauty Oasis Rx, skincare is rooted in medical science. We craft bespoke clinical aesthetic treatments and personalized care tailored precisely to your unique dermal signature and longevity goals.
-            </p>
-
-            {/* Treatment Category Tabs */}
-            <div style={{ display: 'flex', gap: '8px', marginBottom: '28px', flexWrap: 'wrap' }}>
-              {tabs.map((tab, i) => (
-                <button
-                  key={tab.label}
-                  onClick={() => setActiveTab(i)}
-                  style={{
-                    padding: '8px 20px',
-                    borderRadius: '9999px',
-                    fontSize: '12.5px',
-                    fontWeight: 700,
-                    letterSpacing: '0.04em',
-                    border: activeTab === i ? `1.5px solid ${tab.color}` : '1.5px solid #cbd5e1',
-                    background: activeTab === i ? `${tab.color}15` : '#ffffff',
-                    color: activeTab === i ? tab.color : '#475569',
-                    boxShadow: activeTab === i ? `0 4px 14px ${tab.color}25` : 'none',
-                    transition: 'all 0.25s ease',
-                    cursor: 'pointer',
-                  }}
-                >
-                  {tab.label}
-                </button>
-              ))}
+              <p
+                style={{
+                  fontSize: 'clamp(0.96rem, 1.3vw, 1.05rem)',
+                  color: '#0f2942',
+                  fontWeight: 500,
+                  lineHeight: 1.72,
+                  margin: 0,
+                  textShadow: '0 0 1px rgba(255, 255, 255, 0.9), 0 1px 2px rgba(255, 255, 255, 0.7)',
+                }}
+              >
+                At Beauty Oasis Rx, skincare is rooted in medical science. We craft bespoke clinical aesthetic treatments and personalized care tailored precisely to your unique dermal signature and longevity goals.
+              </p>
             </div>
 
             {/* CTA Buttons */}
@@ -294,63 +271,6 @@ export const HeroSection = () => {
               ))}
             </div>
           </div>
-
-          {/* ── Right Column: AI Girl Video Visual ── */}
-          <div style={{ position: 'relative', width: '100%' }}>
-            <BeautyTechHeroVisual activeTabIndex={activeTab} onTabChange={setActiveTab} />
-
-            {/* Patient Review Card */}
-            <div
-              className="hero-review-card"
-              style={{
-                marginTop: '22px',
-                zIndex: 7,
-                background: 'rgba(255,255,255,0.95)',
-                backdropFilter: 'blur(20px)',
-                padding: '16px 22px',
-                borderRadius: '20px',
-                boxShadow: '0 16px 44px rgba(15,41,66,0.08), 0 0 20px rgba(37,99,235,0.06)',
-                border: '1.5px solid #e2e8f0',
-                transition: 'transform 0.3s ease',
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-                {/* Avatar cluster */}
-                <div style={{ display: 'flex' }}>
-                  {['#1e5aa8', '#16a34a', '#0284c7'].map((c, i) => (
-                    <div
-                      key={i}
-                      style={{
-                        width: '24px', height: '24px', borderRadius: '50%',
-                        background: c, border: '2px solid #fff',
-                        marginLeft: i > 0 ? '-7px' : '0',
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        fontSize: '9px', fontWeight: 800, color: '#fff',
-                      }}
-                    >
-                      {['S', 'J', 'M'][i]}
-                    </div>
-                  ))}
-                </div>
-                <div style={{ display: 'flex', gap: '1px' }}>
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={11} fill="#16a34a" color="#16a34a" />
-                  ))}
-                </div>
-                <span style={{ fontSize: '10.5px', fontWeight: 700, color: '#0f2942' }}>
-                  Verified Patient
-                </span>
-              </div>
-
-              <p style={{ fontSize: '12px', color: '#334155', fontStyle: 'italic', lineHeight: 1.5, marginBottom: '4px' }}>
-                "Noticeable transformation after just one session. The sensory-calm room was pure bliss."
-              </p>
-
-              <div style={{ fontSize: '10px', color: '#1e5aa8', fontWeight: 700 }}>
-                — Sarah W. · Clinical Hydrafacial + RF Microneedling
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -367,11 +287,6 @@ export const HeroSection = () => {
           .hero-beauty-girl-bg-img {
             opacity: 0.42 !important;
             object-position: 75% 25% !important;
-          }
-        }
-        @media (min-width: 992px) {
-          .hero-main-grid {
-            grid-template-columns: 1.12fr 0.88fr !important;
           }
         }
         @media (min-width: 768px) {
