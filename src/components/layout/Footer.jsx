@@ -35,20 +35,20 @@ export const Footer = () => {
   return (
     <footer
       style={{
-        background: 'linear-gradient(180deg, #1a0e08 0%, #120904 100%)',
-        color: '#dfc8a4',
+        background: 'linear-gradient(180deg, #091e36 0%, #061526 100%)',
+        color: '#e2e8f0',
         paddingTop: 'clamp(56px, 8vw, 96px)',
         paddingBottom: 'clamp(32px, 5vw, 52px)',
         position: 'relative',
         overflow: 'hidden',
       }}
     >
-      {/* Top gold gradient border */}
+      {/* Top cyan/emerald gradient border */}
       <div
         style={{
           position: 'absolute', top: 0, left: 0, right: 0,
-          height: '1px',
-          background: 'linear-gradient(90deg, transparent 0%, rgba(194,155,100,0.5) 25%, rgba(196,98,45,0.4) 50%, rgba(194,155,100,0.5) 75%, transparent 100%)',
+          height: '2px',
+          background: 'linear-gradient(90deg, transparent 0%, rgba(56,189,248,0.6) 25%, rgba(34,197,94,0.6) 50%, rgba(56,189,248,0.6) 75%, transparent 100%)',
         }}
       />
 
@@ -58,7 +58,7 @@ export const Footer = () => {
         style={{
           position: 'absolute', bottom: '-20%', left: '-10%',
           width: '400px', height: '400px', borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(196,98,45,0.08) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(37,99,235,0.12) 0%, transparent 70%)',
           filter: 'blur(60px)', pointerEvents: 'none',
         }}
       />
@@ -67,7 +67,7 @@ export const Footer = () => {
         style={{
           position: 'absolute', top: '-15%', right: '-8%',
           width: '350px', height: '350px', borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(194,155,100,0.07) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(22,163,74,0.1) 0%, transparent 70%)',
           filter: 'blur(55px)', pointerEvents: 'none',
         }}
       />
@@ -93,7 +93,7 @@ export const Footer = () => {
                   display: 'inline-flex',
                   alignItems: 'center',
                   boxShadow: '0 6px 22px rgba(0,0,0,0.35)',
-                  border: '1px solid rgba(194,155,100,0.3)',
+                  border: '1px solid rgba(56,189,248,0.4)',
                   transition: 'transform 0.25s ease, box-shadow 0.25s ease',
                 }}
                 onMouseEnter={(e) => {
@@ -118,30 +118,30 @@ export const Footer = () => {
               </div>
             </Link>
 
-            <p style={{ fontSize: '0.84rem', color: '#b89e8c', lineHeight: 1.65, marginBottom: '20px', maxWidth: '240px' }}>
+            <p style={{ fontSize: '0.84rem', color: '#94a3b8', lineHeight: 1.65, marginBottom: '20px', maxWidth: '240px' }}>
               Doctor-led clinical aesthetics delivering personalized medical-grade skin transformations.
             </p>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '11px', fontSize: '0.85rem', color: '#dfc8a4' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '11px', fontSize: '0.85rem', color: '#e2e8f0' }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '9px' }}>
-                <MapPin size={15} color="#c4622d" style={{ flexShrink: 0, marginTop: '3px' }} />
+                <MapPin size={15} color="#38bdf8" style={{ flexShrink: 0, marginTop: '3px' }} />
                 <span>333 East Bethany 110-A, Allen, Texas 75002</span>
               </div>
 
-              <a href="tel:+12145007825" style={{ display: 'flex', alignItems: 'center', gap: '9px', color: '#fdf8f3', fontWeight: 600, transition: 'color 0.2s' }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#d4784a')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#fdf8f3')}
+              <a href="tel:+12145007825" style={{ display: 'flex', alignItems: 'center', gap: '9px', color: '#ffffff', fontWeight: 600, transition: 'color 0.2s' }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#38bdf8')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = '#ffffff')}
               >
-                <Phone size={14} color="#c4622d" />
+                <Phone size={14} color="#38bdf8" />
                 (214) 500-7825
               </a>
 
               <a href="mailto:infobeautyoasisrx@gmail.com"
-                style={{ display: 'flex', alignItems: 'center', gap: '9px', color: '#dfc8a4', fontSize: '0.82rem', transition: 'color 0.2s' }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#d4784a')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#dfc8a4')}
+                style={{ display: 'flex', alignItems: 'center', gap: '9px', color: '#bae6fd', fontSize: '0.82rem', transition: 'color 0.2s' }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#38bdf8')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = '#bae6fd')}
               >
-                <Mail size={14} color="#c4622d" />
+                <Mail size={14} color="#38bdf8" />
                 infobeautyoasisrx@gmail.com
               </a>
 
@@ -150,7 +150,7 @@ export const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  color: '#d4784a', fontWeight: 600, fontSize: '12.5px',
+                  color: '#4ade80', fontWeight: 600, fontSize: '12.5px',
                   display: 'inline-flex', alignItems: 'center', gap: '5px',
                   transition: 'gap 0.2s ease',
                 }}
@@ -178,22 +178,22 @@ export const Footer = () => {
                   style={{
                     width: '36px', height: '36px',
                     borderRadius: '10px',
-                    background: 'rgba(255,255,255,0.05)',
-                    border: '1px solid rgba(255,255,255,0.08)',
+                    background: 'rgba(255,255,255,0.06)',
+                    border: '1px solid rgba(255,255,255,0.1)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    color: '#dfc8a4',
+                    color: '#e2e8f0',
                     transition: 'all 0.25s ease',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = 'rgba(196,98,45,0.18)';
-                    e.currentTarget.style.borderColor = 'rgba(196,98,45,0.35)';
-                    e.currentTarget.style.color = '#d4784a';
+                    e.currentTarget.style.background = 'rgba(56,189,248,0.2)';
+                    e.currentTarget.style.borderColor = 'rgba(56,189,248,0.4)';
+                    e.currentTarget.style.color = '#38bdf8';
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
-                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
-                    e.currentTarget.style.color = '#dfc8a4';
+                    e.currentTarget.style.background = 'rgba(255,255,255,0.06)';
+                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
+                    e.currentTarget.style.color = '#e2e8f0';
                     e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
@@ -207,13 +207,13 @@ export const Footer = () => {
           <div>
             <h4
               style={{
-                color: '#fdf8f3', fontSize: '0.95rem',
+                color: '#ffffff', fontSize: '0.95rem',
                 fontFamily: 'var(--font-serif-display)',
                 marginBottom: '20px',
                 display: 'flex', alignItems: 'center', gap: '8px',
               }}
             >
-              <span style={{ display: 'inline-block', width: '18px', height: '1.5px', background: 'linear-gradient(90deg, #c4622d, transparent)' }} />
+              <span style={{ display: 'inline-block', width: '18px', height: '2px', background: 'linear-gradient(90deg, #38bdf8, transparent)' }} />
               Quick Navigation
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.85rem' }}>
@@ -221,13 +221,13 @@ export const Footer = () => {
                 <li key={item.name}>
                   <Link
                     to={item.path}
-                    style={{ color: '#b89e8c', transition: 'all 0.2s ease', display: 'inline-flex', alignItems: 'center', gap: '0px' }}
+                    style={{ color: '#94a3b8', transition: 'all 0.2s ease', display: 'inline-flex', alignItems: 'center', gap: '0px' }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.color = '#d4784a';
+                      e.currentTarget.style.color = '#38bdf8';
                       e.currentTarget.style.gap = '5px';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.color = '#b89e8c';
+                      e.currentTarget.style.color = '#94a3b8';
                       e.currentTarget.style.gap = '0px';
                     }}
                   >
@@ -242,13 +242,13 @@ export const Footer = () => {
           <div>
             <h4
               style={{
-                color: '#fdf8f3', fontSize: '0.95rem',
+                color: '#ffffff', fontSize: '0.95rem',
                 fontFamily: 'var(--font-serif-display)',
                 marginBottom: '20px',
                 display: 'flex', alignItems: 'center', gap: '8px',
               }}
             >
-              <span style={{ display: 'inline-block', width: '18px', height: '1.5px', background: 'linear-gradient(90deg, #c29b64, transparent)' }} />
+              <span style={{ display: 'inline-block', width: '18px', height: '2px', background: 'linear-gradient(90deg, #4ade80, transparent)' }} />
               Areas We Serve
             </h4>
             <div
@@ -263,11 +263,11 @@ export const Footer = () => {
                 <span
                   key={area}
                   style={{
-                    color: '#dfc8a4',
-                    display: 'flex', alignItems: 'center', gap: '5px',
+                    color: '#cbd5e1',
+                    display: 'flex', alignItems: 'center', gap: '6px',
                   }}
                 >
-                  <span style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#c4622d', display: 'inline-block', flexShrink: 0 }} />
+                  <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#38bdf8', display: 'inline-block', flexShrink: 0 }} />
                   {area}
                 </span>
               ))}
@@ -278,13 +278,13 @@ export const Footer = () => {
           <div>
             <h4
               style={{
-                color: '#fdf8f3', fontSize: '0.95rem',
+                color: '#ffffff', fontSize: '0.95rem',
                 fontFamily: 'var(--font-serif-display)',
                 marginBottom: '20px',
                 display: 'flex', alignItems: 'center', gap: '8px',
               }}
             >
-              <span style={{ display: 'inline-block', width: '18px', height: '1.5px', background: 'linear-gradient(90deg, #c4622d, transparent)' }} />
+              <span style={{ display: 'inline-block', width: '18px', height: '2px', background: 'linear-gradient(90deg, #38bdf8, transparent)' }} />
               Information &amp; Booking
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.85rem', marginBottom: '24px' }}>
@@ -292,9 +292,9 @@ export const Footer = () => {
                 <li key={item.name}>
                   <Link
                     to={item.path}
-                    style={{ color: '#b89e8c', transition: 'color 0.2s' }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#d4784a')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = '#b89e8c')}
+                    style={{ color: '#94a3b8', transition: 'color 0.2s' }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#38bdf8')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '#94a3b8')}
                   >
                     {item.name}
                   </Link>
@@ -306,25 +306,27 @@ export const Footer = () => {
               onClick={openBookingModal}
               className="btn-luxury"
               style={{
-                background: 'linear-gradient(135deg, #c4622d 0%, #a84e22 100%)',
+                background: 'linear-gradient(135deg, #1e5aa8 0%, #16a34a 100%)',
                 color: '#ffffff',
                 padding: '11px 24px',
                 borderRadius: '9999px',
                 fontWeight: 700,
                 fontSize: '13px',
-                boxShadow: '0 4px 18px rgba(196,98,45,0.35)',
+                boxShadow: '0 4px 18px rgba(30,90,168,0.4)',
+                border: 'none',
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '6px',
+                cursor: 'pointer',
                 transition: 'transform 0.25s ease, box-shadow 0.25s ease',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.boxShadow = '0 8px 24px rgba(196,98,45,0.5)';
+                e.currentTarget.style.boxShadow = '0 8px 24px rgba(30,90,168,0.6)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 4px 18px rgba(196,98,45,0.35)';
+                e.currentTarget.style.boxShadow = '0 4px 18px rgba(30,90,168,0.4)';
               }}
             >
               Book Clinical Visit
@@ -336,15 +338,15 @@ export const Footer = () => {
               style={{
                 marginTop: '20px',
                 padding: '14px 16px',
-                background: 'rgba(196,98,45,0.08)',
+                background: 'rgba(30,90,168,0.12)',
                 borderRadius: '12px',
-                border: '1px solid rgba(196,98,45,0.2)',
+                border: '1px solid rgba(56,189,248,0.25)',
                 fontSize: '12px',
-                color: '#dfc8a4',
+                color: '#e2e8f0',
                 lineHeight: 1.6,
               }}
             >
-              <div style={{ fontWeight: 700, color: '#d4784a', marginBottom: '4px', textTransform: 'uppercase', fontSize: '10px', letterSpacing: '0.08em' }}>Clinic Hours</div>
+              <div style={{ fontWeight: 700, color: '#38bdf8', marginBottom: '4px', textTransform: 'uppercase', fontSize: '10px', letterSpacing: '0.08em' }}>Clinic Hours</div>
               <div>Mon–Fri: 9:00 AM – 7:00 PM</div>
               <div>Saturday: 10:00 AM – 5:00 PM</div>
               <div>Sunday: By Appointment Only</div>
@@ -356,7 +358,7 @@ export const Footer = () => {
         <div
           style={{
             height: '1px',
-            background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.07), rgba(194,155,100,0.2), rgba(255,255,255,0.07), transparent)',
+            background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.08), rgba(56,189,248,0.3), rgba(255,255,255,0.08), transparent)',
             marginBottom: 'clamp(20px, 3vw, 32px)',
           }}
         />
@@ -370,12 +372,12 @@ export const Footer = () => {
             flexWrap: 'wrap',
             gap: '16px',
             fontSize: '11.5px',
-            color: '#a68a78',
+            color: '#64748b',
           }}
         >
           <div>
             © {new Date().getFullYear()}{' '}
-            <span style={{ color: '#dfc8a4' }}>Beauty Oasis Rx.</span>{' '}
+            <span style={{ color: '#bae6fd' }}>Beauty Oasis Rx.</span>{' '}
             All rights reserved. Registered Medical Aesthetics Clinic.
           </div>
           <div style={{ display: 'flex', gap: '18px' }}>
@@ -387,9 +389,9 @@ export const Footer = () => {
               <Link
                 key={label}
                 to={path}
-                style={{ color: '#a68a78', transition: 'color 0.2s' }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#d4784a')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#a68a78')}
+                style={{ color: '#64748b', transition: 'color 0.2s' }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#38bdf8')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = '#64748b')}
               >
                 {label}
               </Link>

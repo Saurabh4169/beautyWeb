@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, Plus, Minus } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 export const Accordion = ({ items }) => {
   const [openIndex, setOpenIndex] = useState(0);
@@ -18,8 +18,8 @@ export const Accordion = ({ items }) => {
             style={{
               background: "#ffffff",
               borderRadius: "16px",
-              border: isOpen ? "1px solid #c4622d" : "1px solid #ede5da",
-              boxShadow: isOpen ? "0 8px 24px rgba(44, 24, 16, 0.08)" : "0 2px 8px rgba(0, 0, 0, 0.02)",
+              border: isOpen ? "1px solid #1e5aa8" : "1px solid #e2e8f0",
+              boxShadow: isOpen ? "0 8px 24px rgba(30, 90, 168, 0.1)" : "0 2px 8px rgba(0, 0, 0, 0.02)",
               overflow: "hidden",
               transition: "all 0.3s ease"
             }}
@@ -34,12 +34,13 @@ export const Accordion = ({ items }) => {
                 justifyContent: "space-between",
                 gap: "16px",
                 textAlign: "left",
-                background: "transparent",
-                color: isOpen ? "#c4622d" : "#3d2314",
+                background: isOpen ? "#f0f7ff" : "transparent",
+                color: isOpen ? "#1e5aa8" : "#0f2942",
                 fontWeight: 600,
                 fontSize: "1.05rem",
                 fontFamily: "var(--font-sans)",
-                cursor: "pointer"
+                cursor: "pointer",
+                transition: "background 0.3s ease"
               }}
             >
               <span>{item.question}</span>
@@ -48,7 +49,7 @@ export const Accordion = ({ items }) => {
                   width: "32px",
                   height: "32px",
                   borderRadius: "50%",
-                  background: isOpen ? "#fdf0e8" : "#f8f2eb",
+                  background: isOpen ? "#dbeafe" : "#f0f7ff",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -57,7 +58,7 @@ export const Accordion = ({ items }) => {
                   transform: isOpen ? "rotate(180deg)" : "rotate(0)"
                 }}
               >
-                <ChevronDown size={18} color={isOpen ? "#c4622d" : "#8b5e3c"} />
+                <ChevronDown size={18} color={isOpen ? "#1e5aa8" : "#64748b"} />
               </div>
             </button>
 
@@ -65,10 +66,10 @@ export const Accordion = ({ items }) => {
               <div
                 style={{
                   padding: "0 26px 24px 26px",
-                  color: "#6b4c38",
+                  color: "#334155",
                   fontSize: "0.96rem",
                   lineHeight: 1.7,
-                  borderTop: "1px solid #ede5da",
+                  borderTop: "1px solid #e2e8f0",
                   paddingTop: "16px",
                   animation: "fadeIn 0.3s ease"
                 }}

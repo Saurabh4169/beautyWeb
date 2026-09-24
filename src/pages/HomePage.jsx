@@ -20,8 +20,8 @@ export const HomePage = () => {
       desc: 'Doctor-led dermal therapies, RF microneedling, and cellular biostimulation tailored to your skin signature.',
       link: '/treatments',
       linkText: 'Explore Treatments',
-      icon: <Sparkles size={22} color="#c4622d" />,
-      accent: '#c4622d',
+      icon: <Sparkles size={22} color="#1e5aa8" />,
+      accent: '#1e5aa8',
       delay: 'stagger-1',
     },
     {
@@ -30,8 +30,8 @@ export const HomePage = () => {
       desc: 'Specialized low-stimulation skincare journeys with dimmable cove lighting and unhurried pacing.',
       link: '/inclusive-care',
       linkText: 'Discover Sensory Care',
-      icon: <Heart size={22} color="#c29b64" />,
-      accent: '#c29b64',
+      icon: <Heart size={22} color="#16a34a" />,
+      accent: '#16a34a',
       delay: 'stagger-2',
     },
     {
@@ -40,8 +40,8 @@ export const HomePage = () => {
       desc: 'Tri-Fractional RF, Picosecond photo-acoustic laser, and vortex hydro-infusion systems.',
       link: '/technology',
       linkText: 'View Technology',
-      icon: <Cpu size={22} color="#c4622d" />,
-      accent: '#c4622d',
+      icon: <Cpu size={22} color="#0284c7" />,
+      accent: '#0284c7',
       delay: 'stagger-3',
     },
     {
@@ -50,8 +50,8 @@ export const HomePage = () => {
       desc: 'Standard polarized before & after photography documenting acne clearance and structural rejuvenation.',
       link: '/before-after',
       linkText: 'View Case Gallery',
-      icon: <Layers size={22} color="#c29b64" />,
-      accent: '#c29b64',
+      icon: <Layers size={22} color="#16a34a" />,
+      accent: '#16a34a',
       delay: 'stagger-4',
     },
     {
@@ -60,18 +60,18 @@ export const HomePage = () => {
       desc: 'Potent at-home formulations to protect, accelerate, and maintain your clinic outcomes.',
       link: '/apothecary',
       linkText: 'Shop Apothecary',
-      icon: <Sparkle size={22} color="#c4622d" />,
-      accent: '#c4622d',
+      icon: <Sparkle size={22} color="#1e5aa8" />,
+      accent: '#1e5aa8',
       delay: 'stagger-5',
     },
     {
       badge: 'FLAGSHIP SUITES',
       title: 'Visit Our Clinics',
-      desc: 'Find our Allen, Texas clinic and London suites. Get direct directions and parking guidance.',
+      desc: 'Find our Allen, Texas clinic (333 East Bethany Dr). Get direct GPS directions and parking guidance.',
       link: '/locations',
       linkText: 'View Locations & Map',
-      icon: <MapPin size={22} color="#c29b64" />,
-      accent: '#c29b64',
+      icon: <MapPin size={22} color="#16a34a" />,
+      accent: '#16a34a',
       delay: 'stagger-6',
     },
   ];
@@ -85,13 +85,13 @@ export const HomePage = () => {
       <StatsBar />
 
       {/* 3. Curated Overview Highlights */}
-      <section className="section-padding" style={{ background: '#fdf8f3', position: 'relative', overflow: 'hidden' }}>
-        {/* Background subtle orb */}
+      <section className="section-padding" style={{ background: '#ffffff', position: 'relative', overflow: 'hidden' }}>
+        {/* Background subtle sky orb */}
         <div
           style={{
             position: 'absolute', top: '-10%', right: '-5%',
             width: '400px', height: '400px', borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(196,98,45,0.06) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(37,99,235,0.06) 0%, transparent 70%)',
             filter: 'blur(40px)', pointerEvents: 'none',
           }}
         />
@@ -102,11 +102,11 @@ export const HomePage = () => {
             className="reveal"
             style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 56px auto' }}
           >
-            <Badge variant="emerald">WELCOME TO BEAUTY OASIS</Badge>
+            <Badge variant="emerald">WELCOME TO BEAUTY OASIS RX</Badge>
             <h2
               style={{
                 fontSize: 'clamp(2rem, 3.5vw, 2.9rem)',
-                color: 'var(--color-primary-dark)',
+                color: '#0f2942',
                 fontFamily: 'var(--font-serif-display)',
                 margin: '14px 0 16px 0',
                 lineHeight: 1.12,
@@ -116,7 +116,7 @@ export const HomePage = () => {
               <span
                 style={{
                   fontStyle: 'italic',
-                  background: 'linear-gradient(135deg, #c4622d, #d4784a, #c29b64)',
+                  background: 'linear-gradient(135deg, #1e5aa8, #0ea5e9, #16a34a)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
@@ -125,7 +125,7 @@ export const HomePage = () => {
                 Serene Wellness
               </span>
             </h2>
-            <p style={{ fontSize: '1rem', color: '#6b4c38', lineHeight: 1.68 }}>
+            <p style={{ fontSize: '1rem', color: '#334155', lineHeight: 1.68 }}>
               Explore our specialized departments, doctor-administered clinical protocols, sensory accommodations, and pharmaceutical at-home formulations.
             </p>
             {/* Decorative divider */}
@@ -150,12 +150,12 @@ export const HomePage = () => {
                 style={{
                   background: '#ffffff',
                   borderRadius: '22px',
-                  border: '1px solid #ede5da',
+                  border: '1px solid #e2e8f0',
                   padding: '32px 26px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  boxShadow: '0 4px 20px rgba(44,24,16,0.05)',
+                  boxShadow: '0 4px 20px rgba(15,41,66,0.05)',
                   position: 'relative',
                   overflow: 'hidden',
                 }}
@@ -165,8 +165,8 @@ export const HomePage = () => {
                   style={{
                     position: 'absolute',
                     top: 0, left: '24px', right: '24px',
-                    height: '2px',
-                    background: `linear-gradient(90deg, ${item.accent}60, transparent)`,
+                    height: '2.5px',
+                    background: `linear-gradient(90deg, ${item.accent}, transparent)`,
                     borderRadius: '0 0 2px 2px',
                   }}
                 />
@@ -177,7 +177,7 @@ export const HomePage = () => {
                       style={{
                         width: '46px', height: '46px',
                         borderRadius: '14px',
-                        background: `${item.accent}15`,
+                        background: `${item.accent}14`,
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                         border: `1px solid ${item.accent}25`,
                       }}
@@ -187,10 +187,11 @@ export const HomePage = () => {
                     <span
                       style={{
                         fontSize: '10px', fontWeight: 800, letterSpacing: '0.1em',
-                        color: '#c4622d',
-                        background: '#fdf0e8',
+                        color: item.accent,
+                        background: `${item.accent}12`,
                         padding: '4px 10px', borderRadius: '9999px',
                         textTransform: 'uppercase',
+                        border: `1px solid ${item.accent}20`,
                       }}
                     >
                       {item.badge}
@@ -199,7 +200,7 @@ export const HomePage = () => {
 
                   <h3
                     style={{
-                      fontSize: '1.3rem', color: 'var(--color-primary-dark)',
+                      fontSize: '1.3rem', color: '#0f2942',
                       fontFamily: 'var(--font-serif-display)',
                       marginBottom: '10px', lineHeight: 1.22,
                     }}
@@ -207,7 +208,7 @@ export const HomePage = () => {
                     {item.title}
                   </h3>
 
-                  <p style={{ fontSize: '0.88rem', color: '#6b4c38', lineHeight: 1.65, marginBottom: '22px' }}>
+                  <p style={{ fontSize: '0.88rem', color: '#334155', lineHeight: 1.65, marginBottom: '22px' }}>
                     {item.desc}
                   </p>
                 </div>
@@ -216,17 +217,15 @@ export const HomePage = () => {
                   to={item.link}
                   style={{
                     display: 'inline-flex', alignItems: 'center', gap: '6px',
-                    color: '#3d2314', fontWeight: 700, fontSize: '13px',
-                    borderTop: '1px solid #ede5da',
+                    color: item.accent, fontWeight: 700, fontSize: '13px',
+                    borderTop: '1px solid #e2e8f0',
                     paddingTop: '16px',
-                    transition: 'color 0.2s ease, gap 0.2s ease',
+                    transition: 'gap 0.2s ease, transform 0.2s ease',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = item.accent;
                     e.currentTarget.style.gap = '10px';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color = '#3d2314';
                     e.currentTarget.style.gap = '6px';
                   }}
                 >
@@ -241,7 +240,7 @@ export const HomePage = () => {
           <div
             className="reveal"
             style={{
-              background: 'linear-gradient(135deg, #3d2314 0%, #1a0e08 100%)',
+              background: 'linear-gradient(135deg, #0b2545 0%, #1e5aa8 100%)',
               borderRadius: '24px',
               padding: 'clamp(28px, 4vw, 48px)',
               display: 'flex',
@@ -251,6 +250,7 @@ export const HomePage = () => {
               gap: '24px',
               position: 'relative',
               overflow: 'hidden',
+              boxShadow: '0 16px 40px rgba(11,37,69,0.2)',
             }}
           >
             {/* Background shimmer */}
@@ -258,30 +258,30 @@ export const HomePage = () => {
               style={{
                 position: 'absolute', top: '-40%', right: '-10%',
                 width: '360px', height: '360px', borderRadius: '50%',
-                background: 'radial-gradient(circle, rgba(196,98,45,0.18) 0%, transparent 70%)',
+                background: 'radial-gradient(circle, rgba(56,189,248,0.2) 0%, transparent 70%)',
                 filter: 'blur(40px)',
                 pointerEvents: 'none',
               }}
             />
-            {/* Gold decorative line top */}
+            {/* Bright decorative line top */}
             <div
               style={{
                 position: 'absolute', top: 0, left: '40px', right: '40px',
                 height: '1px',
-                background: 'linear-gradient(90deg, transparent, rgba(194,155,100,0.4), transparent)',
+                background: 'linear-gradient(90deg, transparent, rgba(56,189,248,0.5), transparent)',
               }}
             />
 
             <div style={{ position: 'relative', zIndex: 1 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-                <ShieldCheck size={17} color="#d4784a" />
+                <ShieldCheck size={17} color="#4ade80" />
                 <span
                   style={{
                     fontSize: '11px', textTransform: 'uppercase',
-                    letterSpacing: '0.1em', color: '#dfc8a4', fontWeight: 700,
+                    letterSpacing: '0.1em', color: '#bae6fd', fontWeight: 700,
                   }}
                 >
-                  GMC Registered Medical Clinicians
+                  Board-Certified &amp; GMC Registered Clinicians
                 </span>
               </div>
               <h3
@@ -293,8 +293,8 @@ export const HomePage = () => {
               >
                 Ready to begin your personalized aesthetic journey?
               </h3>
-              <p style={{ color: '#dfc8a4', fontSize: '0.9rem', marginTop: '8px', lineHeight: 1.5 }}>
-                Book a no-obligation clinical consultation with one of our specialist physicians.
+              <p style={{ color: '#e0f2fe', fontSize: '0.9rem', marginTop: '8px', lineHeight: 1.5 }}>
+                Book a comprehensive clinical consultation at our Allen, Texas clinic.
               </p>
             </div>
 
@@ -302,28 +302,30 @@ export const HomePage = () => {
               onClick={openBookingModal}
               className="btn-luxury"
               style={{
-                background: 'linear-gradient(135deg, #c4622d 0%, #a84e22 100%)',
+                background: 'linear-gradient(135deg, #16a34a 0%, #15803d 100%)',
                 color: '#ffffff',
                 padding: '14px 32px',
                 borderRadius: '9999px',
                 fontWeight: 700,
                 fontSize: '14px',
-                boxShadow: '0 6px 24px rgba(196,98,45,0.4)',
+                boxShadow: '0 6px 24px rgba(22,163,74,0.4)',
+                border: 'none',
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
                 position: 'relative',
                 zIndex: 1,
                 whiteSpace: 'nowrap',
+                cursor: 'pointer',
                 transition: 'transform 0.25s ease, box-shadow 0.25s ease',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-3px)';
-                e.currentTarget.style.boxShadow = '0 10px 32px rgba(196,98,45,0.55)';
+                e.currentTarget.style.boxShadow = '0 10px 32px rgba(22,163,74,0.55)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 6px 24px rgba(196,98,45,0.4)';
+                e.currentTarget.style.boxShadow = '0 6px 24px rgba(22,163,74,0.4)';
               }}
             >
               <span>Book Doctor Consultation</span>

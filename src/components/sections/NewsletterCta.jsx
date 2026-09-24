@@ -18,7 +18,7 @@ export const NewsletterCta = () => {
   return (
     <section
       style={{
-        background: 'linear-gradient(155deg, #1a0e08 0%, #241409 40%, #2c1810 70%, #1a0e08 100%)',
+        background: 'linear-gradient(155deg, #0b2545 0%, #0f3460 35%, #0a4b3b 70%, #0b2545 100%)',
         color: '#ffffff',
         padding: 'clamp(64px, 10vw, 110px) 0',
         position: 'relative',
@@ -31,7 +31,7 @@ export const NewsletterCta = () => {
         style={{
           position: 'absolute', top: '-30%', left: '-10%',
           width: '500px', height: '500px', borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(196,98,45,0.14) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(30,90,168,0.18) 0%, transparent 70%)',
           filter: 'blur(70px)', pointerEvents: 'none',
         }}
       />
@@ -40,17 +40,17 @@ export const NewsletterCta = () => {
         style={{
           position: 'absolute', bottom: '-20%', right: '-5%',
           width: '400px', height: '400px', borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(194,155,100,0.12) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(22,163,74,0.15) 0%, transparent 70%)',
           filter: 'blur(60px)', pointerEvents: 'none',
         }}
       />
 
-      {/* Decorative top gold border */}
+      {/* Decorative top border */}
       <div
         style={{
           position: 'absolute', top: 0, left: '10%', right: '10%',
           height: '1px',
-          background: 'linear-gradient(90deg, transparent, rgba(194,155,100,0.5), rgba(196,98,45,0.4), rgba(194,155,100,0.5), transparent)',
+          background: 'linear-gradient(90deg, transparent, rgba(147,197,253,0.5), rgba(134,239,172,0.4), rgba(147,197,253,0.5), transparent)',
         }}
       />
 
@@ -71,22 +71,22 @@ export const NewsletterCta = () => {
           <div
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '7px',
-              background: 'rgba(196,98,45,0.16)',
-              border: '1px solid rgba(196,98,45,0.35)',
+              background: 'rgba(30,90,168,0.2)',
+              border: '1px solid rgba(147,197,253,0.35)',
               padding: '6px 18px', borderRadius: '9999px',
               fontSize: '10.5px', fontWeight: 800,
               letterSpacing: '0.12em', textTransform: 'uppercase',
-              color: '#dfc8a4', marginBottom: '24px',
+              color: '#bfdbfe', marginBottom: '24px',
             }}
           >
-            <Sparkles size={12} color="#c4622d" />
+            <Sparkles size={12} color="#60a5fa" />
             The Clinical Journal
           </div>
 
           {/* Stars trust line */}
           <div style={{ display: 'flex', justifyContent: 'center', gap: '3px', marginBottom: '16px' }}>
             {[...Array(5)].map((_, i) => (
-              <Star key={i} size={15} fill="#c29b64" color="#c29b64" />
+              <Star key={i} size={15} fill="#4ade80" color="#4ade80" />
             ))}
           </div>
 
@@ -105,7 +105,7 @@ export const NewsletterCta = () => {
             <span
               style={{
                 fontStyle: 'italic',
-                background: 'linear-gradient(135deg, #d4784a 0%, #c29b64 100%)',
+                background: 'linear-gradient(135deg, #60a5fa 0%, #4ade80 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -119,7 +119,7 @@ export const NewsletterCta = () => {
           <p
             style={{
               fontSize: '1rem',
-              color: '#b89e8c',
+              color: '#93c5fd',
               lineHeight: 1.68,
               marginBottom: '36px',
               maxWidth: '560px',
@@ -127,15 +127,15 @@ export const NewsletterCta = () => {
             }}
           >
             Subscribe to receive evidence-based aesthetic research, physician advice, private event invitations, and{' '}
-            <strong style={{ color: '#dfc8a4' }}>15% off</strong>{' '}
+            <strong style={{ color: '#4ade80' }}>15% off</strong>{' '}
             your first medical appointment or apothecary purchase.
           </p>
 
           {subscribed ? (
             <div
               style={{
-                background: 'rgba(196,98,45,0.16)',
-                border: '1px solid rgba(196,98,45,0.4)',
+                background: 'rgba(22,163,74,0.15)',
+                border: '1px solid rgba(74,222,128,0.4)',
                 padding: '20px 28px',
                 borderRadius: '18px',
                 display: 'inline-flex',
@@ -146,10 +146,10 @@ export const NewsletterCta = () => {
                 animation: 'fadeInScale 0.5s ease both',
               }}
             >
-              <CheckCircle2 size={24} color="#c4622d" />
+              <CheckCircle2 size={24} color="#4ade80" />
               <span style={{ fontSize: '1rem' }}>
                 Thank you! Your promo code{' '}
-                <strong style={{ color: '#dfc8a4', letterSpacing: '0.06em' }}>OASIS15</strong>{' '}
+                <strong style={{ color: '#4ade80', letterSpacing: '0.06em' }}>OASIS15</strong>{' '}
                 is now active.
               </span>
             </div>
@@ -172,7 +172,7 @@ export const NewsletterCta = () => {
                   borderRadius: '9999px',
                   padding: '1px',
                   background: focused
-                    ? 'linear-gradient(135deg, rgba(196,98,45,0.7), rgba(194,155,100,0.5))'
+                    ? 'linear-gradient(135deg, rgba(96,165,250,0.7), rgba(74,222,128,0.5))'
                     : 'rgba(255,255,255,0.12)',
                   transition: 'background 0.3s ease',
                 }}
@@ -180,12 +180,12 @@ export const NewsletterCta = () => {
                 <div
                   style={{
                     display: 'flex', alignItems: 'center', gap: '10px',
-                    background: 'rgba(44, 24, 16, 0.88)',
+                    background: 'rgba(11, 37, 69, 0.88)',
                     borderRadius: '9999px',
                     padding: '0 20px',
                   }}
                 >
-                  <Mail size={16} color="#dfc8a4" />
+                  <Mail size={16} color="#93c5fd" />
                   <input
                     type="email"
                     required
@@ -211,13 +211,13 @@ export const NewsletterCta = () => {
                 type="submit"
                 className="btn-luxury"
                 style={{
-                  background: 'linear-gradient(135deg, #c4622d 0%, #a84e22 100%)',
+                  background: 'linear-gradient(135deg, #1e5aa8 0%, #16a34a 100%)',
                   color: '#ffffff',
                   padding: '14px 32px',
                   borderRadius: '9999px',
                   fontWeight: 700,
                   fontSize: '14px',
-                  boxShadow: '0 6px 20px rgba(196,98,45,0.4)',
+                  boxShadow: '0 6px 20px rgba(30,90,168,0.35)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '7px',
@@ -226,11 +226,11 @@ export const NewsletterCta = () => {
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-2px)';
-                  e.currentTarget.style.boxShadow = '0 10px 28px rgba(196,98,45,0.55)';
+                  e.currentTarget.style.boxShadow = '0 10px 28px rgba(30,90,168,0.5)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(196,98,45,0.4)';
+                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(30,90,168,0.35)';
                 }}
               >
                 <span>Subscribe</span>
@@ -244,11 +244,11 @@ export const NewsletterCta = () => {
             <div
               style={{
                 display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '6px',
-                fontSize: '11.5px', color: '#8b5e3c',
+                fontSize: '11.5px', color: '#64748b',
               }}
             >
-              <Shield size={13} color="#c4622d" />
-              <span>Your data is 100% private. Unsubscribe anytime.</span>
+              <Shield size={13} color="#93c5fd" />
+              <span style={{ color: '#93c5fd' }}>Your data is 100% private. Unsubscribe anytime.</span>
             </div>
           )}
         </div>

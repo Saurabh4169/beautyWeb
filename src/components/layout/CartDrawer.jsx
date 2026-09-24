@@ -50,7 +50,7 @@ export const CartDrawer = () => {
           width: "100%",
           maxWidth: "480px",
           background: "#ffffff",
-          boxShadow: "-10px 0 40px rgba(0, 0, 0, 0.25)",
+          boxShadow: "-10px 0 40px rgba(11, 37, 69, 0.18)",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
@@ -63,15 +63,16 @@ export const CartDrawer = () => {
         <div
           style={{
             padding: "24px 28px",
-            borderBottom: "1px solid #ede5da",
+            borderBottom: "1px solid #e2e8f0",
             display: "flex",
             alignItems: "center",
-            justifyContent: "space-between"
+            justifyContent: "space-between",
+            background: "linear-gradient(135deg, #f0f7ff 0%, #f0fdf4 100%)"
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <ShoppingBag size={20} color="#c4622d" />
-            <h3 style={{ fontSize: "1.25rem", color: "#3d2314", fontFamily: "var(--font-serif-display)" }}>
+            <ShoppingBag size={20} color="#1e5aa8" />
+            <h3 style={{ fontSize: "1.25rem", color: "#0f2942", fontFamily: "var(--font-serif-display)" }}>
               Prescription Medical Bag
             </h3>
           </div>
@@ -81,11 +82,11 @@ export const CartDrawer = () => {
               width: "32px",
               height: "32px",
               borderRadius: "50%",
-              background: "#fdf0e8",
+              background: "#f0f7ff",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              color: "#6b4c38"
+              color: "#1e5aa8"
             }}
           >
             <X size={16} />
@@ -93,15 +94,15 @@ export const CartDrawer = () => {
         </div>
 
         {/* Free Shipping Progress Indicator */}
-        <div style={{ background: "#fcf6f0", padding: "12px 28px", borderBottom: "1px solid #ede5da", fontSize: "12px", color: "#6b4c38" }}>
+        <div style={{ background: "#f0fdf4", padding: "12px 28px", borderBottom: "1px solid #dcfce7", fontSize: "12px", color: "#166534" }}>
           {subtotal >= 100 ? (
-            <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "#c4622d", fontWeight: 600 }}>
-              <Sparkles size={14} color="#c4622d" />
+            <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "#16a34a", fontWeight: 600 }}>
+              <Sparkles size={14} color="#16a34a" />
               <span>You've unlocked Complimentary Express Courier Delivery!</span>
             </div>
           ) : (
-            <div>
-              Add <strong>£{(100 - subtotal).toFixed(2)}</strong> more to qualify for <strong>Free Express Delivery</strong>
+            <div style={{ color: "#334155" }}>
+              Add <strong style={{ color: "#1e5aa8" }}>£{(100 - subtotal).toFixed(2)}</strong> more to qualify for <strong style={{ color: "#16a34a" }}>Free Express Delivery</strong>
             </div>
           )}
         </div>
@@ -110,11 +111,11 @@ export const CartDrawer = () => {
         <div style={{ flex: 1, overflowY: "auto", padding: "24px 28px", display: "flex", flexDirection: "column", gap: "20px" }}>
           {cartItems.length === 0 ? (
             <div style={{ textAlign: "center", padding: "60px 20px" }}>
-              <ShoppingBag size={48} color="#dfc8a4" style={{ margin: "0 auto 16px auto" }} />
-              <h4 style={{ fontSize: "1.1rem", color: "#3d2314", marginBottom: "6px", fontFamily: "var(--font-serif-display)" }}>
+              <ShoppingBag size={48} color="#bfdbfe" style={{ margin: "0 auto 16px auto" }} />
+              <h4 style={{ fontSize: "1.1rem", color: "#0f2942", marginBottom: "6px", fontFamily: "var(--font-serif-display)" }}>
                 Your bag is empty
               </h4>
-              <p style={{ fontSize: "0.88rem", color: "#8b5e3c", marginBottom: "20px" }}>
+              <p style={{ fontSize: "0.88rem", color: "#475569", marginBottom: "20px" }}>
                 Explore our medical-grade skincare apothecary to add clinical formulations to your routine.
               </p>
               <Button variant="primary" size="sm" onClick={() => setIsCartOpen(false)}>
@@ -129,7 +130,7 @@ export const CartDrawer = () => {
                   display: "flex",
                   gap: "16px",
                   paddingBottom: "18px",
-                  borderBottom: "1px solid #f0e8df"
+                  borderBottom: "1px solid #e2e8f0"
                 }}
               >
                 <div
@@ -138,9 +139,9 @@ export const CartDrawer = () => {
                     height: "74px",
                     borderRadius: "12px",
                     overflow: "hidden",
-                    background: "#faf6f0",
+                    background: "#f0f7ff",
                     flexShrink: 0,
-                    border: "1px solid #ede5da"
+                    border: "1px solid #e2e8f0"
                   }}
                 >
                   <img src={item.image} alt={item.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
@@ -149,19 +150,19 @@ export const CartDrawer = () => {
                 <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                   <div>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
-                      <h4 style={{ fontSize: "0.95rem", color: "#3d2314", fontWeight: 600, lineHeight: 1.25 }}>
+                      <h4 style={{ fontSize: "0.95rem", color: "#0f2942", fontWeight: 600, lineHeight: 1.25 }}>
                         {item.name}
                       </h4>
                       <button
                         onClick={() => removeFromCart(item.id)}
-                        style={{ color: "#b89e8c", padding: "2px" }}
+                        style={{ color: "#94a3b8", padding: "2px" }}
                         title="Remove"
                       >
                         <Trash2 size={15} />
                       </button>
                     </div>
                     {item.subtitle && (
-                      <div style={{ fontSize: "11px", color: "#8b5e3c", marginTop: "2px" }}>
+                      <div style={{ fontSize: "11px", color: "#64748b", marginTop: "2px" }}>
                         {item.subtitle}
                       </div>
                     )}
@@ -172,30 +173,30 @@ export const CartDrawer = () => {
                       style={{
                         display: "flex",
                         alignItems: "center",
-                        border: "1px solid #e4d8cc",
+                        border: "1px solid #e2e8f0",
                         borderRadius: "9999px",
                         padding: "2px 8px",
-                        background: "#faf6f0"
+                        background: "#f0f7ff"
                       }}
                     >
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                        style={{ padding: "2px 6px", fontSize: "14px", color: "#3d2314" }}
+                        style={{ padding: "2px 6px", fontSize: "14px", color: "#0f2942" }}
                       >
                         -
                       </button>
-                      <span style={{ fontSize: "12px", fontWeight: 700, padding: "0 8px", color: "#3d2314" }}>
+                      <span style={{ fontSize: "12px", fontWeight: 700, padding: "0 8px", color: "#0f2942" }}>
                         {item.quantity}
                       </span>
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                        style={{ padding: "2px 6px", fontSize: "14px", color: "#3d2314" }}
+                        style={{ padding: "2px 6px", fontSize: "14px", color: "#0f2942" }}
                       >
                         +
                       </button>
                     </div>
 
-                    <div style={{ fontWeight: 700, fontSize: "0.95rem", color: "#3d2314" }}>
+                    <div style={{ fontWeight: 700, fontSize: "0.95rem", color: "#1e5aa8" }}>
                       £{(item.price * item.quantity).toFixed(2)}
                     </div>
                   </div>
@@ -205,13 +206,13 @@ export const CartDrawer = () => {
           )}
         </div>
 
-        {/* Drawer Footer (Subtotal, Promo, Checkout) */}
+        {/* Drawer Footer */}
         {cartItems.length > 0 && (
-          <div style={{ padding: "20px 28px", borderTop: "1px solid #ede5da", background: "#faf6f0" }}>
+          <div style={{ padding: "20px 28px", borderTop: "1px solid #e2e8f0", background: "#f8fafc" }}>
             {/* Promo Code Form */}
             <form onSubmit={handleApplyPromo} style={{ display: "flex", gap: "8px", marginBottom: "16px" }}>
               <div style={{ position: "relative", flex: 1 }}>
-                <Tag size={14} color="#8b5e3c" style={{ position: "absolute", left: "12px", top: "50%", transform: "translateY(-50%)" }} />
+                <Tag size={14} color="#64748b" style={{ position: "absolute", left: "12px", top: "50%", transform: "translateY(-50%)" }} />
                 <input
                   type="text"
                   placeholder="Promo Code (use OASIS15)"
@@ -221,7 +222,7 @@ export const CartDrawer = () => {
                     width: "100%",
                     padding: "9px 12px 9px 34px",
                     borderRadius: "8px",
-                    border: "1px solid #e4d8cc",
+                    border: "1px solid #e2e8f0",
                     fontSize: "12px",
                     textTransform: "uppercase"
                   }}
@@ -230,7 +231,7 @@ export const CartDrawer = () => {
               <button
                 type="submit"
                 style={{
-                  background: "#3d2314",
+                  background: "#1e5aa8",
                   color: "#ffffff",
                   padding: "0 16px",
                   borderRadius: "8px",
@@ -243,14 +244,14 @@ export const CartDrawer = () => {
             </form>
 
             {/* Calculations */}
-            <div style={{ display: "flex", flexDirection: "column", gap: "6px", fontSize: "13px", color: "#6b4c38", marginBottom: "14px" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "6px", fontSize: "13px", color: "#475569", marginBottom: "14px" }}>
               <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <span>Subtotal</span>
                 <span>£{rawSubtotal.toFixed(2)}</span>
               </div>
               {discountPercent > 0 && (
-                <div style={{ display: "flex", justifyContent: "space-between", color: "#c4622d", fontWeight: 600 }}>
-                  <span>Autumn Promo ({discountPercent}%)</span>
+                <div style={{ display: "flex", justifyContent: "space-between", color: "#16a34a", fontWeight: 600 }}>
+                  <span>Oasis Promo ({discountPercent}%)</span>
                   <span>-£{discountAmount.toFixed(2)}</span>
                 </div>
               )}
@@ -264,8 +265,8 @@ export const CartDrawer = () => {
                   justifyContent: "space-between",
                   fontSize: "1.1rem",
                   fontWeight: 700,
-                  color: "#3d2314",
-                  borderTop: "1px solid #ede5da",
+                  color: "#0f2942",
+                  borderTop: "1px solid #e2e8f0",
                   paddingTop: "8px",
                   marginTop: "4px"
                 }}
@@ -279,7 +280,7 @@ export const CartDrawer = () => {
             {checkoutComplete ? (
               <div
                 style={{
-                  background: "#c4622d",
+                  background: "linear-gradient(135deg, #16a34a 0%, #15803d 100%)",
                   color: "#ffffff",
                   padding: "14px",
                   borderRadius: "9999px",
@@ -299,20 +300,20 @@ export const CartDrawer = () => {
                 onClick={handleCheckout}
                 style={{
                   width: "100%",
-                  background: "linear-gradient(135deg, #c4622d 0%, #a84e22 100%)",
+                  background: "linear-gradient(135deg, #1e5aa8 0%, #0284c7 50%, #16a34a 100%)",
                   color: "#ffffff",
                   padding: "14px",
                   borderRadius: "9999px",
                   fontWeight: 700,
                   fontSize: "14px",
-                  boxShadow: "0 4px 16px rgba(196, 98, 45, 0.3)",
+                  boxShadow: "0 4px 18px rgba(30, 90, 168, 0.28)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   gap: "8px"
                 }}
               >
-                <ShieldCheck size={16} color="#fdf8f3" />
+                <ShieldCheck size={16} color="#ffffff" />
                 <span>Secure Clinical Checkout • £{finalTotal.toFixed(2)}</span>
               </button>
             )}

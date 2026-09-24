@@ -30,7 +30,7 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
     {
       category: 'Skin Intelligence',
       badge: 'Active Protocol',
-      accent: '#c4622d',
+      accent: '#1e5aa8',
       highlight: 'Clinical Hydrafacial + RF Microneedling',
       metrics: [
         { label: 'Deep Dermal Hydration', value: '94.8%', progress: 95, status: 'Optimal' },
@@ -41,7 +41,7 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
     {
       category: 'Body Sculpting',
       badge: 'Targeted Protocol',
-      accent: '#c29b64',
+      accent: '#16a34a',
       highlight: 'Lymphatic Drainage + RF Sculpting',
       metrics: [
         { label: 'Micro-Circulation Flow', value: '+88.4%', progress: 88, status: 'Enhanced' },
@@ -52,7 +52,7 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
     {
       category: 'Longevity & Calm',
       badge: 'Sensory Protocol',
-      accent: '#8b5e3c',
+      accent: '#0284c7',
       highlight: 'Cellular Restoration + Sensory Calm',
       metrics: [
         { label: 'Sensory Calm Score', value: '99.4%', progress: 99, status: 'Pure Bliss' },
@@ -72,10 +72,9 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
       style={{
         position: 'relative',
         width: '100%',
-        maxWidth: '540px',
+        maxWidth: '560px',
         margin: '0 auto',
-        transformStyle: 'preserve-3d',
-        paddingTop: '46px',
+        perspective: '1100px',
         ...tiltStyle,
       }}
       className="beauty-tech-hero-wrapper"
@@ -90,12 +89,12 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
           top: '0px',
           left: '4px',
           zIndex: 10,
-          background: 'rgba(255,255,255,0.92)',
+          background: 'rgba(255,255,255,0.96)',
           backdropFilter: 'blur(20px)',
           padding: '8px 16px',
           borderRadius: '16px',
-          border: '1px solid rgba(255,255,255,0.95)',
-          boxShadow: '0 12px 32px rgba(44,24,16,0.1), 0 0 16px rgba(196,98,45,0.1)',
+          border: '1px solid #e2e8f0',
+          boxShadow: '0 12px 32px rgba(15,41,66,0.08), 0 0 16px rgba(37,99,235,0.08)',
           display: 'flex',
           alignItems: 'center',
           gap: '10px',
@@ -105,17 +104,17 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
         <div
           style={{
             width: '32px', height: '32px', borderRadius: '10px',
-            background: 'linear-gradient(135deg, rgba(196,98,45,0.16), rgba(194,155,100,0.25))',
-            display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#c4622d',
+            background: 'linear-gradient(135deg, rgba(30,90,168,0.12), rgba(2,132,199,0.18))',
+            display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1e5aa8',
           }}
         >
           <Activity size={17} />
         </div>
         <div>
-          <div style={{ fontSize: '11.5px', fontWeight: 800, color: '#3d2314', letterSpacing: '0.02em' }}>
+          <div style={{ fontSize: '11.5px', fontWeight: 800, color: '#0f2942', letterSpacing: '0.02em' }}>
             Skin Diagnostics
           </div>
-          <div style={{ fontSize: '10px', color: '#8b5e3c', fontWeight: 600 }}>
+          <div style={{ fontSize: '10px', color: '#1e5aa8', fontWeight: 600 }}>
             Bespoke Dermal Analysis
           </div>
         </div>
@@ -129,18 +128,18 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
           top: '4px',
           right: '4px',
           zIndex: 10,
-          background: 'rgba(255,255,255,0.92)',
+          background: 'rgba(255,255,255,0.96)',
           backdropFilter: 'blur(20px)',
           padding: '8px 16px',
           borderRadius: '9999px',
-          border: '1px solid rgba(255,255,255,0.95)',
-          boxShadow: '0 12px 30px rgba(44,24,16,0.08), 0 0 14px rgba(194,155,100,0.12)',
+          border: '1px solid #e2e8f0',
+          boxShadow: '0 12px 30px rgba(15,41,66,0.08), 0 0 14px rgba(22,163,74,0.1)',
           display: 'flex', alignItems: 'center', gap: '8px',
-          fontSize: '11.5px', fontWeight: 700, color: '#3d2314',
+          fontSize: '11.5px', fontWeight: 700, color: '#0f2942',
           transform: 'translateZ(30px)',
         }}
       >
-        <ShieldCheck size={16} color="#c4622d" />
+        <ShieldCheck size={16} color="#16a34a" />
         <span>Clinical Care · Doctor-Led</span>
       </div>
 
@@ -150,7 +149,7 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
           position: 'absolute',
           top: '40px', left: '-10px', right: '-10px', bottom: '-10px',
           borderRadius: '32px',
-          background: 'radial-gradient(ellipse at 50% 50%, rgba(196,98,45,0.15) 0%, rgba(194,155,100,0.1) 60%, transparent 80%)',
+          background: 'radial-gradient(ellipse at 50% 50%, rgba(37,99,235,0.15) 0%, rgba(22,163,74,0.12) 60%, transparent 80%)',
           filter: 'blur(30px)',
           zIndex: 0, pointerEvents: 'none',
         }}
@@ -162,10 +161,10 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
           position: 'relative',
           zIndex: 2,
           borderRadius: '24px',
-          background: 'rgba(255,255,255,0.85)',
+          background: 'rgba(255,255,255,0.92)',
           backdropFilter: 'blur(24px)',
-          border: '1.5px solid rgba(255,255,255,0.95)',
-          boxShadow: '0 24px 60px rgba(44,24,16,0.1), 0 4px 20px rgba(196,98,45,0.06)',
+          border: '1.5px solid rgba(226,232,240,0.9)',
+          boxShadow: '0 24px 60px rgba(15,41,66,0.09), 0 4px 20px rgba(37,99,235,0.06)',
           padding: 'clamp(20px, 3.5vw, 28px)',
           transform: 'translateZ(20px)',
           transition: 'all 0.4s ease',
@@ -180,7 +179,7 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
             justifyContent: 'space-between',
             paddingBottom: '16px',
             marginBottom: '18px',
-            borderBottom: '1px solid rgba(61,35,20,0.08)',
+            borderBottom: '1px solid #e2e8f0',
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '9px' }}>
@@ -188,7 +187,7 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
               style={{
                 display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
                 width: '28px', height: '28px', borderRadius: '8px',
-                background: `${current.accent}18`, color: current.accent,
+                background: `${current.accent}15`, color: current.accent,
               }}
             >
               <Sparkles size={16} />
@@ -216,7 +215,7 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
                 />
                 Clinical Dermal Evaluation · Active
               </div>
-              <div style={{ fontSize: '13px', fontWeight: 800, color: '#3d2314' }}>
+              <div style={{ fontSize: '13px', fontWeight: 800, color: '#0f2942' }}>
                 {current.category}
               </div>
             </div>
@@ -244,14 +243,14 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
             display: 'flex',
             alignItems: 'center',
             gap: '8px',
-            background: 'rgba(253,248,243,0.9)',
-            border: '1px solid rgba(196,98,45,0.18)',
+            background: 'rgba(240,249,255,0.9)',
+            border: '1px solid #bae6fd',
             padding: '8px 14px',
             borderRadius: '12px',
             marginBottom: '20px',
             fontSize: '11px',
             fontWeight: 700,
-            color: '#5c3520',
+            color: '#0f2942',
           }}
         >
           <Sparkles size={13} color={current.accent} />
@@ -271,7 +270,7 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
                   fontSize: '11.5px',
                 }}
               >
-                <span style={{ color: '#6b4c38', fontWeight: 600 }}>{metric.label}</span>
+                <span style={{ color: '#334155', fontWeight: 600 }}>{metric.label}</span>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <span
                     style={{
@@ -279,13 +278,13 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
                       fontWeight: 700,
                       padding: '2px 7px',
                       borderRadius: '4px',
-                      background: 'rgba(196,98,45,0.09)',
-                      color: '#8b5e3c',
+                      background: '#dcfce7',
+                      color: '#15803d',
                     }}
                   >
                     {metric.status}
                   </span>
-                  <span style={{ fontWeight: 800, color: '#3d2314', minWidth: '42px', textAlign: 'right' }}>
+                  <span style={{ fontWeight: 800, color: '#0f2942', minWidth: '42px', textAlign: 'right' }}>
                     {metric.value}
                   </span>
                 </div>
@@ -296,7 +295,7 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
                 style={{
                   height: '6px',
                   borderRadius: '9999px',
-                  background: 'rgba(61,35,20,0.07)',
+                  background: '#e2e8f0',
                   overflow: 'hidden',
                   position: 'relative',
                 }}
@@ -306,7 +305,7 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
                     height: '100%',
                     width: `${metric.progress}%`,
                     borderRadius: '9999px',
-                    background: `linear-gradient(90deg, ${current.accent} 0%, #c29b64 100%)`,
+                    background: `linear-gradient(90deg, ${current.accent} 0%, #16a34a 100%)`,
                     transition: 'width 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
                     boxShadow: `0 0 10px ${current.accent}55`,
                   }}
@@ -323,14 +322,14 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
             alignItems: 'center',
             justifyContent: 'space-between',
             paddingTop: '14px',
-            borderTop: '1px solid rgba(61,35,20,0.08)',
+            borderTop: '1px solid #e2e8f0',
             fontSize: '11px',
-            color: '#8b5e3c',
+            color: '#475569',
             fontWeight: 600,
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <CheckCircle2 size={14} color="#c4622d" />
+            <CheckCircle2 size={14} color="#16a34a" />
             <span>GMC Certified Aesthetic Protocol</span>
           </div>
 
@@ -343,7 +342,7 @@ export const BeautyTechHeroVisual = ({ activeTabIndex = 0, onTabChange }) => {
                 display: 'inline-block',
               }}
             />
-            <span style={{ fontSize: '10px', fontWeight: 700, color: '#3d2314' }}>Dermal Verified</span>
+            <span style={{ fontSize: '10px', fontWeight: 700, color: '#0f2942' }}>Dermal Verified</span>
           </div>
         </div>
       </div>

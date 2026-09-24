@@ -19,7 +19,7 @@ function useCountUp(target, duration = 1800, start = false) {
   return count;
 }
 
-const StatItem = ({ value, suffix, label, started, divider, delay = 0 }) => {
+const StatItem = ({ value, suffix, label, started, divider }) => {
   const num = parseFloat(value.replace(/[^0-9.]/g, ''));
   const counted = useCountUp(num, 1800, started);
 
@@ -45,7 +45,7 @@ const StatItem = ({ value, suffix, label, started, divider, delay = 0 }) => {
             transform: 'translateY(-50%)',
             width: '1px',
             height: '40px',
-            background: 'linear-gradient(to bottom, transparent, #e4d8cc, transparent)',
+            background: 'linear-gradient(to bottom, transparent, #cbd5e1, transparent)',
           }}
         />
       )}
@@ -54,11 +54,10 @@ const StatItem = ({ value, suffix, label, started, divider, delay = 0 }) => {
         style={{
           fontSize: 'clamp(1.9rem, 3.2vw, 2.7rem)',
           fontWeight: 700,
-          color: 'var(--color-primary-dark)',
           fontFamily: 'var(--font-serif-display)',
           lineHeight: 1.05,
           letterSpacing: '-0.025em',
-          background: 'linear-gradient(135deg, #3d2314 0%, #5c3520 100%)',
+          background: 'linear-gradient(135deg, #1e5aa8 0%, #0284c7 50%, #16a34a 100%)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
           backgroundClip: 'text',
@@ -70,7 +69,7 @@ const StatItem = ({ value, suffix, label, started, divider, delay = 0 }) => {
       <div
         style={{
           fontSize: '11px',
-          color: '#8b5e3c',
+          color: '#334155',
           fontWeight: 700,
           textTransform: 'uppercase',
           letterSpacing: '0.07em',
@@ -87,10 +86,10 @@ const StatItem = ({ value, suffix, label, started, divider, delay = 0 }) => {
           width: '5px',
           height: '5px',
           borderRadius: '50%',
-          background: 'linear-gradient(135deg, #c4622d, #c29b64)',
+          background: 'linear-gradient(135deg, #1e5aa8, #16a34a)',
           display: 'block',
           marginTop: '2px',
-          opacity: 0.8,
+          opacity: 0.85,
         }}
       />
     </div>
@@ -126,21 +125,21 @@ export const StatsBar = () => {
     <section
       ref={ref}
       style={{
-        background: 'linear-gradient(to right, #fdf8f3, #ffffff, #fdf8f3)',
-        borderTop: '1px solid #ede5da',
-        borderBottom: '1px solid #ede5da',
+        background: 'linear-gradient(to right, #f0f7ff, #ffffff, #f0fdf4)',
+        borderTop: '1px solid #e2e8f0',
+        borderBottom: '1px solid #e2e8f0',
         padding: 'clamp(28px, 4vw, 48px) 0',
         position: 'relative',
         overflow: 'hidden',
       }}
     >
-      {/* Subtle ambient shimmer */}
+      {/* Subtle ambient sky shimmer */}
       <div
         style={{
           position: 'absolute',
           top: 0, left: '-20%',
           width: '60%', height: '100%',
-          background: 'radial-gradient(ellipse at center, rgba(196,98,45,0.06) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse at center, rgba(37,99,235,0.06) 0%, transparent 70%)',
           pointerEvents: 'none',
         }}
       />
@@ -162,7 +161,6 @@ export const StatsBar = () => {
               label={stat.label}
               started={started}
               divider={idx > 0}
-              delay={idx * 80}
             />
           ))}
         </div>

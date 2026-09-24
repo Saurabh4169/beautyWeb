@@ -10,7 +10,7 @@ function createSparkle(x, y) {
     y,
     size: Math.random() * 5 + 3,
     opacity: 1,
-    color: Math.random() > 0.5 ? '#c4622d' : '#c29b64',
+    color: Math.random() > 0.5 ? '#1e5aa8' : '#16a34a',
     vx: (Math.random() - 0.5) * 2.4,
     vy: (Math.random() - 0.5) * 2.4 - 1.2,
     life: 1,
@@ -216,13 +216,13 @@ export const CustomCursor = () => {
           marginTop: `-${ringSize / 2}px`,
           borderRadius: '50%',
           background: isHovered
-            ? 'radial-gradient(circle, rgba(196,98,45,0.12) 0%, rgba(194,155,100,0.08) 60%, transparent 100%)'
+            ? 'radial-gradient(circle, rgba(37,99,235,0.14) 0%, rgba(22,163,74,0.08) 60%, transparent 100%)'
             : 'transparent',
           border: isHovered
-            ? '1.5px solid rgba(196,98,45,0.75)'
-            : '1.2px solid rgba(61,35,20,0.3)',
+            ? '1.5px solid rgba(37,99,235,0.75)'
+            : '1.2px solid rgba(30,90,168,0.3)',
           boxShadow: isHovered
-            ? '0 0 20px rgba(196,98,45,0.35), inset 0 0 10px rgba(194,155,100,0.2)'
+            ? '0 0 20px rgba(37,99,235,0.35), inset 0 0 10px rgba(22,163,74,0.2)'
             : 'none',
           pointerEvents: 'none',
           zIndex: 99998,
@@ -243,7 +243,7 @@ export const CustomCursor = () => {
               fontWeight: 800,
               letterSpacing: '0.1em',
               textTransform: 'uppercase',
-              color: '#3d2314',
+              color: '#0f2942',
               whiteSpace: 'nowrap',
               userSelect: 'none',
             }}
@@ -266,11 +266,11 @@ export const CustomCursor = () => {
           marginTop: `-${dotSize / 2}px`,
           borderRadius: '50%',
           background: isHovered
-            ? 'linear-gradient(135deg, #c4622d 0%, #c29b64 100%)'
-            : '#3d2314',
+            ? 'linear-gradient(135deg, #1e5aa8 0%, #16a34a 100%)'
+            : '#1e5aa8',
           boxShadow: isHovered
-            ? '0 0 14px rgba(196,98,45,0.9)'
-            : '0 0 5px rgba(61,35,20,0.5)',
+            ? '0 0 14px rgba(37,99,235,0.9)'
+            : '0 0 5px rgba(30,90,168,0.5)',
           pointerEvents: 'none',
           zIndex: 99999,
           opacity: isVisible ? 1 : 0,

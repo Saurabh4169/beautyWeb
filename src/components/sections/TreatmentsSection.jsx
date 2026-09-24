@@ -14,7 +14,7 @@ export const TreatmentsSection = () => {
     : treatmentsData.filter(t => t.category === selectedCategory || (selectedCategory === "Skin Rejuvenation" && t.category === "Skin Rejuvenation"));
 
   return (
-    <section id="treatments" className="section-padding" style={{ background: "#fdf8f3" }}>
+    <section id="treatments" className="section-padding" style={{ background: "linear-gradient(180deg, #ffffff 0%, #f0f7ff 50%, #ffffff 100%)" }}>
       <div className="container">
         {/* Section Header */}
         <SectionHeader
@@ -41,15 +41,16 @@ export const TreatmentsSection = () => {
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 style={{
-                  padding: "8px 16px",
+                  padding: "9px 20px",
                   borderRadius: "9999px",
                   fontSize: "12.5px",
-                  fontWeight: 600,
+                  fontWeight: 700,
+                  cursor: "pointer",
                   transition: "all 0.25s ease",
-                  background: isActive ? "#3d2314" : "#ffffff",
-                  color: isActive ? "#ffffff" : "#6b4c38",
-                  border: isActive ? "1px solid #3d2314" : "1px solid #ede5da",
-                  boxShadow: isActive ? "0 4px 14px rgba(44, 24, 16, 0.22)" : "0 2px 6px rgba(44,24,16,0.03)"
+                  background: isActive ? "#1e5aa8" : "#ffffff",
+                  color: isActive ? "#ffffff" : "#334155",
+                  border: isActive ? "1px solid #1e5aa8" : "1px solid #e2e8f0",
+                  boxShadow: isActive ? "0 4px 14px rgba(30, 90, 168, 0.25)" : "0 2px 6px rgba(15,41,66,0.03)"
                 }}
               >
                 {cat}
@@ -75,39 +76,40 @@ export const TreatmentsSection = () => {
         {/* Bottom Diagnostic Banner */}
         <div
           style={{
-            background: "linear-gradient(135deg, #fdf0e8 0%, #fdf8f3 100%)",
+            background: "linear-gradient(135deg, #f0f7ff 0%, #f0fdf4 100%)",
             borderRadius: "18px",
-            border: "1px solid #ede5da",
+            border: "1px solid #bae6fd",
             padding: "clamp(20px, 3vw, 32px)",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
             flexWrap: "wrap",
-            gap: "16px"
+            gap: "16px",
+            boxShadow: "0 6px 20px rgba(15,41,66,0.04)"
           }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
             <div
               style={{
-                width: "40px",
-                height: "40px",
+                width: "44px",
+                height: "44px",
                 borderRadius: "50%",
-                background: "#3d2314",
+                background: "linear-gradient(135deg, #1e5aa8, #16a34a)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                color: "#d4784a",
+                color: "#ffffff",
                 flexShrink: 0
               }}
             >
-              <Sparkles size={18} />
+              <Sparkles size={20} />
             </div>
             <div>
-              <h4 style={{ fontSize: "1.1rem", color: "#3d2314", fontFamily: "var(--font-serif-display)" }}>
+              <h4 style={{ fontSize: "1.15rem", color: "#0f2942", fontFamily: "var(--font-serif-display)", marginBottom: "3px" }}>
                 Unsure which protocol fits your skin needs?
               </h4>
-              <p style={{ fontSize: "0.85rem", color: "#8b5e3c", margin: 0 }}>
-                Schedule a 3D VISIA deep dermal scan and diagnostic doctor consultation.
+              <p style={{ fontSize: "0.85rem", color: "#334155", margin: 0 }}>
+                Schedule a 3D VISIA deep dermal scan and diagnostic doctor consultation at our Allen, TX clinic.
               </p>
             </div>
           </div>
@@ -115,19 +117,28 @@ export const TreatmentsSection = () => {
           <button
             onClick={() => openBookingModal()}
             style={{
-              background: "#3d2314",
+              background: "linear-gradient(135deg, #1e5aa8 0%, #16a34a 100%)",
               color: "#ffffff",
-              padding: "10px 20px",
+              padding: "11px 22px",
               borderRadius: "9999px",
               fontSize: "13px",
-              fontWeight: 600,
+              fontWeight: 700,
               display: "flex",
               alignItems: "center",
               gap: "6px",
-              transition: "background 0.2s ease"
+              border: "none",
+              cursor: "pointer",
+              boxShadow: "0 4px 14px rgba(30,90,168,0.3)",
+              transition: "transform 0.2s ease, box-shadow 0.2s ease"
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.background = '#c4622d'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.background = '#3d2314'; }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-2px)';
+              e.currentTarget.style.boxShadow = '0 6px 20px rgba(30,90,168,0.45)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 4px 14px rgba(30,90,168,0.3)';
+            }}
           >
             <span>Book Diagnostic Scan</span>
             <ArrowRight size={14} />

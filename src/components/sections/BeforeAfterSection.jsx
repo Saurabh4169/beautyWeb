@@ -6,14 +6,14 @@ import { ShieldCheck, Camera, Sparkles, Award } from 'lucide-react';
 
 export const BeforeAfterSection = () => {
   const trustPoints = [
-    { icon: <Camera size={14} color="#c4622d" />, text: "Cross-Polarized Lighting Standards" },
-    { icon: <ShieldCheck size={14} color="#c4622d" />, text: "100% Raw & Unretouched Documentation" },
-    { icon: <Award size={14} color="#c4622d" />, text: "Doctor-Administered Protocols" },
-    { icon: <Sparkles size={14} color="#c4622d" />, text: "Verified Allen, TX Patient Outcomes" }
+    { icon: <Camera size={14} color="#1e5aa8" />, text: "Cross-Polarized Lighting Standards" },
+    { icon: <ShieldCheck size={14} color="#16a34a" />, text: "100% Raw & Unretouched Documentation" },
+    { icon: <Award size={14} color="#1e5aa8" />, text: "Doctor-Administered Protocols" },
+    { icon: <Sparkles size={14} color="#16a34a" />, text: "Verified Allen, TX Patient Outcomes" }
   ];
 
   return (
-    <section id="before-after" className="section-padding" style={{ background: "#fdf8f3", position: "relative" }}>
+    <section id="before-after" className="section-padding" style={{ background: "linear-gradient(180deg, #f8fafc 0%, #f0f7ff 50%, #ffffff 100%)", position: "relative" }}>
       <div className="container">
         <SectionHeader
           badge="CLINICAL RESULTS GALLERY"
@@ -39,13 +39,13 @@ export const BeforeAfterSection = () => {
                 alignItems: "center",
                 gap: "8px",
                 background: "#ffffff",
-                padding: "7px 16px",
+                padding: "8px 18px",
                 borderRadius: "9999px",
                 fontSize: "12px",
-                color: "#6b4c38",
+                color: "#334155",
                 fontWeight: 600,
-                border: "1px solid #ede5da",
-                boxShadow: "0 2px 6px rgba(44, 24, 16, 0.03)"
+                border: "1px solid #e2e8f0",
+                boxShadow: "0 2px 8px rgba(15, 41, 66, 0.04)"
               }}
             >
               {item.icon}
@@ -59,4 +59,3 @@ export const BeforeAfterSection = () => {
     </section>
   );
 };
-

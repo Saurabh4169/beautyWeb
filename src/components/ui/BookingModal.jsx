@@ -35,6 +35,28 @@ export const BookingModal = () => {
     closeBookingModal();
   };
 
+  /* Shared input style */
+  const inputStyle = {
+    width: "100%",
+    padding: "11px 12px",
+    borderRadius: "10px",
+    border: "1px solid #e2e8f0",
+    background: "#ffffff",
+    fontSize: "13.5px",
+    color: "#0f2942",
+    outline: "none"
+  };
+
+  const labelStyle = {
+    display: "block",
+    fontSize: "11.5px",
+    fontWeight: 700,
+    textTransform: "uppercase",
+    letterSpacing: "0.05em",
+    color: "#1e5aa8",
+    marginBottom: "5px"
+  };
+
   return (
     <div className="modal-overlay" onClick={handleClose}>
       <div
@@ -46,12 +68,13 @@ export const BookingModal = () => {
           maxHeight: "90vh",
           overflowY: "auto",
           position: "relative",
-          boxShadow: "0 20px 60px rgba(0, 0, 0, 0.3)",
+          boxShadow: "0 20px 60px rgba(11, 37, 69, 0.22)",
           padding: "clamp(20px, 4vw, 36px)",
           animation: "fadeIn 0.3s ease"
         }}
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Close button */}
         <button
           onClick={handleClose}
           aria-label="Close modal"
@@ -62,11 +85,11 @@ export const BookingModal = () => {
             width: "34px",
             height: "34px",
             borderRadius: "50%",
-            background: "#fdf0e8",
+            background: "#f0f7ff",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            color: "#6b4c38"
+            color: "#1e5aa8"
           }}
         >
           <X size={16} />
@@ -79,28 +102,28 @@ export const BookingModal = () => {
                 width: "64px",
                 height: "64px",
                 borderRadius: "50%",
-                background: "#fdf0e8",
+                background: "#f0fdf4",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 margin: "0 auto 16px auto"
               }}
             >
-              <CheckCircle2 size={36} color="#c4622d" />
+              <CheckCircle2 size={36} color="#16a34a" />
             </div>
 
-            <h3 style={{ fontSize: "1.6rem", color: "#3d2314", fontFamily: "var(--font-serif-display)", marginBottom: "8px" }}>
+            <h3 style={{ fontSize: "1.6rem", color: "#0f2942", fontFamily: "var(--font-serif-display)", marginBottom: "8px" }}>
               Consultation Reserved
             </h3>
 
-            <p style={{ color: "#6b4c38", fontSize: "0.92rem", maxWidth: "420px", margin: "0 auto 20px auto", lineHeight: 1.55 }}>
+            <p style={{ color: "#475569", fontSize: "0.92rem", maxWidth: "420px", margin: "0 auto 20px auto", lineHeight: 1.55 }}>
               Thank you, <strong>{formData.name || "Valued Client"}</strong>. Your clinical appointment has been scheduled at our <strong>{formData.location}</strong> on <strong>{formData.date} at {formData.time}</strong>.
             </p>
 
             <button
               onClick={handleClose}
               style={{
-                background: "#3d2314",
+                background: "linear-gradient(135deg, #1e5aa8 0%, #16a34a 100%)",
                 color: "#ffffff",
                 padding: "12px 28px",
                 borderRadius: "9999px",
@@ -113,36 +136,30 @@ export const BookingModal = () => {
           </div>
         ) : (
           <div>
+            {/* Modal Header */}
             <div style={{ marginBottom: "20px", paddingRight: "28px" }}>
-              <span style={{ fontSize: "10.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#c4622d" }}>
+              <span style={{ fontSize: "10.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#16a34a" }}>
                 DOCTOR-LED AESTHETIC CARE
               </span>
-              <h2 style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.85rem)", color: "#3d2314", fontFamily: "var(--font-serif-display)", marginTop: "2px" }}>
+              <h2 style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.85rem)", color: "#0f2942", fontFamily: "var(--font-serif-display)", marginTop: "2px" }}>
                 Book Your Clinical Consultation
               </h2>
-              <p style={{ fontSize: "0.88rem", color: "#8b5e3c", margin: 0 }}>
+              <p style={{ fontSize: "0.88rem", color: "#475569", margin: 0 }}>
                 Select your preferred clinic, specialist, and sensory preferences.
               </p>
             </div>
 
+            {/* Top accent bar */}
+            <div style={{ height: "3px", borderRadius: "9999px", background: "linear-gradient(90deg, #1e5aa8, #16a34a)", marginBottom: "24px" }} />
+
             <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               {/* Treatment Select */}
               <div>
-                <label style={{ display: "block", fontSize: "11.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#3d2314", marginBottom: "5px" }}>
-                  Selected Treatment / Focus
-                </label>
+                <label style={labelStyle}>Selected Treatment / Focus</label>
                 <select
                   value={formData.treatmentId}
                   onChange={(e) => setFormData({ ...formData, treatmentId: e.target.value })}
-                  style={{
-                    width: "100%",
-                    padding: "11px 12px",
-                    borderRadius: "10px",
-                    border: "1px solid #ede5da",
-                    background: "#ffffff",
-                    fontSize: "13.5px",
-                    color: "#3d2314"
-                  }}
+                  style={inputStyle}
                 >
                   <option value="general-consult">Comprehensive Doctor Diagnostic Consultation</option>
                   {treatmentsData.map(t => (
@@ -160,21 +177,11 @@ export const BookingModal = () => {
                 }}
               >
                 <div>
-                  <label style={{ display: "block", fontSize: "11.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#3d2314", marginBottom: "5px" }}>
-                    Clinic Location
-                  </label>
+                  <label style={labelStyle}>Clinic Location</label>
                   <select
                     value={formData.location}
                     onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                    style={{
-                      width: "100%",
-                      padding: "11px 12px",
-                      borderRadius: "10px",
-                      border: "1px solid #ede5da",
-                      background: "#ffffff",
-                      fontSize: "13px",
-                      color: "#3d2314"
-                    }}
+                    style={inputStyle}
                   >
                     <option>Allen, Texas Clinic (333 East Bethany Dr)</option>
                     <option>Harley Street, London (Flagship)</option>
@@ -183,21 +190,11 @@ export const BookingModal = () => {
                 </div>
 
                 <div>
-                  <label style={{ display: "block", fontSize: "11.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#3d2314", marginBottom: "5px" }}>
-                    Suite Preference
-                  </label>
+                  <label style={labelStyle}>Suite Preference</label>
                   <select
                     value={formData.suiteType}
                     onChange={(e) => setFormData({ ...formData, suiteType: e.target.value })}
-                    style={{
-                      width: "100%",
-                      padding: "11px 12px",
-                      borderRadius: "10px",
-                      border: "1px solid #ede5da",
-                      background: "#ffffff",
-                      fontSize: "13px",
-                      color: "#3d2314"
-                    }}
+                    style={inputStyle}
                   >
                     <option>Standard Luxury Suite</option>
                     <option>🌿 Sensory-Calm Suite (Low-Stimulation)</option>
@@ -215,41 +212,22 @@ export const BookingModal = () => {
                 }}
               >
                 <div>
-                  <label style={{ display: "block", fontSize: "11.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#3d2314", marginBottom: "5px" }}>
-                    Preferred Date
-                  </label>
+                  <label style={labelStyle}>Preferred Date</label>
                   <input
                     type="date"
                     required
                     value={formData.date}
                     onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                    style={{
-                      width: "100%",
-                      padding: "11px 12px",
-                      borderRadius: "10px",
-                      border: "1px solid #ede5da",
-                      fontSize: "13px",
-                      color: "#3d2314"
-                    }}
+                    style={inputStyle}
                   />
                 </div>
 
                 <div>
-                  <label style={{ display: "block", fontSize: "11.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#3d2314", marginBottom: "5px" }}>
-                    Time Slot
-                  </label>
+                  <label style={labelStyle}>Time Slot</label>
                   <select
                     value={formData.time}
                     onChange={(e) => setFormData({ ...formData, time: e.target.value })}
-                    style={{
-                      width: "100%",
-                      padding: "11px 12px",
-                      borderRadius: "10px",
-                      border: "1px solid #ede5da",
-                      background: "#ffffff",
-                      fontSize: "13px",
-                      color: "#3d2314"
-                    }}
+                    style={inputStyle}
                   >
                     <option>09:30 AM</option>
                     <option>11:30 AM</option>
@@ -269,66 +247,39 @@ export const BookingModal = () => {
                 }}
               >
                 <div>
-                  <label style={{ display: "block", fontSize: "11.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#3d2314", marginBottom: "5px" }}>
-                    Full Name
-                  </label>
+                  <label style={labelStyle}>Full Name</label>
                   <input
                     type="text"
                     required
                     placeholder="e.g. Eleanor Vance"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    style={{
-                      width: "100%",
-                      padding: "11px 12px",
-                      borderRadius: "10px",
-                      border: "1px solid #ede5da",
-                      color: "#3d2314",
-                      fontSize: "13px"
-                    }}
+                    style={inputStyle}
                   />
                 </div>
 
                 <div>
-                  <label style={{ display: "block", fontSize: "11.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#3d2314", marginBottom: "5px" }}>
-                    Phone Number
-                  </label>
+                  <label style={labelStyle}>Phone Number</label>
                   <input
                     type="tel"
                     required
                     placeholder="(214) 500-7825"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    style={{
-                      width: "100%",
-                      padding: "11px 12px",
-                      borderRadius: "10px",
-                      border: "1px solid #ede5da",
-                      color: "#3d2314",
-                      fontSize: "13px"
-                    }}
+                    style={inputStyle}
                   />
                 </div>
               </div>
 
               <div>
-                <label style={{ display: "block", fontSize: "11.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#3d2314", marginBottom: "5px" }}>
-                  Email Address
-                </label>
+                <label style={labelStyle}>Email Address</label>
                 <input
                   type="email"
                   required
                   placeholder="name@example.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  style={{
-                    width: "100%",
-                    padding: "11px 12px",
-                    borderRadius: "10px",
-                    border: "1px solid #ede5da",
-                    color: "#3d2314",
-                    fontSize: "13px"
-                  }}
+                  style={inputStyle}
                 />
               </div>
 
@@ -336,13 +287,13 @@ export const BookingModal = () => {
               <button
                 type="submit"
                 style={{
-                  background: "linear-gradient(135deg, #c4622d 0%, #a84e22 100%)",
+                  background: "linear-gradient(135deg, #1e5aa8 0%, #0284c7 50%, #16a34a 100%)",
                   color: "#ffffff",
                   padding: "14px",
                   borderRadius: "9999px",
                   fontWeight: 700,
                   fontSize: "14px",
-                  boxShadow: "0 4px 16px rgba(196, 98, 45, 0.3)",
+                  boxShadow: "0 4px 18px rgba(30, 90, 168, 0.3)",
                   marginTop: "4px",
                   display: "flex",
                   alignItems: "center",
@@ -350,7 +301,7 @@ export const BookingModal = () => {
                   gap: "8px"
                 }}
               >
-                <ShieldCheck size={17} color="#fdf8f3" />
+                <ShieldCheck size={17} color="#ffffff" />
                 <span>Confirm & Reserve Consultation</span>
               </button>
             </form>

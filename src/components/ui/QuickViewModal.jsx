@@ -27,7 +27,7 @@ export const QuickViewModal = () => {
           maxHeight: "90vh",
           overflowY: "auto",
           position: "relative",
-          boxShadow: "0 25px 60px rgba(0, 0, 0, 0.3)",
+          boxShadow: "0 25px 60px rgba(11, 37, 69, 0.2)",
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
           gap: "32px",
@@ -45,11 +45,11 @@ export const QuickViewModal = () => {
             width: "36px",
             height: "36px",
             borderRadius: "50%",
-            background: "#fdf0e8",
+            background: "#f0f7ff",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            color: "#6b4c38",
+            color: "#1e5aa8",
             transition: "all 0.2s"
           }}
         >
@@ -61,8 +61,8 @@ export const QuickViewModal = () => {
           style={{
             borderRadius: "18px",
             overflow: "hidden",
-            background: "#faf6f0",
-            border: "1px solid #ede5da",
+            background: "#f0f7ff",
+            border: "1px solid #e2e8f0",
             height: "100%",
             minHeight: "300px"
           }}
@@ -79,17 +79,17 @@ export const QuickViewModal = () => {
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
               {quickViewProduct.badge && (
-                <Badge variant={quickViewProduct.badgeColor === "gold" ? "gold" : "emerald"}>
+                <Badge variant={quickViewProduct.badgeColor === "gold" ? "sky" : "emerald"}>
                   {quickViewProduct.badge}
                 </Badge>
               )}
-              <span style={{ fontSize: "12px", color: "#8b5e3c" }}>{quickViewProduct.category}</span>
+              <span style={{ fontSize: "12px", color: "#475569" }}>{quickViewProduct.category}</span>
             </div>
 
             <h2
               style={{
                 fontSize: "1.65rem",
-                color: "#3d2314",
+                color: "#0f2942",
                 fontFamily: "var(--font-serif-display)",
                 lineHeight: 1.25,
                 marginBottom: "8px"
@@ -98,30 +98,30 @@ export const QuickViewModal = () => {
               {quickViewProduct.name}
             </h2>
 
-            <div style={{ fontSize: "13px", color: "#8b5e3c", fontWeight: 600, marginBottom: "14px" }}>
+            <div style={{ fontSize: "13px", color: "#1e5aa8", fontWeight: 600, marginBottom: "14px" }}>
               {quickViewProduct.subtitle}
             </div>
 
             <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "16px" }}>
-              <div style={{ display: "flex", gap: "2px", color: "#d4784a" }}>
+              <div style={{ display: "flex", gap: "2px", color: "#16a34a" }}>
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={14} fill="#d4784a" color="#d4784a" />
+                  <Star key={i} size={14} fill="#16a34a" color="#16a34a" />
                 ))}
               </div>
-              <span style={{ fontSize: "13px", fontWeight: 700, color: "#3d2314" }}>{quickViewProduct.rating}</span>
-              <span style={{ fontSize: "13px", color: "#8b5e3c" }}>({quickViewProduct.reviewCount} clinical reviews)</span>
+              <span style={{ fontSize: "13px", fontWeight: 700, color: "#0f2942" }}>{quickViewProduct.rating}</span>
+              <span style={{ fontSize: "13px", color: "#475569" }}>({quickViewProduct.reviewCount} clinical reviews)</span>
             </div>
 
-            <div style={{ fontSize: "1.6rem", fontWeight: 700, color: "#3d2314", marginBottom: "18px" }}>
+            <div style={{ fontSize: "1.6rem", fontWeight: 700, color: "#1e5aa8", marginBottom: "18px" }}>
               £{quickViewProduct.price}.00
             </div>
 
-            <p style={{ fontSize: "0.92rem", color: "#6b4c38", lineHeight: 1.6, marginBottom: "20px" }}>
+            <p style={{ fontSize: "0.92rem", color: "#334155", lineHeight: 1.6, marginBottom: "20px" }}>
               {quickViewProduct.description}
             </p>
 
-            <div style={{ background: "#fdf8f3", border: "1px solid #ede5da", borderRadius: "12px", padding: "14px", marginBottom: "24px", fontSize: "12px", color: "#6b4c38" }}>
-              <strong style={{ color: "#3d2314" }}>Key Actives:</strong> {quickViewProduct.ingredients}
+            <div style={{ background: "#f0fdf4", border: "1px solid #dcfce7", borderRadius: "12px", padding: "14px", marginBottom: "24px", fontSize: "12px", color: "#166534" }}>
+              <strong style={{ color: "#15803d" }}>Key Actives:</strong> {quickViewProduct.ingredients}
             </div>
           </div>
 
@@ -131,24 +131,24 @@ export const QuickViewModal = () => {
               style={{
                 display: "flex",
                 alignItems: "center",
-                border: "1px solid #ede5da",
+                border: "1px solid #e2e8f0",
                 borderRadius: "9999px",
                 padding: "4px 12px",
-                background: "#fdf8f3"
+                background: "#f0f7ff"
               }}
             >
               <button
                 onClick={() => setQty(Math.max(1, qty - 1))}
-                style={{ padding: "4px 8px", fontSize: "16px", color: "#3d2314", fontWeight: 700 }}
+                style={{ padding: "4px 8px", fontSize: "16px", color: "#0f2942", fontWeight: 700 }}
               >
                 -
               </button>
-              <span style={{ padding: "0 10px", fontSize: "14px", fontWeight: 700, color: "#3d2314" }}>
+              <span style={{ padding: "0 10px", fontSize: "14px", fontWeight: 700, color: "#0f2942" }}>
                 {qty}
               </span>
               <button
                 onClick={() => setQty(qty + 1)}
-                style={{ padding: "4px 8px", fontSize: "16px", color: "#3d2314", fontWeight: 700 }}
+                style={{ padding: "4px 8px", fontSize: "16px", color: "#0f2942", fontWeight: 700 }}
               >
                 +
               </button>
@@ -162,13 +162,13 @@ export const QuickViewModal = () => {
                 alignItems: "center",
                 justifyContent: "center",
                 gap: "8px",
-                background: "linear-gradient(135deg, #c4622d 0%, #a84e22 100%)",
+                background: "linear-gradient(135deg, #1e5aa8 0%, #16a34a 100%)",
                 color: "#ffffff",
                 padding: "13px 24px",
                 borderRadius: "9999px",
                 fontWeight: 600,
                 fontSize: "14px",
-                boxShadow: "0 4px 18px rgba(196, 98, 45, 0.3)"
+                boxShadow: "0 4px 18px rgba(30, 90, 168, 0.28)"
               }}
             >
               <ShoppingBag size={16} />

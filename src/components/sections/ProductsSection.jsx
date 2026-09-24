@@ -12,7 +12,7 @@ export const ProductsSection = () => {
     : productsData.filter(p => p.category === activeCategory);
 
   return (
-    <section id="products" className="section-padding" style={{ background: "#fdf8f3" }}>
+    <section id="products" className="section-padding" style={{ background: "linear-gradient(180deg, #f8fafc 0%, #f0fdf4 50%, #f0f7ff 100%)" }}>
       <div className="container">
         {/* Header */}
         <SectionHeader
@@ -39,15 +39,15 @@ export const ProductsSection = () => {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 style={{
-                  padding: "7px 16px",
+                  padding: "8px 18px",
                   borderRadius: "9999px",
                   fontSize: "12.5px",
                   fontWeight: 600,
                   transition: "all 0.25s ease",
-                  background: isActive ? "#3d2314" : "#ffffff",
-                  color: isActive ? "#ffffff" : "#6b4c38",
-                  border: isActive ? "1px solid #3d2314" : "1px solid #ede5da",
-                  boxShadow: isActive ? "0 4px 12px rgba(44, 24, 16, 0.22)" : "none"
+                  background: isActive ? "linear-gradient(135deg, #1e5aa8 0%, #0f3460 100%)" : "#ffffff",
+                  color: isActive ? "#ffffff" : "#1e3a5f",
+                  border: isActive ? "1px solid #1e5aa8" : "1px solid #e2e8f0",
+                  boxShadow: isActive ? "0 4px 14px rgba(30, 90, 168, 0.25)" : "0 1px 3px rgba(0,0,0,0.03)"
                 }}
               >
                 {cat}
@@ -75,7 +75,8 @@ export const ProductsSection = () => {
           style={{
             background: "#ffffff",
             borderRadius: "18px",
-            border: "1px solid #ede5da",
+            border: "1px solid #e2e8f0",
+            boxShadow: "0 4px 20px rgba(30, 90, 168, 0.05)",
             padding: "clamp(20px, 3vw, 28px)",
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 200px), 1fr))",
@@ -83,26 +84,26 @@ export const ProductsSection = () => {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <ShieldCheck size={22} color="#c4622d" style={{ flexShrink: 0 }} />
+            <ShieldCheck size={22} color="#16a34a" style={{ flexShrink: 0 }} />
             <div>
-              <strong style={{ fontSize: "13px", color: "#3d2314", display: "block" }}>100% Authentic Formulations</strong>
-              <span style={{ fontSize: "11.5px", color: "#8b5e3c" }}>Prescription-strength certified</span>
+              <strong style={{ fontSize: "13px", color: "#0f2942", display: "block" }}>100% Authentic Formulations</strong>
+              <span style={{ fontSize: "11.5px", color: "#475569" }}>Prescription-strength certified</span>
             </div>
           </div>
 
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <Truck size={22} color="#c4622d" style={{ flexShrink: 0 }} />
+            <Truck size={22} color="#1e5aa8" style={{ flexShrink: 0 }} />
             <div>
-              <strong style={{ fontSize: "13px", color: "#3d2314", display: "block" }}>Complimentary Delivery</strong>
-              <span style={{ fontSize: "11.5px", color: "#8b5e3c" }}>On orders above £100 / $125</span>
+              <strong style={{ fontSize: "13px", color: "#0f2942", display: "block" }}>Complimentary Delivery</strong>
+              <span style={{ fontSize: "11.5px", color: "#475569" }}>On orders above £100 / $125</span>
             </div>
           </div>
 
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <Sparkles size={22} color="#c4622d" style={{ flexShrink: 0 }} />
+            <Sparkles size={22} color="#16a34a" style={{ flexShrink: 0 }} />
             <div>
-              <strong style={{ fontSize: "13px", color: "#3d2314", display: "block" }}>Personalized Regimen Support</strong>
-              <span style={{ fontSize: "11.5px", color: "#8b5e3c" }}>Direct guidance from skin nurses</span>
+              <strong style={{ fontSize: "13px", color: "#0f2942", display: "block" }}>Personalized Regimen Support</strong>
+              <span style={{ fontSize: "11.5px", color: "#475569" }}>Direct guidance from skin nurses</span>
             </div>
           </div>
         </div>

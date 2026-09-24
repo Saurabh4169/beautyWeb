@@ -92,10 +92,10 @@ export const BeforeAfterSlider = ({ cases }) => {
                 fontWeight: 700,
                 cursor: 'pointer',
                 transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                background: isActive ? '#3d2314' : '#ffffff',
-                color: isActive ? '#ffffff' : '#6b4c38',
-                border: isActive ? '1px solid #3d2314' : '1px solid #ede5da',
-                boxShadow: isActive ? '0 6px 20px rgba(61, 35, 20, 0.25)' : '0 2px 6px rgba(44, 24, 16, 0.04)',
+                background: isActive ? '#1e5aa8' : '#ffffff',
+                color: isActive ? '#ffffff' : '#334155',
+                border: isActive ? '1px solid #1e5aa8' : '1px solid #e2e8f0',
+                boxShadow: isActive ? '0 6px 20px rgba(30, 90, 168, 0.25)' : '0 2px 6px rgba(15, 41, 66, 0.04)',
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
@@ -108,7 +108,7 @@ export const BeforeAfterSlider = ({ cases }) => {
                     width: '7px',
                     height: '7px',
                     borderRadius: '50%',
-                    background: isActive ? '#dfa26a' : '#c4622d',
+                    background: isActive ? '#4ade80' : '#16a34a',
                     display: 'inline-block',
                   }}
                 />
@@ -122,8 +122,8 @@ export const BeforeAfterSlider = ({ cases }) => {
                     letterSpacing: '0.06em',
                     padding: '2px 7px',
                     borderRadius: '6px',
-                    background: isActive ? 'rgba(255,255,255,0.2)' : '#fce8dc',
-                    color: isActive ? '#ffffff' : '#7a2e10',
+                    background: isActive ? 'rgba(255,255,255,0.25)' : '#dcfce7',
+                    color: isActive ? '#ffffff' : '#15803d',
                     fontWeight: 800,
                   }}
                 >
@@ -140,9 +140,9 @@ export const BeforeAfterSlider = ({ cases }) => {
         style={{
           background: '#ffffff',
           borderRadius: 'clamp(20px, 3.5vw, 28px)',
-          border: '1px solid #ede5da',
+          border: '1px solid #e2e8f0',
           padding: 'clamp(18px, 3.5vw, 36px)',
-          boxShadow: '0 16px 50px rgba(44, 24, 16, 0.08)',
+          boxShadow: '0 16px 50px rgba(15, 41, 66, 0.07)',
         }}
       >
         {/* Top Header Row */}
@@ -153,7 +153,7 @@ export const BeforeAfterSlider = ({ cases }) => {
             alignItems: 'flex-start',
             flexWrap: 'wrap',
             gap: '16px',
-            borderBottom: '1px solid #ede5da',
+            borderBottom: '1px solid #e2e8f0',
             paddingBottom: '20px',
             marginBottom: '22px',
           }}
@@ -166,14 +166,14 @@ export const BeforeAfterSlider = ({ cases }) => {
               <span
                 style={{
                   fontSize: '12px',
-                  color: '#8b5e3c',
+                  color: '#1e5aa8',
                   fontWeight: 600,
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '4px',
                 }}
               >
-                <ShieldCheck size={14} color="#c4622d" />
+                <ShieldCheck size={14} color="#16a34a" />
                 Cross-Polarized Clinical Photography
               </span>
             </div>
@@ -181,7 +181,7 @@ export const BeforeAfterSlider = ({ cases }) => {
             <h3
               style={{
                 fontSize: 'clamp(1.3rem, 2.4vw, 1.7rem)',
-                color: 'var(--color-primary-dark)',
+                color: '#0f2942',
                 fontFamily: 'var(--font-serif-display)',
                 fontWeight: 700,
                 lineHeight: 1.25,
@@ -196,10 +196,10 @@ export const BeforeAfterSlider = ({ cases }) => {
           <div
             style={{
               display: 'inline-flex',
-              background: '#fdf8f3',
+              background: '#f0f7ff',
               padding: '4px',
               borderRadius: '9999px',
-              border: '1px solid #ede5da',
+              border: '1px solid #bae6fd',
               gap: '4px',
             }}
           >
@@ -217,8 +217,8 @@ export const BeforeAfterSlider = ({ cases }) => {
                 cursor: 'pointer',
                 border: 'none',
                 transition: 'all 0.2s ease',
-                background: viewMode === 'slider' ? '#3d2314' : 'transparent',
-                color: viewMode === 'slider' ? '#ffffff' : '#6b4c38',
+                background: viewMode === 'slider' ? '#1e5aa8' : 'transparent',
+                color: viewMode === 'slider' ? '#ffffff' : '#334155',
               }}
             >
               <SplitSquareVertical size={14} />
@@ -239,8 +239,8 @@ export const BeforeAfterSlider = ({ cases }) => {
                 cursor: 'pointer',
                 border: 'none',
                 transition: 'all 0.2s ease',
-                background: viewMode === 'side-by-side' ? '#3d2314' : 'transparent',
-                color: viewMode === 'side-by-side' ? '#ffffff' : '#6b4c38',
+                background: viewMode === 'side-by-side' ? '#1e5aa8' : 'transparent',
+                color: viewMode === 'side-by-side' ? '#ffffff' : '#334155',
               }}
             >
               <Columns size={14} />
@@ -264,8 +264,8 @@ export const BeforeAfterSlider = ({ cases }) => {
                 cursor: 'pointer',
                 border: 'none',
                 transition: 'all 0.2s ease',
-                background: viewMode === 'toggle' ? '#3d2314' : 'transparent',
-                color: viewMode === 'toggle' ? '#ffffff' : '#6b4c38',
+                background: viewMode === 'toggle' ? '#1e5aa8' : 'transparent',
+                color: viewMode === 'toggle' ? '#ffffff' : '#334155',
               }}
             >
               <Eye size={14} />
@@ -288,8 +288,8 @@ export const BeforeAfterSlider = ({ cases }) => {
                 borderRadius: '18px',
                 overflow: 'hidden',
                 cursor: 'ew-resize',
-                boxShadow: '0 8px 30px rgba(44, 24, 16, 0.12)',
-                background: '#1a0e08',
+                boxShadow: '0 8px 30px rgba(15, 41, 66, 0.1)',
+                background: '#091e36',
                 touchAction: 'none',
               }}
             >
@@ -315,14 +315,14 @@ export const BeforeAfterSlider = ({ cases }) => {
                       bottom: '16px',
                       left: '50%',
                       transform: 'translateX(-50%)',
-                      background: 'rgba(26, 14, 8, 0.85)',
+                      background: 'rgba(11, 37, 69, 0.88)',
                       backdropFilter: 'blur(8px)',
-                      color: '#dfc8a4',
+                      color: '#e2e8f0',
                       padding: '8px 18px',
                       borderRadius: '9999px',
                       fontSize: '12px',
                       fontWeight: 600,
-                      border: '1px solid rgba(194, 155, 100, 0.3)',
+                      border: '1px solid rgba(56, 189, 248, 0.35)',
                       display: 'flex',
                       alignItems: 'center',
                       gap: '8px',
@@ -330,7 +330,7 @@ export const BeforeAfterSlider = ({ cases }) => {
                     }}
                   >
                     <span>Left: Clinical Baseline</span>
-                    <span style={{ color: '#c4622d' }}>•</span>
+                    <span style={{ color: '#38bdf8' }}>•</span>
                     <span>Right: Post-Treatment Clearance</span>
                   </div>
                 </div>
@@ -346,7 +346,7 @@ export const BeforeAfterSlider = ({ cases }) => {
                       maxHeight: '560px',
                       objectFit: 'contain',
                       display: 'block',
-                      background: '#1a0e08',
+                      background: '#091e36',
                       pointerEvents: 'none',
                     }}
                   />
@@ -380,14 +380,14 @@ export const BeforeAfterSlider = ({ cases }) => {
                           maxHeight: '560px',
                           objectFit: 'contain',
                           display: 'block',
-                          background: '#1a0e08',
+                          background: '#091e36',
                           pointerEvents: 'none',
                         }}
                       />
                     </div>
                   </div>
 
-                  {/* Draggable Divider Line & Luxury Handle */}
+                  {/* Draggable Divider Line & Handle */}
                   <div
                     style={{
                       position: 'absolute',
@@ -396,7 +396,7 @@ export const BeforeAfterSlider = ({ cases }) => {
                       left: `${sliderPosition}%`,
                       transform: 'translateX(-50%)',
                       width: '4px',
-                      background: 'linear-gradient(180deg, #c4622d 0%, #ffffff 50%, #c29b64 100%)',
+                      background: 'linear-gradient(180deg, #1e5aa8 0%, #ffffff 50%, #16a34a 100%)',
                       pointerEvents: 'none',
                       zIndex: 10,
                     }}
@@ -410,13 +410,13 @@ export const BeforeAfterSlider = ({ cases }) => {
                         width: '46px',
                         height: '46px',
                         borderRadius: '50%',
-                        background: 'linear-gradient(135deg, #3d2314 0%, #1a0e08 100%)',
+                        background: 'linear-gradient(135deg, #1e5aa8 0%, #16a34a 100%)',
                         border: '2px solid #ffffff',
-                        boxShadow: '0 4px 18px rgba(0,0,0,0.45), 0 0 12px rgba(196,98,45,0.6)',
+                        boxShadow: '0 4px 18px rgba(0,0,0,0.35), 0 0 14px rgba(37,99,235,0.6)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        color: '#dfc8a4',
+                        color: '#ffffff',
                         cursor: 'ew-resize',
                         pointerEvents: 'auto',
                       }}
@@ -433,7 +433,7 @@ export const BeforeAfterSlider = ({ cases }) => {
                   position: 'absolute',
                   top: '16px',
                   left: '16px',
-                  background: 'rgba(26, 14, 8, 0.85)',
+                  background: 'rgba(11, 37, 69, 0.88)',
                   backdropFilter: 'blur(8px)',
                   color: '#ffffff',
                   padding: '6px 14px',
@@ -442,7 +442,7 @@ export const BeforeAfterSlider = ({ cases }) => {
                   fontWeight: 700,
                   letterSpacing: '0.06em',
                   textTransform: 'uppercase',
-                  border: '1px solid rgba(196, 98, 45, 0.4)',
+                  border: '1px solid rgba(56, 189, 248, 0.4)',
                   zIndex: 5,
                   pointerEvents: 'none',
                 }}
@@ -455,16 +455,16 @@ export const BeforeAfterSlider = ({ cases }) => {
                   position: 'absolute',
                   top: '16px',
                   right: '16px',
-                  background: 'rgba(26, 14, 8, 0.85)',
+                  background: 'rgba(21, 128, 61, 0.9)',
                   backdropFilter: 'blur(8px)',
-                  color: '#dfa26a',
+                  color: '#ffffff',
                   padding: '6px 14px',
                   borderRadius: '9999px',
                   fontSize: '11.5px',
                   fontWeight: 700,
                   letterSpacing: '0.06em',
                   textTransform: 'uppercase',
-                  border: '1px solid rgba(194, 155, 100, 0.4)',
+                  border: '1px solid rgba(134, 239, 172, 0.45)',
                   zIndex: 5,
                   pointerEvents: 'none',
                 }}
@@ -472,7 +472,7 @@ export const BeforeAfterSlider = ({ cases }) => {
                 After Result
               </div>
 
-              {/* Interaction Hint Overlay (fades once user interacts) */}
+              {/* Interaction Hint Overlay */}
               {!hasInteracted && !isSplitComposite && (
                 <div
                   style={{
@@ -480,7 +480,7 @@ export const BeforeAfterSlider = ({ cases }) => {
                     bottom: '20px',
                     left: '50%',
                     transform: 'translateX(-50%)',
-                    background: 'rgba(61, 35, 20, 0.9)',
+                    background: 'rgba(15, 41, 66, 0.92)',
                     backdropFilter: 'blur(10px)',
                     color: '#ffffff',
                     padding: '8px 20px',
@@ -488,7 +488,7 @@ export const BeforeAfterSlider = ({ cases }) => {
                     fontSize: '12px',
                     fontWeight: 600,
                     boxShadow: '0 4px 16px rgba(0,0,0,0.35)',
-                    border: '1px solid rgba(194,155,100,0.4)',
+                    border: '1px solid rgba(56,189,248,0.4)',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '8px',
@@ -496,15 +496,15 @@ export const BeforeAfterSlider = ({ cases }) => {
                     animation: 'pulseGlow 2.5s infinite',
                   }}
                 >
-                  <ChevronsLeftRight size={16} color="#dfa26a" />
+                  <ChevronsLeftRight size={16} color="#38bdf8" />
                   <span>Drag slider left or right to inspect dermal clearance</span>
                 </div>
               )}
             </div>
 
-            {/* Accessible slider input for keyboard/screen-reader */}
+            {/* Accessible slider input */}
             <div style={{ marginTop: '12px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <span style={{ fontSize: '11px', color: '#8b5e3c', fontWeight: 600, textTransform: 'uppercase' }}>
+              <span style={{ fontSize: '11px', color: '#1e5aa8', fontWeight: 700, textTransform: 'uppercase' }}>
                 Before
               </span>
               <input
@@ -519,12 +519,12 @@ export const BeforeAfterSlider = ({ cases }) => {
                 aria-label="Before and After Comparison Slider"
                 style={{
                   flex: 1,
-                  accentColor: '#c4622d',
+                  accentColor: '#1e5aa8',
                   cursor: 'pointer',
                   height: '6px',
                 }}
               />
-              <span style={{ fontSize: '11px', color: '#c4622d', fontWeight: 600, textTransform: 'uppercase' }}>
+              <span style={{ fontSize: '11px', color: '#16a34a', fontWeight: 700, textTransform: 'uppercase' }}>
                 After
               </span>
             </div>
@@ -546,9 +546,9 @@ export const BeforeAfterSlider = ({ cases }) => {
                 position: 'relative',
                 borderRadius: '16px',
                 overflow: 'hidden',
-                background: '#1a0e08',
-                border: '1px solid #ede5da',
-                boxShadow: '0 4px 16px rgba(44,24,16,0.06)',
+                background: '#091e36',
+                border: '1px solid #e2e8f0',
+                boxShadow: '0 4px 16px rgba(15,41,66,0.06)',
               }}
             >
               <div
@@ -556,7 +556,7 @@ export const BeforeAfterSlider = ({ cases }) => {
                   position: 'absolute',
                   top: '12px',
                   left: '12px',
-                  background: 'rgba(26, 14, 8, 0.85)',
+                  background: 'rgba(15, 41, 66, 0.88)',
                   backdropFilter: 'blur(8px)',
                   color: '#ffffff',
                   padding: '5px 12px',
@@ -564,7 +564,7 @@ export const BeforeAfterSlider = ({ cases }) => {
                   fontSize: '11px',
                   fontWeight: 700,
                   textTransform: 'uppercase',
-                  border: '1px solid rgba(196,98,45,0.4)',
+                  border: '1px solid rgba(56,189,248,0.4)',
                   zIndex: 2,
                 }}
               >
@@ -578,14 +578,14 @@ export const BeforeAfterSlider = ({ cases }) => {
                   height: '420px',
                   objectFit: 'contain',
                   display: 'block',
-                  background: '#1a0e08',
+                  background: '#091e36',
                 }}
               />
-              <div style={{ padding: '14px', background: '#fdf8f3', borderTop: '1px solid #ede5da' }}>
-                <div style={{ fontSize: '11px', color: '#a84e22', fontWeight: 800, textTransform: 'uppercase', marginBottom: '2px' }}>
+              <div style={{ padding: '14px', background: '#f0f7ff', borderTop: '1px solid #e2e8f0' }}>
+                <div style={{ fontSize: '11px', color: '#1e5aa8', fontWeight: 800, textTransform: 'uppercase', marginBottom: '2px' }}>
                   Diagnostic Presentation
                 </div>
-                <p style={{ fontSize: '0.84rem', color: '#6b4c38', margin: 0, lineHeight: 1.5 }}>
+                <p style={{ fontSize: '0.84rem', color: '#334155', margin: 0, lineHeight: 1.5 }}>
                   {currentCase.beforeNotes}
                 </p>
               </div>
@@ -597,9 +597,9 @@ export const BeforeAfterSlider = ({ cases }) => {
                 position: 'relative',
                 borderRadius: '16px',
                 overflow: 'hidden',
-                background: '#1a0e08',
-                border: '1px solid #ede5da',
-                boxShadow: '0 4px 16px rgba(44,24,16,0.06)',
+                background: '#091e36',
+                border: '1px solid #e2e8f0',
+                boxShadow: '0 4px 16px rgba(15,41,66,0.06)',
               }}
             >
               <div
@@ -607,15 +607,15 @@ export const BeforeAfterSlider = ({ cases }) => {
                   position: 'absolute',
                   top: '12px',
                   left: '12px',
-                  background: 'rgba(26, 14, 8, 0.85)',
+                  background: 'rgba(21, 128, 61, 0.9)',
                   backdropFilter: 'blur(8px)',
-                  color: '#dfa26a',
+                  color: '#ffffff',
                   padding: '5px 12px',
                   borderRadius: '9999px',
                   fontSize: '11px',
                   fontWeight: 700,
                   textTransform: 'uppercase',
-                  border: '1px solid rgba(194,155,100,0.4)',
+                  border: '1px solid rgba(134,239,172,0.4)',
                   zIndex: 2,
                 }}
               >
@@ -629,14 +629,14 @@ export const BeforeAfterSlider = ({ cases }) => {
                   height: '420px',
                   objectFit: 'contain',
                   display: 'block',
-                  background: '#1a0e08',
+                  background: '#091e36',
                 }}
               />
-              <div style={{ padding: '14px', background: '#fdf8f3', borderTop: '1px solid #ede5da' }}>
-                <div style={{ fontSize: '11px', color: '#c4622d', fontWeight: 800, textTransform: 'uppercase', marginBottom: '2px' }}>
+              <div style={{ padding: '14px', background: '#f0fdf4', borderTop: '1px solid #e2e8f0' }}>
+                <div style={{ fontSize: '11px', color: '#15803d', fontWeight: 800, textTransform: 'uppercase', marginBottom: '2px' }}>
                   Documented Outcome
                 </div>
-                <p style={{ fontSize: '0.84rem', color: '#6b4c38', margin: 0, lineHeight: 1.5 }}>
+                <p style={{ fontSize: '0.84rem', color: '#334155', margin: 0, lineHeight: 1.5 }}>
                   {currentCase.afterNotes}
                 </p>
               </div>
@@ -652,8 +652,8 @@ export const BeforeAfterSlider = ({ cases }) => {
                 position: 'relative',
                 borderRadius: '18px',
                 overflow: 'hidden',
-                background: '#1a0e08',
-                border: '1px solid #ede5da',
+                background: '#091e36',
+                border: '1px solid #e2e8f0',
                 maxHeight: '520px',
                 marginBottom: '16px',
               }}
@@ -675,7 +675,7 @@ export const BeforeAfterSlider = ({ cases }) => {
                   position: 'absolute',
                   top: '16px',
                   left: '16px',
-                  background: toggleState === 'before' ? '#c4622d' : '#3d2314',
+                  background: toggleState === 'before' ? '#1e5aa8' : '#16a34a',
                   color: '#ffffff',
                   padding: '6px 16px',
                   borderRadius: '9999px',
@@ -700,8 +700,8 @@ export const BeforeAfterSlider = ({ cases }) => {
                   fontSize: '13px',
                   cursor: 'pointer',
                   border: 'none',
-                  background: toggleState === 'before' ? '#c4622d' : '#fdf0e8',
-                  color: toggleState === 'before' ? '#ffffff' : '#c4622d',
+                  background: toggleState === 'before' ? '#1e5aa8' : '#f0f7ff',
+                  color: toggleState === 'before' ? '#ffffff' : '#1e5aa8',
                   transition: 'all 0.2s ease',
                 }}
               >
@@ -716,8 +716,8 @@ export const BeforeAfterSlider = ({ cases }) => {
                   fontSize: '13px',
                   cursor: 'pointer',
                   border: 'none',
-                  background: toggleState === 'after' ? '#3d2314' : '#fdf8f3',
-                  color: toggleState === 'after' ? '#ffffff' : '#3d2314',
+                  background: toggleState === 'after' ? '#16a34a' : '#f0fdf4',
+                  color: toggleState === 'after' ? '#ffffff' : '#15803d',
                   transition: 'all 0.2s ease',
                 }}
               >
@@ -734,29 +734,29 @@ export const BeforeAfterSlider = ({ cases }) => {
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
             gap: '16px',
-            background: '#fdf8f3',
+            background: 'linear-gradient(135deg, #f0f7ff 0%, #ffffff 50%, #f0fdf4 100%)',
             borderRadius: '16px',
             padding: 'clamp(16px, 2.5vw, 24px)',
-            border: '1px solid #ede5da',
+            border: '1px solid #e2e8f0',
           }}
         >
           {/* Metadata pill column */}
           <div>
             <div style={{ display: 'flex', gap: '16px', marginBottom: '12px', flexWrap: 'wrap' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#6b4c38' }}>
-                <Calendar size={15} color="#c4622d" />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#334155' }}>
+                <Calendar size={15} color="#1e5aa8" />
                 <span><strong>Timeline:</strong> {currentCase.timeline}</span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#6b4c38' }}>
-                <Layers size={15} color="#c4622d" />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#334155' }}>
+                <Layers size={15} color="#16a34a" />
                 <span><strong>Protocol:</strong> {currentCase.sessions}</span>
               </div>
             </div>
 
-            <div style={{ fontSize: '10.5px', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 800, color: '#a84e22', marginBottom: '4px' }}>
+            <div style={{ fontSize: '10.5px', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 800, color: '#1e5aa8', marginBottom: '4px' }}>
               Clinical Pathway Administered:
             </div>
-            <p style={{ fontSize: '0.86rem', color: '#3d2314', lineHeight: 1.5, margin: 0, fontWeight: 600 }}>
+            <p style={{ fontSize: '0.86rem', color: '#0f2942', lineHeight: 1.5, margin: 0, fontWeight: 600 }}>
               {currentCase.protocolUsed}
             </p>
           </div>
@@ -772,7 +772,8 @@ export const BeforeAfterSlider = ({ cases }) => {
                 background: '#ffffff',
                 borderRadius: '12px',
                 padding: '12px',
-                border: '1px solid #ede5da',
+                border: '1px solid #e2e8f0',
+                boxShadow: '0 2px 8px rgba(15,41,66,0.04)',
               }}
             >
               {currentCase.stats.map((s, idx) => (
@@ -782,14 +783,14 @@ export const BeforeAfterSlider = ({ cases }) => {
                       fontFamily: 'var(--font-serif-display)',
                       fontSize: 'clamp(1.2rem, 2vw, 1.5rem)',
                       fontWeight: 700,
-                      color: '#c4622d',
+                      color: idx === 1 ? '#16a34a' : '#1e5aa8',
                       lineHeight: 1,
                       marginBottom: '4px',
                     }}
                   >
                     {s.value}
                   </div>
-                  <div style={{ fontSize: '10.5px', color: '#6b4c38', fontWeight: 600 }}>
+                  <div style={{ fontSize: '10.5px', color: '#475569', fontWeight: 600 }}>
                     {s.label}
                   </div>
                 </div>
@@ -804,17 +805,17 @@ export const BeforeAfterSlider = ({ cases }) => {
               flexDirection: 'column',
               justifyContent: 'center',
               alignItems: 'flex-start',
-              borderLeft: '1px solid #ede5da',
+              borderLeft: '1px solid #e2e8f0',
               paddingLeft: '18px',
             }}
           >
-            <div style={{ fontSize: '11px', color: '#8b5e3c', fontWeight: 600, marginBottom: '6px' }}>
+            <div style={{ fontSize: '11px', color: '#1e5aa8', fontWeight: 600, marginBottom: '6px' }}>
               Experiencing similar skin concerns?
             </div>
             <button
               onClick={openBookingModal}
               style={{
-                background: 'linear-gradient(135deg, #c4622d 0%, #a84e22 100%)',
+                background: 'linear-gradient(135deg, #1e5aa8 0%, #16a34a 100%)',
                 color: '#ffffff',
                 border: 'none',
                 padding: '10px 20px',
@@ -825,16 +826,16 @@ export const BeforeAfterSlider = ({ cases }) => {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '6px',
-                boxShadow: '0 4px 14px rgba(196, 98, 45, 0.35)',
+                boxShadow: '0 4px 14px rgba(30, 90, 168, 0.35)',
                 transition: 'transform 0.2s ease, box-shadow 0.2s ease',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.boxShadow = '0 6px 20px rgba(196, 98, 45, 0.45)';
+                e.currentTarget.style.boxShadow = '0 6px 20px rgba(30, 90, 168, 0.45)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 4px 14px rgba(196, 98, 45, 0.35)';
+                e.currentTarget.style.boxShadow = '0 4px 14px rgba(30, 90, 168, 0.35)';
               }}
             >
               <span>Book Skin Diagnostic</span>

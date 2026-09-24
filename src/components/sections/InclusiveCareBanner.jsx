@@ -9,22 +9,22 @@ export const InclusiveCareBanner = () => {
 
   const inclusiveFeatures = [
     {
-      icon: <SunMedium size={18} color="#c4622d" />,
+      icon: <SunMedium size={18} color="#16a34a" />,
       title: "Sensory-Adapted Lighting & Sound",
-      desc: "Warm dimmable amber cove lighting, zero harsh fluorescent glare, and acoustic-shielded silent rooms."
+      desc: "Warm dimmable soothing cove lighting, zero harsh fluorescent glare, and acoustic-shielded silent rooms."
     },
     {
-      icon: <Clock size={18} color="#c4622d" />,
+      icon: <Clock size={18} color="#1e5aa8" />,
       title: "Unhurried Extended Pacing",
       desc: "Double-length appointment intervals with clear visual step-by-step briefings before every stage."
     },
     {
-      icon: <VolumeX size={18} color="#c4622d" />,
+      icon: <VolumeX size={18} color="#16a34a" />,
       title: "Low-Stimulation Modalities",
       desc: "Whisper-quiet pneumatic vortex extraction and touch-sensitive pressure adjustments."
     },
     {
-      icon: <Heart size={18} color="#c4622d" />,
+      icon: <Heart size={18} color="#1e5aa8" />,
       title: "Dedicated Sensory Coordinator",
       desc: "Personalized pre-arrival care plans accommodating autism, ADHD, sensory processing and medical anxiety."
     }
@@ -35,11 +35,11 @@ export const InclusiveCareBanner = () => {
       <div className="container">
         <div
           style={{
-            background: "linear-gradient(145deg, #fdf6ee 0%, #f9eee0 100%)",
+            background: "linear-gradient(145deg, #f0fdf4 0%, #ffffff 40%, #f0f7ff 100%)",
             borderRadius: "clamp(20px, 4vw, 28px)",
-            border: "1px solid #ede5da",
+            border: "1px solid #bae6fd",
             padding: "clamp(24px, 4vw, 56px)",
-            boxShadow: "0 10px 35px rgba(44, 24, 16, 0.05)"
+            boxShadow: "0 10px 35px rgba(15, 41, 66, 0.05)"
           }}
         >
           <div
@@ -53,7 +53,7 @@ export const InclusiveCareBanner = () => {
             {/* Left Text Column */}
             <div>
               <div style={{ marginBottom: "14px" }}>
-                <Badge variant="emerald" icon={<Sparkles size={13} color="#c4622d" />}>
+                <Badge variant="emerald" icon={<Sparkles size={13} color="#16a34a" />}>
                   INCLUSIVE WELLNESS PROGRAM
                 </Badge>
               </div>
@@ -61,7 +61,7 @@ export const InclusiveCareBanner = () => {
               <h2
                 style={{
                   fontSize: "clamp(1.75rem, 3.2vw, 2.6rem)",
-                  color: "var(--color-primary-dark)",
+                  color: "#0f2942",
                   lineHeight: 1.18,
                   marginBottom: "16px",
                   fontFamily: "var(--font-serif-display)"
@@ -73,7 +73,7 @@ export const InclusiveCareBanner = () => {
               <p
                 style={{
                   fontSize: "clamp(0.9rem, 1.1vw, 0.98rem)",
-                  color: "#6b4c38",
+                  color: "#334155",
                   lineHeight: 1.65,
                   marginBottom: "28px"
                 }}
@@ -94,24 +94,25 @@ export const InclusiveCareBanner = () => {
                   <div key={i} style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
                     <div
                       style={{
-                        width: "34px",
-                        height: "34px",
+                        width: "36px",
+                        height: "36px",
                         borderRadius: "10px",
                         background: "#ffffff",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                         flexShrink: 0,
-                        boxShadow: "0 2px 8px rgba(44,24,16,0.06)"
+                        border: "1px solid #e2e8f0",
+                        boxShadow: "0 2px 8px rgba(15,41,66,0.05)"
                       }}
                     >
                       {feat.icon}
                     </div>
                     <div>
-                      <h4 style={{ fontSize: "0.9rem", color: "#3d2314", fontWeight: 700, marginBottom: "2px" }}>
+                      <h4 style={{ fontSize: "0.92rem", color: "#0f2942", fontWeight: 700, marginBottom: "2px" }}>
                         {feat.title}
                       </h4>
-                      <p style={{ fontSize: "0.8rem", color: "#8b5e3c", lineHeight: 1.4, margin: 0 }}>
+                      <p style={{ fontSize: "0.82rem", color: "#475569", lineHeight: 1.45, margin: 0 }}>
                         {feat.desc}
                       </p>
                     </div>
@@ -125,6 +126,10 @@ export const InclusiveCareBanner = () => {
                 size="md"
                 icon={<ArrowUpRight size={16} />}
                 onClick={() => openBookingModal()}
+                style={{
+                  background: 'linear-gradient(135deg, #1e5aa8 0%, #16a34a 100%)',
+                  boxShadow: '0 4px 18px rgba(30, 90, 168, 0.35)',
+                }}
               >
                 Explore Inclusive Sensory Suite
               </Button>
@@ -136,9 +141,9 @@ export const InclusiveCareBanner = () => {
                 style={{
                   borderRadius: "clamp(16px, 3vw, 22px)",
                   overflow: "hidden",
-                  boxShadow: "0 16px 40px rgba(44, 24, 16, 0.12)",
+                  boxShadow: "0 16px 40px rgba(15, 41, 66, 0.1)",
                   border: "3px solid #ffffff",
-                  background: "#f8f2eb"
+                  background: "#f0f7ff"
                 }}
               >
                 <img
@@ -159,15 +164,16 @@ export const InclusiveCareBanner = () => {
                 style={{
                   position: "relative",
                   marginTop: "12px",
-                  background: "rgba(44, 24, 16, 0.94)",
+                  background: "rgba(11, 37, 69, 0.94)",
                   padding: "12px 16px",
                   borderRadius: "12px",
                   color: "#ffffff",
                   fontSize: "12px",
-                  lineHeight: 1.4
+                  lineHeight: 1.4,
+                  border: "1px solid rgba(56, 189, 248, 0.3)"
                 }}
               >
-                <strong style={{ color: "#dfc8a4", display: "block", marginBottom: "2px" }}>
+                <strong style={{ color: "#4ade80", display: "block", marginBottom: "2px" }}>
                   🌿 The Sensory Sanctuary Suite
                 </strong>
                 Designed in partnership with neuro-inclusion clinicians for maximum sensory comfort.

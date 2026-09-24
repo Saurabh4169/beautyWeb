@@ -12,13 +12,13 @@ export const ClinicalTechnologySection = () => {
       id="technology"
       className="section-padding"
       style={{
-        background: "linear-gradient(180deg, #1a0e08 0%, #241409 50%, #1a0e08 100%)",
+        background: "linear-gradient(180deg, #091e36 0%, #0e2e54 50%, #091e36 100%)",
         color: "#ffffff",
         position: "relative",
         overflow: "hidden"
       }}
     >
-      {/* Background ambient lighting effects */}
+      {/* Background ambient blue lighting effects */}
       <div
         style={{
           position: "absolute",
@@ -27,7 +27,7 @@ export const ClinicalTechnologySection = () => {
           transform: "translateX(-50%)",
           width: "600px",
           height: "300px",
-          background: "radial-gradient(ellipse, rgba(196, 98, 45, 0.16) 0%, rgba(0,0,0,0) 70%)",
+          background: "radial-gradient(ellipse, rgba(37, 99, 235, 0.18) 0%, rgba(0,0,0,0) 70%)",
           filter: "blur(60px)",
           pointerEvents: "none"
         }}
@@ -54,8 +54,8 @@ export const ClinicalTechnologySection = () => {
             <div
               key={tech.number}
               style={{
-                background: "rgba(44, 24, 16, 0.65)",
-                border: "1px solid rgba(196, 98, 45, 0.25)",
+                background: "rgba(14, 46, 84, 0.72)",
+                border: "1px solid rgba(56, 189, 248, 0.25)",
                 borderRadius: "20px",
                 padding: "32px 26px",
                 backdropFilter: "blur(10px)",
@@ -67,12 +67,12 @@ export const ClinicalTechnologySection = () => {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "translateY(-6px)";
-                e.currentTarget.style.borderColor = "#c4622d";
-                e.currentTarget.style.boxShadow = "0 12px 35px rgba(196, 98, 45, 0.22)";
+                e.currentTarget.style.borderColor = "#38bdf8";
+                e.currentTarget.style.boxShadow = "0 12px 35px rgba(37, 99, 235, 0.25)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.borderColor = "rgba(196, 98, 45, 0.25)";
+                e.currentTarget.style.borderColor = "rgba(56, 189, 248, 0.25)";
                 e.currentTarget.style.boxShadow = "none";
               }}
             >
@@ -84,7 +84,7 @@ export const ClinicalTechnologySection = () => {
                       fontFamily: "var(--font-serif-display)",
                       fontSize: "1.8rem",
                       fontWeight: 700,
-                      color: "#d4784a",
+                      color: "#38bdf8",
                       lineHeight: 1
                     }}
                   >
@@ -95,9 +95,10 @@ export const ClinicalTechnologySection = () => {
                       fontSize: "10px",
                       textTransform: "uppercase",
                       letterSpacing: "0.08em",
-                      color: "#dfc8a4",
+                      color: "#bae6fd",
                       fontWeight: 700,
-                      background: "rgba(255, 255, 255, 0.08)",
+                      background: "rgba(56, 189, 248, 0.15)",
+                      border: "1px solid rgba(56, 189, 248, 0.3)",
                       padding: "4px 10px",
                       borderRadius: "9999px"
                     }}
@@ -122,7 +123,7 @@ export const ClinicalTechnologySection = () => {
                 <p
                   style={{
                     fontSize: "0.88rem",
-                    color: "#b89e8c",
+                    color: "#94a3b8",
                     lineHeight: 1.65,
                     marginBottom: "20px"
                   }}
@@ -135,8 +136,8 @@ export const ClinicalTechnologySection = () => {
               <div style={{ borderTop: "1px solid rgba(255, 255, 255, 0.1)", paddingTop: "16px" }}>
                 <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "6px" }}>
                   {tech.benefits.map((b, i) => (
-                    <li key={i} style={{ fontSize: "12px", color: "#dfc8a4", display: "flex", alignItems: "center", gap: "6px" }}>
-                      <span style={{ width: "4px", height: "4px", borderRadius: "50%", background: "#c4622d" }} />
+                    <li key={i} style={{ fontSize: "12px", color: "#e2e8f0", display: "flex", alignItems: "center", gap: "8px" }}>
+                      <span style={{ width: "5px", height: "5px", borderRadius: "50%", background: "#4ade80", flexShrink: 0 }} />
                       <span>{b}</span>
                     </li>
                   ))}
@@ -149,8 +150,8 @@ export const ClinicalTechnologySection = () => {
         {/* Bottom CTA Banner inside Dark Section */}
         <div
           style={{
-            background: "rgba(255, 255, 255, 0.05)",
-            border: "1px solid rgba(223, 200, 164, 0.2)",
+            background: "rgba(255, 255, 255, 0.06)",
+            border: "1px solid rgba(56, 189, 248, 0.25)",
             borderRadius: "18px",
             padding: "24px 32px",
             display: "flex",
@@ -161,8 +162,8 @@ export const ClinicalTechnologySection = () => {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-            <Cpu size={22} color="#d4784a" />
-            <span style={{ fontSize: "0.95rem", color: "#fdf8f3" }}>
+            <Cpu size={22} color="#38bdf8" />
+            <span style={{ fontSize: "0.95rem", color: "#ffffff" }}>
               Interested in clinical device specifications and contraindications?
             </span>
           </div>
@@ -170,20 +171,28 @@ export const ClinicalTechnologySection = () => {
           <button
             onClick={() => openBookingModal()}
             style={{
-              background: "linear-gradient(135deg, #c4622d 0%, #a84e22 100%)",
+              background: "linear-gradient(135deg, #1e5aa8 0%, #16a34a 100%)",
               color: "#ffffff",
-              padding: "10px 24px",
+              padding: "11px 26px",
               borderRadius: "9999px",
               fontSize: "13px",
               fontWeight: 700,
               display: "flex",
               alignItems: "center",
               gap: "6px",
-              boxShadow: "0 4px 16px rgba(196,98,45,0.35)",
-              transition: "transform 0.2s ease"
+              border: "none",
+              cursor: "pointer",
+              boxShadow: "0 4px 16px rgba(30,90,168,0.4)",
+              transition: "transform 0.2s ease, box-shadow 0.2s ease"
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-2px)";
+              e.currentTarget.style.boxShadow = "0 6px 22px rgba(30,90,168,0.55)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow = "0 4px 16px rgba(30,90,168,0.4)";
+            }}
           >
             <span>Consult With a Physician</span>
             <ArrowRight size={14} />
