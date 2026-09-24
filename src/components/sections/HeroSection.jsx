@@ -73,18 +73,8 @@ export const HeroSection = () => {
             height: '100%',
             objectFit: 'cover',
             objectPosition: '68% 28%',
-            opacity: 0.92,
-            filter: 'contrast(106%) brightness(98%) saturate(106%)',
-          }}
-        />
-
-        {/* Overlay on girl image (16% dark tint for ideal readability and depth) */}
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'rgba(0, 0, 0, 0.16)',
-            pointerEvents: 'none',
+            opacity: 1,
+            filter: 'contrast(102%) brightness(102%) saturate(104%)',
           }}
         />
       </div>
