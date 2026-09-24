@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles, ShieldCheck, Heart, Cpu, Sparkle, Star, Layers, MapPin, ArrowUpRight } from 'lucide-react';
 import { HeroSection } from '../components/sections/HeroSection';
 import { StatsBar } from '../components/sections/StatsBar';
+import { BeforeAfterSection } from '../components/sections/BeforeAfterSection';
 import { NewsletterCta } from '../components/sections/NewsletterCta';
 import { Badge } from '../components/ui/Badge';
 import { useBooking } from '../context/BookingContext';
@@ -332,7 +333,10 @@ export const HomePage = () => {
         </div>
       </section>
 
-      {/* 4. VIP Newsletter CTA */}
+      {/* 4. Real Clinical Before & After Transformation Slider */}
+      <BeforeAfterSection />
+
+      {/* 5. VIP Newsletter CTA */}
       <NewsletterCta />
     </div>
   );

@@ -4,6 +4,7 @@ import { ShoppingBag, Sparkles, Menu, X, ArrowUpRight } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
 import { useBooking } from '../../context/BookingContext';
 import { Button } from '../ui/Button';
+import brandLogo from '../../assets/logo.jpeg';
 
 export const Navbar = () => {
   const { totalItemsCount, setIsCartOpen } = useCart();
@@ -77,58 +78,26 @@ export const Navbar = () => {
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '12px',
               textDecoration: 'none',
               flexShrink: 0,
-              transition: 'transform 0.25s ease',
-              transform: logoHovered ? 'translateY(-1px)' : 'none',
+              transition: 'transform 0.25s ease, filter 0.25s ease',
+              transform: logoHovered ? 'translateY(-1px) scale(1.02)' : 'none',
+              filter: logoHovered ? 'drop-shadow(0 4px 14px rgba(196,98,45,0.22))' : 'none',
             }}
           >
-            <div
+            <img
+              src={brandLogo}
+              alt="BeautyOasisRx — Renew Your Skin"
               style={{
-                width: '42px',
-                height: '42px',
-                borderRadius: '12px',
-                background: 'linear-gradient(135deg, #3d2314 0%, #2c1810 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: '#ffffff',
-                boxShadow: logoHovered
-                  ? '0 6px 20px rgba(61,35,20,0.38)'
-                  : '0 4px 12px rgba(61,35,20,0.22)',
-                transition: 'box-shadow 0.25s ease',
+                height: isScrolled ? '46px' : '54px',
+                width: 'auto',
+                maxWidth: '220px',
+                objectFit: 'contain',
+                mixBlendMode: 'multiply',
+                transition: 'height 0.3s ease',
+                display: 'block',
               }}
-            >
-              <Sparkles size={20} color="#d4784a" />
-            </div>
-            <div>
-              <div
-                style={{
-                  fontFamily: 'var(--font-serif-display)',
-                  fontSize: '1.38rem',
-                  fontWeight: 700,
-                  letterSpacing: '0.04em',
-                  color: '#3d2314',
-                  lineHeight: 1.1,
-                  whiteSpace: 'nowrap',
-                }}
-              >
-                BEAUTY OASIS
-              </div>
-              <div
-                style={{
-                  fontSize: '8px',
-                  letterSpacing: '0.24em',
-                  textTransform: 'uppercase',
-                  color: '#8b5e3c',
-                  fontWeight: 700,
-                  whiteSpace: 'nowrap',
-                }}
-              >
-                Aesthetics &amp; Wellness Clinic
-              </div>
-            </div>
+            />
           </Link>
 
           {/* ── Desktop Nav ── */}

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Sparkles, MapPin, Phone, Mail, Navigation, Globe, Share2, Play, ArrowUpRight } from 'lucide-react';
 import { useBooking } from '../../context/BookingContext';
+import brandLogo from '../../assets/logo.jpeg';
 
 export const Footer = () => {
   const { openBookingModal } = useBooking();
@@ -83,28 +84,39 @@ export const Footer = () => {
         >
           {/* Col 1: Brand & Contact */}
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '18px' }}>
+            <Link to="/" style={{ textDecoration: 'none', display: 'inline-block', marginBottom: '18px' }}>
               <div
                 style={{
-                  width: '40px', height: '40px',
-                  borderRadius: '10px',
-                  background: 'linear-gradient(135deg, #3d2314, #2c1810)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  boxShadow: '0 4px 14px rgba(0,0,0,0.3)',
-                  border: '1px solid rgba(196,98,45,0.3)',
+                  background: '#ffffff',
+                  padding: '8px 16px',
+                  borderRadius: '12px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  boxShadow: '0 6px 22px rgba(0,0,0,0.35)',
+                  border: '1px solid rgba(194,155,100,0.3)',
+                  transition: 'transform 0.25s ease, box-shadow 0.25s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = '0 10px 28px rgba(0,0,0,0.45)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 6px 22px rgba(0,0,0,0.35)';
                 }}
               >
-                <Sparkles size={18} color="#d4784a" />
+                <img
+                  src={brandLogo}
+                  alt="BeautyOasisRx — Renew Your Skin"
+                  style={{
+                    height: '42px',
+                    width: 'auto',
+                    objectFit: 'contain',
+                    display: 'block',
+                  }}
+                />
               </div>
-              <div>
-                <div style={{ fontFamily: 'var(--font-serif-display)', fontSize: '1.3rem', color: '#fdf8f3', fontWeight: 700, lineHeight: 1.1 }}>
-                  Beauty Oasis Rx
-                </div>
-                <div style={{ fontSize: '8px', letterSpacing: '0.2em', color: '#d4784a', textTransform: 'uppercase', fontWeight: 700 }}>
-                  Renew Your Skin
-                </div>
-              </div>
-            </div>
+            </Link>
 
             <p style={{ fontSize: '0.84rem', color: '#b89e8c', lineHeight: 1.65, marginBottom: '20px', maxWidth: '240px' }}>
               Doctor-led clinical aesthetics delivering personalized medical-grade skin transformations.
