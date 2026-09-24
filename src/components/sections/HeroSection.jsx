@@ -74,7 +74,7 @@ export const HeroSection = () => {
             objectFit: 'cover',
             objectPosition: '68% 28%',
             opacity: 1,
-            filter: 'contrast(102%) brightness(102%) saturate(104%)',
+            filter: 'contrast(104%) brightness(103%) saturate(106%)',
           }}
         />
       </div>
@@ -275,8 +275,9 @@ export const HeroSection = () => {
         }
         @media (max-width: 991px) {
           .hero-beauty-girl-bg-img {
-            opacity: 0.42 !important;
-            object-position: 75% 25% !important;
+            opacity: 1 !important;
+            filter: contrast(104%) brightness(103%) saturate(106%) !important;
+            object-position: 68% 25% !important;
           }
         }
         @media (min-width: 768px) {
